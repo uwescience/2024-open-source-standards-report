@@ -11,6 +11,14 @@ of a new standard [^1].
 been devoted to it.
 
 Another failure is the mismatch between developers of the standard and users.
+There is an iherent gap in both interest and ability to engage with the
+technical details undergirding standards and their development between the
+developers of the standard and their users. In extreme cases, these interests
+may be at odds, as developers implement sophisticated mechanisms to automate
+the creation of the standard or advocate for more technically advanced
+mechanisms for evolving the standard, leaving potential users sidelined in the
+development of the standard, and limiting their ability to provide feedback
+about the practical implications of changes to the standards.
 
 ## Sustainability
 
