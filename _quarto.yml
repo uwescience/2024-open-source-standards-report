@@ -8,9 +8,11 @@ format:
   html:
     comments:
       hypothesis: true
+    toc: true
+
   # docx: default
   # jats: default
   pdf: default
 
-
-
+number-sections: true
+bibliography: references.bib
