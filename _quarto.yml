@@ -8,14 +8,9 @@ format:
   html:
     comments:
       hypothesis: true
-  docx: default
-  jats: default
-
-  # (other formats)
-  # pdf: default
-
-execute:
-  freeze: true
+  # docx: default
+  # jats: default
+  pdf: default
 
 
 
