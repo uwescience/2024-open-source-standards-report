@@ -1,3 +1,4 @@
 
-## Section
-This is a simple placeholder for the manuscript's main document [@knuth84].
+## Introduction
+
+BIDS is an example [@Gorgolewski2016BIDS]
