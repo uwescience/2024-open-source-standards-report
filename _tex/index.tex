@@ -77,39 +77,6 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-% definitions for citeproc citations
-\NewDocumentCommand\citeproctext{}{}
-\NewDocumentCommand\citeproc{mm}{%
-  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
-\makeatletter
- % allow citations to break across lines
- \let\@cite@ofmt\@firstofone
- % avoid brackets around text for \cite:
- \def\@biblabel#1{}
- \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
-\makeatother
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
- {\begin{list}{}{%
-  \setlength{\itemindent}{0pt}
-  \setlength{\leftmargin}{0pt}
-  \setlength{\parsep}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1
-   \setlength{\leftmargin}{\cslhangindent}
-   \setlength{\itemindent}{-1\cslhangindent}
-  \fi
-  % set entry spacing
-  \setlength{\itemsep}{#2\baselineskip}}}
- {\end{list}}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \KOMAoption{captions}{tableheading}
 \makeatletter
@@ -213,8 +180,114 @@ the process.
 
 \section{Introduction}\label{introduction}
 
-The Brain Imaging Data Structure BIDS (Gorgolewski et al. 2016) is an
-example of a data standard.
+Data-intensive discovery has become an important mode of knowledge
+production across many research fields and has had a significant and
+broad impact across all of society. This is becoming increasingly
+salient as recent developments in machine learning and artificial
+intelligence (AI) promise to increase the value of large,
+multi-dimensional, heterogeneous data sources. Coupled with these new
+machine learning techniques, these datasets can help us understand
+everything from the cellular operations of the human body, through
+business transactions on the internet, to the structure and history of
+the universe. However, the development of new machine learning methods,
+and data-intensive discovery more generally, rely heavily on the
+availability and usability of these large datasets. Data can be openly
+available but still not useful if it cannot be properly understood. In
+current conditions in which almost all of the relevant data is stored in
+digital formats, and many relevant datasets can be found through the
+communication networks of the world wide web, Findability,
+Accessibility, Interoperability and Reusability (FAIR) principles for
+data management and stewardship become critically important
+\cite{Wilkinson2016FAIR}.
+
+One of the main mechanisms through which these principles are promoted
+is the development of \emph{standards} for data and metadata. Standards
+can vary in the level of detail and scope, and encompass such things as
+\emph{file formats} for the storing of certain data types,
+\emph{schemas} for databases that store a range of data types,
+\emph{ontologies} to describe and organize metadata in a manner that
+connects it to field-specific meaning, as well as mechanisms to describe
+\emph{provenance} of different data derivatives. The importance of
+standards was underscored in a recent report report by the Subcommittee
+on Open Science of the National Science and Technology Council on
+\texttt{Desirable\ characteristics\ of\ data\ repositories\ for\ federally\ funded\ research\textquotesingle{}\textquotesingle{}\ \textbackslash{}cite\{nstc2022desirable\}.\ The\ report\ explicitly\ called\ out\ the\ importance\ of}allow{[}ing{]}
+datasets and metadata to be accessed, downloaded, or exported from the
+repository in widely used, preferably non-proprietary, formats
+consistent with standards used in the disciplines the repository
+serves.'\,' This highlights the need for data and metadata standards
+across a variety of different kinds of data. In addition, a report from
+the National Institute of Standards and Technology on
+\texttt{U.S.\ Leadership\ in\ AI:\ A\ Plan\ for\ Federal\ Engagement\ in\ Developing\ Technical\ Standards\ and\ Related\ Tools\textquotesingle{}\textquotesingle{}\ emphasized\ that\ -\/-\ specifically\ for\ the\ case\ of\ AI\ -\/-}U.S.
+government agencies should prioritize AI standards efforts that are
+{[}\ldots{]} Consensus-based, {[}\ldots{]} Inclusive and accessible,
+{[}\ldots{]} Multi-path, {[}\ldots{]} Open and transparent, {[}\ldots{]}
+and {[}that{]} Result in globally relevant and non-discriminatory
+standards\ldots{} '\,' \cite{NIST2019}. The converging characteristics
+of standards that arise from these reports suggest that considerable
+thought needs to be given to the manner in which standards arise, so
+that these goals are achieved.
+
+Standards for a specific domain can come about in various ways, but very
+broadly speaking two kinds of mechanisms can generate a standard for a
+specific type of data: (i) top-down: in this case a (usually) small
+group of people develop the standard and disseminate it to the
+communities of interest with very little input from these communities.
+An example of this mode of standards development can occur when an
+instrument is developed by a manufacturer and users of this instrument
+receive the data in a particular format that was developed in tandem
+with the instrument; and (ii) bottom-up: in this case, standards are
+developed by a larger group of people that convene and reach consensus
+about the details of the standard in an attempt to cover a large range
+of use-cases. Most standards are developed through an interplay between
+these two modes, and understanding how to make the best of these modes
+is critical in advancing the development of data and metadata standards.
+
+One source of inspiration for bottom-up development of robust, adaptable
+and useful standards comes from open-source software (OSS). OSS has a
+long history going back to the development of the Unix operating system
+in the late 1960s. Over the time since its inception, the large
+community of developers and users of OSS have have developed a host of
+socio-technical mechanisms that support the development and use of OSS.
+For example, the Open Source Initiative (OSI), a non-profit organization
+that was founded in 1990s has evolved a set of guidelines for licensing
+of OSS that is designed to protect the rights of developers and users.
+Technical tools to support the evolution of open-source software include
+software for distributed version control, such as the Git Source-code
+management system. When these social and technical innovations are put
+together they enable a host of positive defining features of OSS, such
+as transparency, collaboration, and decentralization. These features
+allow OSS to have a remarkable level of dynamism and productivity, while
+also retaining the ability of a variety of stakeholders to guide the
+evolution of the software to take their needs and interests into
+account.
+
+A necessary complement to these technical tools and legal instruments
+have been a host of practices that define the social interactions
+\emph{within} communities of OSS developers and users, and structures
+for governing these communities. While many OSS communities started as
+projects led by individual founders (so-called benevolent dictators for
+life, or BDFL; a title first bestowed on the originator of the Python
+programming language, Guido Van Rossum \cite{Van_Rossum2008BDFL}),
+recent years have led to an increased understanding that minimal
+standards of democratic governance are required in order for OSS
+communities to develop and flourish. This has led to the adoption of
+codes of conduct that govern the standards of behavior and communication
+among project stakeholders. It has also led to the establishment of
+democratically elected steering councils/committees from among the
+members and stakeholders of an OSS project's community.
+
+It was also within the Python community that an orderly process for
+community-guided evolution of an open-source software project emerged,
+through the Python Enhancement Proposal (PEP) mechanism
+\cite{Warsaw2000PEP1}, which lays out how major changes to the software
+should be proposed, advocated for, and eventually decided on. While
+these tools, ideas, and practices evolved in developing software, they
+are readily translated to other domains. For example, OSS notions
+surrounding IP have given rise to the Creative Commons movement that has
+expanded these notions to apply to a much wider range of human creative
+endeavours. Similarly OSS notions regarding collaborative structures
+have pervaded the current era of open science and team science
+\cite{Baumgartner2023TeamScience, Koch2016TeamScience}.
 
 \section{Recommendations}\label{recommendations}
 
@@ -231,17 +304,6 @@ We make the following recommendations:
   basis of the analysis or assessment of an existing standard, or as
   guidelines to develop new standards.
 \end{enumerate}
-
-\phantomsection\label{refs}
-\begin{CSLReferences}{1}{0}
-\bibitem[\citeproctext]{ref-Gorgolewski2016BIDS}
-Gorgolewski, Krzysztof J, Tibor Auer, Vince D Calhoun, R Cameron
-Craddock, Samir Das, Eugene P Duff, Guillaume Flandin, et al. 2016.
-{``The {Brain} {Imaging} {Data} {Structure}, a Format for Organizing and
-Describing Outputs of Neuroimaging Experiments.''} \emph{Sci Data} 3
-(June): 160044. \url{https://www.nature.com/articles/sdata201644}.
-
-\end{CSLReferences}
 
 
 
