@@ -1,0 +1,19 @@
+# Challenges for open source data and metadata standards, and some solutions
+
+## Too much flexibility, or too little
+
+It's a story as old as time (or at least as old as standards): users fail to
+consider existing standards, or perceive an existing standard as not offering
+enough flexibility to cover some use case, and they embark on the development
+of a new standard [^1].
+
+[^1]: So old in fact that an oft-cited [XKCD comic](https://xkcd.com/927/) has
+been devoted to it.
+
+Another failure is the mismatch between developers of the standard and users.
+
+## Sustainability
+
+## The importance of automated validation
+
+
