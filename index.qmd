@@ -26,13 +26,8 @@ into account in a top-down model of standards development. On the other hand,
 open-source models carry unique risks that need to be incorporated into the
 process.
 
-## Introduction
 
-BIDS is an example [@Gorgolewski2016BIDS]
+{{< include sections/01-introduction.qmd >}}
+{{< include sections/02-recommendations.qmd >}}
 
-
-## Recommendations
-
-1. Training for data stewards and career paths that encourage this role.
-2. XXX
 

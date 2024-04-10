@@ -1,0 +1,7 @@
+# Recommendations
+
+We make the following recommendations:
+
+
+1. Training for data stewards and career paths that encourage this role.
+2. Development of meta-standards or standards-of-standards. These are descriptions of cross-cutting best-practices. These can be used as a basis of the analysis or assessment of an existing standard, or as guidelines to develop new standards.

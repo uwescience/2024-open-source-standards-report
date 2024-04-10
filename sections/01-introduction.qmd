@@ -1,0 +1,5 @@
+# Introduction
+
+The Brain Imaging Data Structure BIDS [@Gorgolewski2016BIDS] is an example of a data standard.
+
+
