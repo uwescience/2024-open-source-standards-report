@@ -13,7 +13,7 @@ We make the following recommendations:
 8. Survey and document failure of current standards for a specific dataset / domain before establishing a new one. Use resources such as Fairsharing.org or Digital Curation Center https://www.dcc.ac.uk/guidance/standards. 
 9. Funding agencies and science communities need to establish governance for standards creation and adoption (cite https://www.theopensourceway.org/the_open_source_way-guidebook-2.0.html#_project_and_community_governance).
 10. Cross sector alliances such as industry - academia need closer coordination and algnment of pace through strong program management (for instance via OSPO efforts).
-11. Multi company partnerships should include strategic initiatives for standard establishment (cite example https://www.pistoiaalliance.org/news/press-release-pistoia-alliance-launches-idmp-1-0/).
+11. Multi company partnerships should include strategic initiatives for standard establishment (example https://www.pistoiaalliance.org/news/press-release-pistoia-alliance-launches-idmp-1-0/).
 
 
 
