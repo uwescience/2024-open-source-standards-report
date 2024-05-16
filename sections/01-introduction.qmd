@@ -9,54 +9,63 @@ machine learning techniques, these datasets can help us understand everything
 from the cellular operations of the human body, through business transactions
 on the internet, to the structure and history of the universe. However, the
 development of new machine learning methods, and data-intensive discovery more
-generally, rely heavily on the availability and usability of these large
-datasets. Data can be openly available but still not useful if it cannot be
-properly understood. In current conditions in which almost all of the relevant
-data is stored in digital formats, and many relevant datasets can be found
-through the communication networks of the world wide web, Findability,
-Accessibility, Interoperability and Reusability (FAIR) principles for data
-management and stewardship become critically important
-\cite{Wilkinson2016FAIR}.
+generally, rely heavily on Findability, Accessibility, Interoperability and
+Reusability (FAIR) of data [@Wilkinson2016FAIR].
 
-One of the main mechanisms through which these principles are promoted is the
-development of \emph{standards} for data and metadata. Standards can vary in
-the level of detail and scope, and encompass such things as \emph{file formats}
-for the storing of certain data types, \emph{schemas} for databases that store
-a range of data types, \emph{ontologies} to describe and organize metadata in a
+One of the main mechanisms through which the FAIR principles are promoted is the
+development of *standards* for data and metadata. Standards can vary in
+the level of detail and scope, and encompass such things as *file formats*
+for the storing of certain data types, *schemas* for databases that store
+a range of data types, *ontologies* to describe and organize metadata in a
 manner that connects it to field-specific meaning, as well as mechanisms to
-describe \emph{provenance} of different data derivatives. The importance of
-standards was underscored in a recent report report by the Subcommittee on Open
-Science of the National Science and Technology Council on "Desirable
-characteristics of data repositories for federally funded research"
-\cite{nstc2022desirable}. The report explicitly called out the importance of
-"allow[ing] datasets and metadata to be accessed, downloaded, or exported from
-the repository in widely used, preferably non-proprietary, formats consistent
-with standards used in the disciplines the repository serves." This highlights
-the need for data and metadata standards across a variety of different kinds of
-data. In addition, a report from the National Institute of Standards and
-Technology on "U.S. Leadership in AI: A Plan for Federal Engagement in
-Developing Technical Standards and Related Tools" emphasized that --
-specifically for the case of AI -- "U.S. government agencies should prioritize
-AI standards efforts that are [...] Consensus-based, [...] Inclusive and
-accessible, [...] Multi-path, [...] Open and transparent, [...] and [that]
-Result in globally relevant and non-discriminatory standards..."
-\cite{NIST2019}. The converging characteristics of standards that arise from
-these reports suggest that considerable thought needs to be given to the manner
-in which standards arise, so that these goals are achieved.
+describe *provenance* of analysis products.
 
-Standards for a specific domain can come about in various ways, but very
-broadly speaking two kinds of mechanisms can generate a standard for a specific
-type of data: (i) top-down: in this case a (usually) small group of people
-develop the standard and disseminate it to the communities of interest with
-very little input from these communities. An example of this mode of standards
-development can occur when an instrument is developed by a manufacturer and
-users of this instrument receive the data in a particular format that was
-developed in tandem with the instrument; and (ii) bottom-up: in this case,
-standards are developed by a larger group of people that convene and reach
-consensus about the details of the standard in an attempt to cover a large
-range of use-cases. Most standards are developed through an interplay between
-these two modes, and understanding how to make the best of these modes is
-critical in advancing the development of data and metadata standards.
+The importance of standards stems not only from discussions within research
+fields about how research can best be conducted to take advantage of existing
+and growing datasets, but also arises from an ongoing series of policy
+discussions that address the interactions between research communities and the
+general public. In the United States, memos issued in 2013 and 2022 by the
+directors of the White House Office of Science and Technology Policy (OSTP),
+James Holdren (2013) and Alondra Nelson (2022). While these memos focused
+primarily on making peer-reviewed publications funded by the US Federal
+government available to the general public, they also lay an increasingly
+detailed path towards the publication and general availability of the data that
+is collected as part of the research that is funded by the US government.
+
+The general guidance and overall spirit of these memos dovetail with more
+specific policy discussions that put meat on the bones of the general guidance.
+The importance of data and metadata standards, for example, was underscored in
+a recent report by the Subcommittee on Open Science of the National Science and
+Technology Council on the "Desirable characteristics of data repositories for
+federally funded research" [@nstc2022desirable]. The report explicitly called
+out the importance of "allow[ing] datasets and metadata to be accessed,
+downloaded, or exported from the repository in widely used, preferably
+non-proprietary, formats consistent with standards used in the disciplines the
+repository serves." This highlights the need for data and metadata standards
+across a variety of different kinds of data. In addition, a report from the
+National Institute of Standards and Technology on "U.S. Leadership in AI: A
+Plan for Federal Engagement in Developing Technical Standards and Related
+Tools" emphasized that -- specifically for the case of AI -- "U.S. government
+agencies should prioritize AI standards efforts that are [...] Consensus-based,
+[...] Inclusive and accessible, [...] Multi-path, [...] Open and transparent,
+[...] and [that] Result in globally relevant and non-discriminatory
+standards..." [@NIST2019]. The converging characteristics of standards that
+arise from these reports suggest that considerable thought needs to be given to
+the manner in which standards arise, so that these goals are achieved.
+
+Standards for a specific domain can come about in various ways. Broadly
+speaking two kinds of mechanisms can generate a standard for a specific type of
+data: (i) top-down: in this case a (usually) small group of people develop the
+standard and disseminate it to the communities of interest with very little
+input from these communities. An example of this mode of standards development
+can occur when an instrument is developed by a manufacturer and users of this
+instrument receive the data in a particular format that was developed in tandem
+with the instrument; and (ii) bottom-up: in this case, standards are developed
+by a larger group of people that convene and reach consensus about the details
+of the standard in an attempt to cover a large range of use-cases. Most
+standards are developed through an interplay between these two modes, and
+understanding how to make the best of these modes is critical in advancing the
+development of data and metadata standards.
 
 One source of inspiration for bottom-up development of robust, adaptable and
 useful standards comes from open-source software (OSS). OSS has a long history
