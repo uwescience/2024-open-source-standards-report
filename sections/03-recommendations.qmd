@@ -1,4 +1,3 @@
-# Recommendations
 
 
 ## Funding or Grantmaking entities: 
@@ -31,7 +30,7 @@ Stakeholder organizations should invest in training grants to establish curricul
 
 ## Science and Technology Communities:
 
-### User Drive Development 
+### User Driven Development 
 
 Standards should be needs-driven and developed in close collaboration with users. Changes and enhancements should be in response to community feedback. 
 
