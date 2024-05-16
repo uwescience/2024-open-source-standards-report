@@ -31,10 +31,15 @@ jobs:
               with:
                 # To install LaTeX to build PDF book
                 tinytex: true
-            - name: Publish to GitHub Pages (and render)
-              if: github.event.pull_request.merged == true
+
+            - name: Render Quarto
+              uses: quarto-dev/quarto-actions/render@v2
+
+            - name: Publish to GitHub Pages
+              if: github.event_name != 'pull_request'
               uses: quarto-dev/quarto-actions/publish@v2
               with:
+                render: false
                 target: gh-pages
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
