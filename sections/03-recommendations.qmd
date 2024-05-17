@@ -1,4 +1,7 @@
 
+# Recommendations for open source data and metadata standards
+
+We propose the following recommendations:
 
 ## Funding or Grantmaking entities: 
 
