@@ -1,26 +1,25 @@
 
 
-<<<<<<< HEAD
-## Funding or Grantmaking entities: 
+## Funding or Grantmaking entities:
 
 ### Fund Data Standards Development
-Data standards development should be seen integral to science innovation and earmarked for funding in research grants. Funding models should encourage the development and adoption of standards, and fund associated community efforts and tools for this. 
+Data standards development should be seen integral to science innovation and earmarked for funding in research grants. Funding models should encourage the development and adoption of standards, and fund associated community efforts and tools for this.
 
-### Invest in Data Stewards 
-Recognize data stewards as a distinct role in research and science investment. Set up programs for training for data stewards and invest in career paths that encourage this role. 
+### Invest in Data Stewards
+Recognize data stewards as a distinct role in research and science investment. Set up programs for training for data stewards and invest in career paths that encourage this role.
 
 ### Review Data Standards Pathways
 
-Invest in programs that examine retrospective pathways for establishing data standards. Encourage publication of lifecycles for successful data standards. Lifecycle should include process, creators, affiliations, grants, and adoption journeys. Make this documentation step integral to the work of standards creators and granting agencies. Retrocactively document #3 for standards such as CF(climate science), NASA genelab (space omics), OpenGIS (geospatial), DICOM (medical imaging), GA4GH (genomics), FITS (astronomy), Zarr (domain agnostic n-dimensional arrays)... ? 
+Invest in programs that examine retrospective pathways for establishing data standards. Encourage publication of lifecycles for successful data standards. Lifecycle should include process, creators, affiliations, grants, and adoption journeys. Make this documentation step integral to the work of standards creators and granting agencies. Retrocactively document #3 for standards such as CF(climate science), NASA genelab (space omics), OpenGIS (geospatial), DICOM (medical imaging), GA4GH (genomics), FITS (astronomy), Zarr (domain agnostic n-dimensional arrays)... ?
 
-### Establish Governance 
+### Establish Governance
 
-Establish governance for standards creation and adoption, especially for communities beyond a certain size that need to converge toward a new standard or rely on an existing standard. Review existing governance practices such as [TheOpenSourceWay](https://www.theopensourceway.org/the_open_source_way-guidebook-2.0.html#_project_and_community_governance). Data management plans should promote the sharing of not only data, but also metadata and descriptions of how to use it.  
+Establish governance for standards creation and adoption, especially for communities beyond a certain size that need to converge toward a new standard or rely on an existing standard. Review existing governance practices such as [TheOpenSourceWay](https://www.theopensourceway.org/the_open_source_way-guidebook-2.0.html#_project_and_community_governance). Data management plans should promote the sharing of not only data, but also metadata and descriptions of how to use it.
 
 
 ### Program Manage Cross Sector alliances
 
-Encourage cross sector and cross domain alliances that can impact successful standards creation. Invest in robust program management of these alliances to align pace and create incentives (for instance via Open Source Program Office / OSPO efforts). Similar to program officers at funding agencies, standards evolution need sustained PM efforts. Multi company partnerships should include strategic initiatives for standard establishment e.g. [Pistoiaalliance](https://www.pistoiaalliance.org/news/press-release-pistoia-alliance-launches-idmp-1-0/). 
+Encourage cross sector and cross domain alliances that can impact successful standards creation. Invest in robust program management of these alliances to align pace and create incentives (for instance via Open Source Program Office / OSPO efforts). Similar to program officers at funding agencies, standards evolution need sustained PM efforts. Multi company partnerships should include strategic initiatives for standard establishment e.g. [Pistoiaalliance](https://www.pistoiaalliance.org/news/press-release-pistoia-alliance-launches-idmp-1-0/).
 
 
 
@@ -31,22 +30,22 @@ Stakeholder organizations should invest in training grants to establish curricul
 
 ## Science and Technology Communities:
 
-### User Driven Development 
+### User Driven Development
 
-Standards should be needs-driven and developed in close collaboration with users. Changes and enhancements should be in response to community feedback. 
+Standards should be needs-driven and developed in close collaboration with users. Changes and enhancements should be in response to community feedback.
 
 ### Meta-Standards development
 
-Develop meta-standards or standards-of-standards. These are descriptions of cross-cutting best-practices and can be used as a basis of the analysis or assessment of an existing standard, or as guidelines to develop new standards. For instance, barriers to adopting a data standard irrespective of team size and technological capabilities should be considered. Meta standards should include formalization for versioning of standards & interaction with related software. Naming of standards should aid marketing and adoption. 
+Develop meta-standards or standards-of-standards. These are descriptions of cross-cutting best-practices and can be used as a basis of the analysis or assessment of an existing standard, or as guidelines to develop new standards. For instance, barriers to adopting a data standard irrespective of team size and technological capabilities should be considered. Meta standards should include formalization for versioning of standards & interaction with related software. Naming of standards should aid marketing and adoption.
 
 ### Ontology Development
 
-Create ontology for standards process such as top down vs bottom up, minimum number of datasets, community size. Examine schema.org (w3c), PEP (Python), CDISC (FDA). 
+Create ontology for standards process such as top down vs bottom up, minimum number of datasets, community size. Examine schema.org (w3c), PEP (Python), CDISC (FDA).
 
 
 ### Formalization Guidelines
 
-Amplify formalization/guidelines on how to create standards (example metadata schema specifications using [LinkML](https://linkml.io). 
+Amplify formalization/guidelines on how to create standards (example metadata schema specifications using [LinkML](https://linkml.io).
 
 ### Landscape and Failure Analysis
 
@@ -54,23 +53,9 @@ Before establishing a new standard, survey and document failure of current stand
 
 ### Machine Readability
 
-Development of standards should be coupled with development of associated software. Make data standards machine readable, and software creation an integral part of establishing a standard's schema e.g. For identifiers for a person using CFF in citations, cffconvert software makes the CFF standard usable and useful. 
-Additionally, standards evolution should maintain software compatibility, and ability to translate and migrate between standards. 
+Development of standards should be coupled with development of associated software. Make data standards machine readable, and software creation an integral part of establishing a standard's schema e.g. For identifiers for a person using CFF in citations, cffconvert software makes the CFF standard usable and useful.
+Additionally, standards evolution should maintain software compatibility, and ability to translate and migrate between standards.
 
 
-=======
-1. Training for data stewards and career paths that encourage this role.
-2. Development of meta-standards or standards-of-standards. These are descriptions of cross-cutting best practices. These can be used as a basis of the analysis or assessment of an existing standard, or as guidelines to develop new standards.
-3. Recommend pathways or lifecycles for successful data standards. Include process, creators, affiliations, grants, and adoption journeys. Make this documentation step integral to the work of standards creators and granting agencies.
-4. Retrocactively document #3 for standards such as CF(climate science), NASA genelab (space omics), OpenGIS (geospatial), DICOM (medical imaging), GA4GH (genomics), FITS (astronomy), Zarr (domain agnostic n-dimensional arrays)... ?
-5. Create ontology for standards process such as top down vs bottom up, minimum number of datasets, and community size. Examine schema.org (w3c), PEP (Python), CDISC (FDA).
-6. Amplify formalization/guidelines on how to create standards (example metadata schema specifications using https://linkml.io).
-7. Make data standards machine readable, and software creation an integral part of establishing a standard's schema e.g. identifiers for a person using CFF in citations. cffconvert software makes the CFF standard usable and useful.
-8. Survey and document failure of current standards for a specific dataset / domain before establishing a new one. Use resources such as Fairsharing.org or Digital Curation Center https://www.dcc.ac.uk/guidance/standards.
-9. Funding agencies and science communities need to establish governance for standards creation and adoption (cite https://www.theopensourceway.org/the_open_source_way-guidebook-2.0.html#_project_and_community_governance).
-10. Cross sector alliances such as industry - academia need closer coordination and algnment of pace through strong program management (for instance via OSPO efforts).
-11. Multi company partnerships should include strategic initiatives for standard establishment (example https://www.pistoiaalliance.org/news/press-release-pistoia-alliance-launches-idmp-1-0/).
-12. Stakeholder organizations should invest in training grants to establish curriculum for data and metadata standards education.
->>>>>>> 8cb3f6b (More edits.)
 
 
