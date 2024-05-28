@@ -25,7 +25,7 @@ for the storing of certain data types, \emph{schemas} for databases that store
 a range of data types, \emph{ontologies} to describe and organize metadata in a
 manner that connects it to field-specific meaning, as well as mechanisms to
 describe \emph{provenance} of different data derivatives. The importance of
-standards was underscored in a recent report report by the Subcommittee on Open
+standards was underscored in a recent report by the Subcommittee on Open
 Science of the National Science and Technology Council on "Desirable
 characteristics of data repositories for federally funded research"
 \cite{nstc2022desirable}. The report explicitly called out the importance of
@@ -58,21 +58,31 @@ range of use-cases. Most standards are developed through an interplay between
 these two modes, and understanding how to make the best of these modes is
 critical in advancing the development of data and metadata standards.
 
+<!--
+As an alternative for the paragraph above, maybe start with:
+1. "[Many] standards are developed through an interplay of modes"
+2. describe mode 1
+3. describe mode 2
+4. conclude the paragraph by something like "understanding how to make the
+best of these modes is critical in advancing the development of data and
+metadata standards."
+-->
+
 One source of inspiration for bottom-up development of robust, adaptable and
 useful standards comes from open-source software (OSS). OSS has a long history
 going back to the development of the Unix operating system in the late 1960s.
-Over the time since its inception, the large community of developers and users
-of OSS have have developed a host of socio-technical mechanisms that support
+Since its inception, the large community of developers and users
+of OSS have developed a host of socio-technical mechanisms that support
 the development and use of OSS. For example, the Open Source Initiative (OSI),
-a non-profit organization that was founded in 1990s has evolved a set of
+a non-profit organization that was founded in the 1990s has evolved <!-- developed? --> a set of
 guidelines for licensing of OSS that is designed to protect the rights of
 developers and users. Technical tools to support the evolution of open-source
-software include software for distributed version control, such as the Git
-Source-code management system. When these social and technical innovations are
-put together they enable a host of positive defining features of OSS, such as
+software include software for distributed version control such as Git.
+When these social and technical innovations are
+put together, they enable a host of positive defining features of OSS, such as
 transparency, collaboration, and decentralization. These features allow OSS to
-have a remarkable level of dynamism and productivity, while also retaining the
-ability of a variety of stakeholders to guide the evolution of the software to
+have a remarkable level of dynamism and productivity, while also allowing
+a variety of stakeholders to guide the evolution of the software to
 take their needs and interests into account.
 
 A necessary complement to these technical tools and legal instruments have been
@@ -80,9 +90,14 @@ a host of practices that define the social interactions \emph{within}
 communities of OSS developers and users, and structures for governing these
 communities. While many OSS communities started as projects led by individual
 founders (so-called benevolent dictators for life, or BDFL; a title first
-bestowed on the originator of the Python programming language, Guido Van Rossum
+bestowed on the originator of the Python programming language, Guido van Rossum
 \cite{Van_Rossum2008BDFL}), recent years have led to an increased understanding
 that minimal standards of democratic governance are required in order for OSS
+<!--
+Perhaps predictability of how a project is governed is more important for
+projects to be successful than the fact that they are governed in a democratic
+way. E.g. Python was successul while Van Rossum was BDFL.
+-->
 communities to develop and flourish. This has led to the adoption of codes of
 conduct that govern the standards of behavior and communication among project
 stakeholders. It has also led to the establishment of democratically elected
@@ -95,10 +110,23 @@ the Python Enhancement Proposal (PEP) mechanism \cite{Warsaw2000PEP1}, which
 lays out how major changes to the software should be proposed, advocated for,
 and eventually decided on. While these tools, ideas, and practices evolved in
 developing software, they are readily translated to other domains. For example,
-OSS notions surrounding IP have given rise to the Creative Commons movement
+OSS notions surrounding intellectual property (IP) have given rise to the Creative Commons movement
 that has expanded these notions to apply to a much wider range of human
-creative endeavours. Similarly OSS notions regarding collaborative structures
+creative endeavours. Similarly, OSS notions regarding collaborative structures
 have pervaded the current era of open science and team science
 \cite{Baumgartner2023TeamScience, Koch2016TeamScience}.
 
 
+<!--
+The end of the penultimate paragraph felt a bit odd to me. While I don't have a
+good alternative at this time, the general structure of the last paragraph and
+a half is more or less this
+
+Governance mechanisms that help communities develop and flourish are for example:
+1. codes of conduct
+2. steering councils
+3. enhancement proposals
+[4. contribution guidelines]
+These mechanism are readily translated to other domains, see for example
+licensing and collaborative structures.
+-->
