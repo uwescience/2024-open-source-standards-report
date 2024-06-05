@@ -7,16 +7,16 @@ heavy construction.
 
 Recent progress in machine learning and artificial intelligence promises to
 advance research and understanding across a wide range of fields and
-activities. In tandem, an increased awareness of the importance of open data
-for reproducibility and scientific transparency is making inroads in fields
-that have not traditionally produced large publicly available datasets. Data
-sharing requirements from publishers and funders, as well as from other
-stakeholders, have also created pressure to make datasets with research and/or
-public interest value available through digital repositories. However, to make
-the best use of existing data, and facilitate the creation of useful future
+activities. In tandem, increased awareness of the importance of open data for
+reproducibility and scientific transparency is making inroads in fields that
+have not traditionally produced large publicly available datasets. Data sharing
+requirements from publishers and funders, as well as from other stakeholders,
+have also created pressure to make datasets with research and/or public
+interest value available through digital repositories. However, to make the
+best use of existing data, and facilitate the creation of useful future
 datasets, robust, interoperable and usable standards need to evolve and adapt
 over time. The open-source development model provides significant potential
-benefits to the process of standard creation and adaptation. In particular,
+benefits to the process of standard creation and adaptation. In particular, the
 development and adaptation of standards can use long-standing socio-technical
 processes that have been key to managing the development of software, and allow
 incorporating broad community input into the formulation of these standards. By
@@ -26,7 +26,7 @@ validation), processes such as automated testing and continuous integration,
 which have been important in the development of open-source software, can be
 adopted in defining data and metadata standards as well. Similarly, open-source
 governance provides a range of stakeholders a voice in the development of
-standards, potentially enabling use-cases and concerns that would not be taken
+standards, potentially enabling use cases and concerns that would not be taken
 into account in a top-down model of standards development. On the other hand,
 open-source models carry unique risks that need to be incorporated into the
 process.
@@ -34,6 +34,8 @@ process.
 
 {{< include sections/01-introduction.qmd >}}
 {{< include sections/02-challenges.qmd >}}
+{{< include sections/xx-use-cases.qmd >}}
 {{< include sections/03-recommendations.qmd >}}
+{{< include sections/04-acknowledgments.qmd >}}
 
 
