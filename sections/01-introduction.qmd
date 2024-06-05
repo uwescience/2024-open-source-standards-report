@@ -9,7 +9,7 @@ machine learning techniques, these datasets can help us understand everything
 from the cellular operations of the human body, through business transactions
 on the internet, to the structure and history of the universe. However, the
 development of new machine learning methods, and data-intensive discovery more
-generally, rely heavily on Findability, Accessibility, Interoperability and
+generally depend on Findability, Accessibility, Interoperability and
 Reusability (FAIR) of data [@Wilkinson2016FAIR].
 
 One of the main mechanisms through which the FAIR principles are promoted is the
@@ -24,79 +24,51 @@ The importance of standards stems not only from discussions within research
 fields about how research can best be conducted to take advantage of existing
 and growing datasets, but also arises from an ongoing series of policy
 discussions that address the interactions between research communities and the
-general public. In the United States, memos issued in 2013 and 2022 by the
-directors of the White House Office of Science and Technology Policy (OSTP),
-James Holdren (2013) and Alondra Nelson (2022). While these memos focused
-primarily on making peer-reviewed publications funded by the US Federal
-government available to the general public, they also lay an increasingly
-detailed path towards the publication and general availability of the data that
-is collected as part of the research that is funded by the US government.
+general public. In the United States, these policies are expressed, for example
+in memos issued by the directors of the White House Office of Science and
+Technology Policy (OSTP), James Holdren (in 2013) and Alondra Nelson (in 2022).
+While these memos focused primarily on making peer-reviewed publications funded
+by the US Federal government available to the general public, they also lay an
+increasingly detailed path toward the publication and general availability of
+the data that is collected in research that is funded by the US government. The
+general guidance and overall spirit of these memos dovetail with more specific
+policy guidance related to data and metadata standards. The importance of
+standards was underscored in a recent report by the Subcommittee on Open
+Science of the National Science and Technology Council on the "Desirable
+characteristics of data repositories for federally funded research"
+[@nstc2022desirable]. The report explicitly called out the importance of
+"allow[ing] datasets and metadata to be accessed, downloaded, or exported from
+the repository in widely used, preferably non-proprietary, formats consistent
+with standards used in the disciplines the repository serves." This highlights
+the need for data and metadata standards across a variety of different kinds of
+data. In addition, a report from the National Institute of Standards and
+Technology on "U.S. Leadership in AI: A Plan for Federal Engagement in
+Developing Technical Standards and Related Tools" emphasized that --
+specifically for the case of AI -- "U.S. government agencies should prioritize
+AI standards efforts that are [...] Consensus-based, [...] Inclusive and
+accessible, [...] Multi-path, [...] Open and transparent, [...] and [that]
+Result in globally relevant and non-discriminatory standards..." [@NIST2019].
+The converging characteristics of standards that arise from these reports
+suggest that considerable thought needs to be given to how standards arise, so
+that these goals are achieved.
 
-The general guidance and overall spirit of these memos dovetail with more
-specific policy discussions that put meat on the bones of the general guidance.
-The importance of data and metadata standards, for example, was underscored in
-a recent report by the Subcommittee on Open Science of the National Science and
-Technology Council on the "Desirable characteristics of data repositories for
-federally funded research" [@nstc2022desirable]. The report explicitly called
-out the importance of "allow[ing] datasets and metadata to be accessed,
-downloaded, or exported from the repository in widely used, preferably
-non-proprietary, formats consistent with standards used in the disciplines the
-repository serves." This highlights the need for data and metadata standards
-across a variety of different kinds of data. In addition, a report from the
-National Institute of Standards and Technology on "U.S. Leadership in AI: A
-Plan for Federal Engagement in Developing Technical Standards and Related
-Tools" emphasized that -- specifically for the case of AI -- "U.S. government
-agencies should prioritize AI standards efforts that are [...] Consensus-based,
-[...] Inclusive and accessible, [...] Multi-path, [...] Open and transparent,
-[...] and [that] Result in globally relevant and non-discriminatory
-standards..." [@NIST2019]. The converging characteristics of standards that
-arise from these reports suggest that considerable thought needs to be given to
-the manner in which standards arise, so that these goals are achieved.
-
-Standards for a specific domain can come about in various ways. Broadly
-speaking two kinds of mechanisms can generate a standard for a specific type of
-data: (i) top-down: in this case a (usually) small group of people develop the
-standard and disseminate it to the communities of interest with very little
-input from these communities. An example of this mode of standards development
-can occur when an instrument is developed by a manufacturer and users of this
-instrument receive the data in a particular format that was developed in tandem
-with the instrument; and (ii) bottom-up: in this case, standards are developed
-by a larger group of people that convene and reach consensus about the details
-of the standard in an attempt to cover a large range of use-cases. Most
-standards are developed through an interplay between these two modes, and
-understanding how to make the best of these modes is critical in advancing the
-development of data and metadata standards.
-
-One source of inspiration for bottom-up development of robust, adaptable and
-useful standards comes from open-source software (OSS). OSS has a long history
-going back to the development of the Unix operating system in the late 1960s.
-Over the time since its inception, the large community of developers and users
-of OSS have have developed a host of socio-technical mechanisms that support
+One source of inspiration for community-driven development of robust, adaptable
+and useful standards comes from open-source software (OSS). OSS has a long
+history going back to the development of the Unix operating system in the late
+1960s. Over the time since its inception, the large community of developers and
+users of OSS have developed a host of socio-technical mechanisms that support
 the development and use of OSS. For example, the Open Source Initiative (OSI),
-a non-profit organization that was founded in 1990s has evolved a set of
+a non-profit organization that was founded in 1990s developed a set of
 guidelines for licensing of OSS that is designed to protect the rights of
-developers and users. Technical tools to support the evolution of open-source
-software include software for distributed version control, such as the Git
-Source-code management system. When these social and technical innovations are
-put together they enable a host of positive defining features of OSS, such as
-transparency, collaboration, and decentralization. These features allow OSS to
-have a remarkable level of dynamism and productivity, while also retaining the
-ability of a variety of stakeholders to guide the evolution of the software to
-take their needs and interests into account.
+developers and users. On the more technical side, tools such as the Git
+Source-code management system also support open-source development workflows.
+When these social and technical innovations are put together they enable a host
+of positive defining features of OSS, such as transparency, collaboration, and
+decentralization. These features allow OSS to have a remarkable level of
+dynamism and productivity, while also retaining the ability of a variety of
+stakeholders to guide the evolution of the software to take their needs and
+interests into account.
 
-A necessary complement to these technical tools and legal instruments have been
-a host of practices that define the social interactions \emph{within}
-communities of OSS developers and users, and structures for governing these
-communities. While many OSS communities started as projects led by individual
-founders (so-called benevolent dictators for life, or BDFL; a title first
-bestowed on the originator of the Python programming language, Guido Van Rossum
-\cite{Van_Rossum2008BDFL}), recent years have led to an increased understanding
-that minimal standards of democratic governance are required in order for OSS
-communities to develop and flourish. This has led to the adoption of codes of
-conduct that govern the standards of behavior and communication among project
-stakeholders. It has also led to the establishment of democratically elected
-steering councils/committees from among the members and stakeholders of an OSS
-project's community.
 
 It was also within the Python community that an orderly process for
 community-guided evolution of an open-source software project emerged, through

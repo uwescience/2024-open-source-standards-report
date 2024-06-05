@@ -1,0 +1,34 @@
+# Use cases
+
+Meanwhile, the importance of standards is also increasingly understood in
+research communities that are learning about the value of shared data
+resources. While some fields, such as astronomy, high-energy physics and earth
+sciences have a relatively long history of shared data resources from
+organizations such as LSST and CERN, other fields have only relatively recently
+become aware of the value of data sharing and its impact.
+
+For example, neuroscience has traditionally been a "cottage industry", where
+individual labs have generated experimental data designed to answer specific
+experimental questions. While this model still exists, the field has also seen
+the emergence of new modes of data production that focus on generating large
+shared datasets designed to answer many different questions, more akin to the
+data generated in large astronomy data collection efforts. This change has been
+brought on through a combination of technical advances in data acquisition
+techniques, which now generate large and very high-dimensional/information-rich
+datasets, cultural changes, which have ushered in new norms of transparency and
+reproducibility (related to the policy discussions mentioned above), and
+funding initiatives that have encouraged this kind of data collection
+(including the US BRAIN Initiative and the Allen Institute for Brain Science).
+Neuroscience presents an interesting example, because in response to these new
+data resources, the field has had to establish new standards for data and
+metadata that facilitate sharing and using of these data. Two examples are the
+Neurodata Without Borders file format for neurophysiology data [@Rubel2022NWB]
+and the Brain Imaging Data Structure standard for neuroimaging data
+[@Gorgolewski2016BIDS].
+
+
+
+## Automated discovery
+
+## Citizen science
+
