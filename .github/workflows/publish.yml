@@ -51,7 +51,7 @@ jobs:
               with:
                 add: '_manuscript/index.pdf'
                 author_name: 'GitHub Actions'
-                message: 'Add poster.pdf at ${{ github.sha }}'
+                message: 'Add paper.pdf at ${{ github.sha }}'
 
 
             - name: Commit DOCX
@@ -60,5 +60,5 @@ jobs:
               with:
                 add: '_manuscript/index.docx'
                 author_name: 'GitHub Actions'
-                message: 'Add poster.pdf at ${{ github.sha }}'
+                message: 'Add paper.doxc at ${{ github.sha }}'
 
