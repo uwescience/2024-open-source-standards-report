@@ -1,85 +1,45 @@
 # Introduction
 
 Data-intensive discovery has become an important mode of knowledge production
-across many research fields and has had a significant and broad impact across
-all of society. This is becoming increasingly salient as recent developments in
-machine learning and artificial intelligence (AI) promise to increase the value
-of large, multi-dimensional, heterogeneous data sources. Coupled with these new
-machine learning techniques, these datasets can help us understand everything
-from the cellular operations of the human body, through business transactions
-on the internet, to the structure and history of the universe. However, the
-development of new machine learning methods, and data-intensive discovery more
-generally depend on Findability, Accessibility, Interoperability and
-Reusability (FAIR) of data [@Wilkinson2016FAIR].
+across many research fields and it is having a significant and broad impact
+across all of society. This is becoming increasingly salient as recent
+developments in machine learning and artificial intelligence (AI) promise to
+increase the value of large, multi-dimensional, heterogeneous data sources.
+Coupled with these new machine learning techniques, these datasets can help us
+understand everything from the cellular operations of the human body, through
+business transactions on the internet, to the structure and history of the
+universe. However, the development of new machine learning methods and
+data-intensive discovery more generally depend on Findability, Accessibility,
+Interoperability and Reusability (FAIR) of data [@Wilkinson2016FAIR]. One of
+the main mechanisms through which the FAIR principles are promoted is the
+development of *standards* for data and metadata. Standards can vary in the
+level of detail and scope, and encompass such things as *file formats* for the
+storage of certain data types, *schemas* for databases that organize data,
+*ontologies* to describe and organize metadata in a manner that connects it to
+field-specific meaning, as well as mechanisms to describe *provenance* of
+analysis products.
 
-One of the main mechanisms through which the FAIR principles are promoted is the
-development of *standards* for data and metadata. Standards can vary in
-the level of detail and scope, and encompass such things as *file formats*
-for the storing of certain data types, *schemas* for databases that store
-a range of data types, *ontologies* to describe and organize metadata in a
-manner that connects it to field-specific meaning, as well as mechanisms to
-describe *provenance* of analysis products.
-
-The importance of standards stems not only from discussions within research
-fields about how research can best be conducted to take advantage of existing
-and growing datasets, but also arises from an ongoing series of policy
-discussions that address the interactions between research communities and the
-general public. In the United States, these policies are expressed, for example
-in memos issued by the directors of the White House Office of Science and
-Technology Policy (OSTP), James Holdren (in 2013) and Alondra Nelson (in 2022).
-While these memos focused primarily on making peer-reviewed publications funded
-by the US Federal government available to the general public, they also lay an
-increasingly detailed path toward the publication and general availability of
-the data that is collected in research that is funded by the US government. The
-general guidance and overall spirit of these memos dovetail with more specific
-policy guidance related to data and metadata standards. The importance of
-standards was underscored in a recent report by the Subcommittee on Open
-Science of the National Science and Technology Council on the "Desirable
-characteristics of data repositories for federally funded research"
-[@nstc2022desirable]. The report explicitly called out the importance of
-"allow[ing] datasets and metadata to be accessed, downloaded, or exported from
-the repository in widely used, preferably non-proprietary, formats consistent
-with standards used in the disciplines the repository serves." This highlights
-the need for data and metadata standards across a variety of different kinds of
-data. In addition, a report from the National Institute of Standards and
-Technology on "U.S. Leadership in AI: A Plan for Federal Engagement in
-Developing Technical Standards and Related Tools" emphasized that --
-specifically for the case of AI -- "U.S. government agencies should prioritize
-AI standards efforts that are [...] Consensus-based, [...] Inclusive and
-accessible, [...] Multi-path, [...] Open and transparent, [...] and [that]
-Result in globally relevant and non-discriminatory standards..." [@NIST2019].
-The converging characteristics of standards that arise from these reports
-suggest that considerable thought needs to be given to how standards arise, so
-that these goals are achieved.
-
-One source of inspiration for community-driven development of robust, adaptable
-and useful standards comes from open-source software (OSS). OSS has a long
-history going back to the development of the Unix operating system in the late
-1960s. Over the time since its inception, the large community of developers and
-users of OSS have developed a host of socio-technical mechanisms that support
-the development and use of OSS. For example, the Open Source Initiative (OSI),
-a non-profit organization that was founded in 1990s developed a set of
+Community-driven development of robust, adaptable and useful standards draws
+significant inspiration from the development of open-source software (OSS) and
+has many parallels and overlaps with OSS development. OSS has a long history
+going back to the development of the Unix operating system in the late 1960s.
+Over the time since its inception, the large community of developers and users
+of OSS have developed a host of socio-technical mechanisms that support the
+development and use of OSS. For example, the Open Source Initiative (OSI), a
+non-profit organization that was founded in the 1990s developed a set of
 guidelines for licensing of OSS that is designed to protect the rights of
 developers and users. On the more technical side, tools such as the Git
-Source-code management system also support open-source development workflows.
-When these social and technical innovations are put together they enable a host
-of positive defining features of OSS, such as transparency, collaboration, and
-decentralization. These features allow OSS to have a remarkable level of
-dynamism and productivity, while also retaining the ability of a variety of
-stakeholders to guide the evolution of the software to take their needs and
-interests into account.
-
-
-It was also within the Python community that an orderly process for
-community-guided evolution of an open-source software project emerged, through
-the Python Enhancement Proposal (PEP) mechanism \cite{Warsaw2000PEP1}, which
-lays out how major changes to the software should be proposed, advocated for,
-and eventually decided on. While these tools, ideas, and practices evolved in
-developing software, they are readily translated to other domains. For example,
-OSS notions surrounding IP have given rise to the Creative Commons movement
-that has expanded these notions to apply to a much wider range of human
-creative endeavours. Similarly OSS notions regarding collaborative structures
-have pervaded the current era of open science and team science
-\cite{Baumgartner2023TeamScience, Koch2016TeamScience}.
-
+Source-code management system support open-source development workflows that
+can be adopted in the development of standards. When these social and technical
+innovations are put together they enable a host of positive defining features
+of OSS, such as transparency, collaboration, and decentralization. These
+features allow OSS to have a remarkable level of dynamism and productivity,
+while also retaining the ability of a variety of stakeholders to guide the
+evolution of the software to take their needs and interests into account. The
+present report seeks to explore how OSS processes and tools have affected the
+development of data and metadata standards. The report will triangulate common
+features of a variety of use-cases, will identify some of the challenges and
+pitfalls of this mode of standards development, and will make recommendations
+for future developments and policies that can help this mode of standards
+development thrive and reach its full potential.
 
