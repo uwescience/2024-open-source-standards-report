@@ -77,6 +77,39 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \KOMAoption{captions}{tableheading}
 \makeatletter
@@ -152,7 +185,7 @@ under heavy construction.
 
 Recent progress in machine learning and artificial intelligence promises
 to advance research and understanding across a wide range of fields and
-activities. In tandem, an increased awareness of the importance of open
+activities. In tandem, increased awareness of the importance of open
 data for reproducibility and scientific transparency is making inroads
 in fields that have not traditionally produced large publicly available
 datasets. Data sharing requirements from publishers and funders, as well
@@ -162,7 +195,7 @@ repositories. However, to make the best use of existing data, and
 facilitate the creation of useful future datasets, robust, interoperable
 and usable standards need to evolve and adapt over time. The open-source
 development model provides significant potential benefits to the process
-of standard creation and adaptation. In particular, development and
+of standard creation and adaptation. In particular, the development and
 adaptation of standards can use long-standing socio-technical processes
 that have been key to managing the development of software, and allow
 incorporating broad community input into the formulation of these
@@ -173,7 +206,7 @@ testing and continuous integration, which have been important in the
 development of open-source software, can be adopted in defining data and
 metadata standards as well. Similarly, open-source governance provides a
 range of stakeholders a voice in the development of standards,
-potentially enabling use-cases and concerns that would not be taken into
+potentially enabling use cases and concerns that would not be taken into
 account in a top-down model of standards development. On the other hand,
 open-source models carry unique risks that need to be incorporated into
 the process.
@@ -181,116 +214,51 @@ the process.
 \section{Introduction}\label{introduction}
 
 Data-intensive discovery has become an important mode of knowledge
-production across many research fields and has had a significant and
-broad impact across all of society. This is becoming increasingly
+production across many research fields and it is having a significant
+and broad impact across all of society. This is becoming increasingly
 salient as recent developments in machine learning and artificial
 intelligence (AI) promise to increase the value of large,
 multi-dimensional, heterogeneous data sources. Coupled with these new
 machine learning techniques, these datasets can help us understand
 everything from the cellular operations of the human body, through
 business transactions on the internet, to the structure and history of
-the universe. However, the development of new machine learning methods,
-and data-intensive discovery more generally, rely heavily on the
-availability and usability of these large datasets. Data can be openly
-available but still not useful if it cannot be properly understood. In
-current conditions in which almost all of the relevant data is stored in
-digital formats, and many relevant datasets can be found through the
-communication networks of the world wide web, Findability,
-Accessibility, Interoperability and Reusability (FAIR) principles for
-data management and stewardship become critically important
-\cite{Wilkinson2016FAIR}.
-
-One of the main mechanisms through which these principles are promoted
-is the development of \emph{standards} for data and metadata. Standards
-can vary in the level of detail and scope, and encompass such things as
-\emph{file formats} for the storing of certain data types,
-\emph{schemas} for databases that store a range of data types,
+the universe. However, the development of new machine learning methods
+and data-intensive discovery more generally depend on Findability,
+Accessibility, Interoperability and Reusability (FAIR) of data
+(Wilkinson et al. 2016). One of the main mechanisms through which the
+FAIR principles are promoted is the development of \emph{standards} for
+data and metadata. Standards can vary in the level of detail and scope,
+and encompass such things as \emph{file formats} for the storage of
+certain data types, \emph{schemas} for databases that organize data,
 \emph{ontologies} to describe and organize metadata in a manner that
 connects it to field-specific meaning, as well as mechanisms to describe
-\emph{provenance} of different data derivatives. The importance of
-standards was underscored in a recent report report by the Subcommittee
-on Open Science of the National Science and Technology Council on
-``Desirable characteristics of data repositories for federally funded
-research'' \cite{nstc2022desirable}. The report explicitly called out
-the importance of ``allow{[}ing{]} datasets and metadata to be accessed,
-downloaded, or exported from the repository in widely used, preferably
-non-proprietary, formats consistent with standards used in the
-disciplines the repository serves.'' This highlights the need for data
-and metadata standards across a variety of different kinds of data. In
-addition, a report from the National Institute of Standards and
-Technology on ``U.S. Leadership in AI: A Plan for Federal Engagement in
-Developing Technical Standards and Related Tools'' emphasized that --
-specifically for the case of AI -- ``U.S. government agencies should
-prioritize AI standards efforts that are {[}\ldots{]} Consensus-based,
-{[}\ldots{]} Inclusive and accessible, {[}\ldots{]} Multi-path,
-{[}\ldots{]} Open and transparent, {[}\ldots{]} and {[}that{]} Result in
-globally relevant and non-discriminatory standards\ldots{}''
-\cite{NIST2019}. The converging characteristics of standards that arise
-from these reports suggest that considerable thought needs to be given
-to the manner in which standards arise, so that these goals are
-achieved.
+\emph{provenance} of analysis products.
 
-Standards for a specific domain can come about in various ways, but very
-broadly speaking two kinds of mechanisms can generate a standard for a
-specific type of data: (i) top-down: in this case a (usually) small
-group of people develop the standard and disseminate it to the
-communities of interest with very little input from these communities.
-An example of this mode of standards development can occur when an
-instrument is developed by a manufacturer and users of this instrument
-receive the data in a particular format that was developed in tandem
-with the instrument; and (ii) bottom-up: in this case, standards are
-developed by a larger group of people that convene and reach consensus
-about the details of the standard in an attempt to cover a large range
-of use-cases. Most standards are developed through an interplay between
-these two modes, and understanding how to make the best of these modes
-is critical in advancing the development of data and metadata standards.
-
-One source of inspiration for bottom-up development of robust, adaptable
-and useful standards comes from open-source software (OSS). OSS has a
-long history going back to the development of the Unix operating system
-in the late 1960s. Over the time since its inception, the large
-community of developers and users of OSS have have developed a host of
-socio-technical mechanisms that support the development and use of OSS.
-For example, the Open Source Initiative (OSI), a non-profit organization
-that was founded in 1990s has evolved a set of guidelines for licensing
-of OSS that is designed to protect the rights of developers and users.
-Technical tools to support the evolution of open-source software include
-software for distributed version control, such as the Git Source-code
-management system. When these social and technical innovations are put
-together they enable a host of positive defining features of OSS, such
-as transparency, collaboration, and decentralization. These features
-allow OSS to have a remarkable level of dynamism and productivity, while
-also retaining the ability of a variety of stakeholders to guide the
-evolution of the software to take their needs and interests into
-account.
-
-A necessary complement to these technical tools and legal instruments
-have been a host of practices that define the social interactions
-\emph{within} communities of OSS developers and users, and structures
-for governing these communities. While many OSS communities started as
-projects led by individual founders (so-called benevolent dictators for
-life, or BDFL; a title first bestowed on the originator of the Python
-programming language, Guido Van Rossum \cite{Van_Rossum2008BDFL}),
-recent years have led to an increased understanding that minimal
-standards of democratic governance are required in order for OSS
-communities to develop and flourish. This has led to the adoption of
-codes of conduct that govern the standards of behavior and communication
-among project stakeholders. It has also led to the establishment of
-democratically elected steering councils/committees from among the
-members and stakeholders of an OSS project's community.
-
-It was also within the Python community that an orderly process for
-community-guided evolution of an open-source software project emerged,
-through the Python Enhancement Proposal (PEP) mechanism
-\cite{Warsaw2000PEP1}, which lays out how major changes to the software
-should be proposed, advocated for, and eventually decided on. While
-these tools, ideas, and practices evolved in developing software, they
-are readily translated to other domains. For example, OSS notions
-surrounding IP have given rise to the Creative Commons movement that has
-expanded these notions to apply to a much wider range of human creative
-endeavours. Similarly OSS notions regarding collaborative structures
-have pervaded the current era of open science and team science
-\cite{Baumgartner2023TeamScience, Koch2016TeamScience}.
+Community-driven development of robust, adaptable and useful standards
+draws significant inspiration from the development of open-source
+software (OSS) and has many parallels and overlaps with OSS development.
+OSS has a long history going back to the development of the Unix
+operating system in the late 1960s. Over the time since its inception,
+the large community of developers and users of OSS have developed a host
+of socio-technical mechanisms that support the development and use of
+OSS. For example, the Open Source Initiative (OSI), a non-profit
+organization that was founded in the 1990s developed a set of guidelines
+for licensing of OSS that is designed to protect the rights of
+developers and users. On the more technical side, tools such as the Git
+Source-code management system support open-source development workflows
+that can be adopted in the development of standards. When these social
+and technical innovations are put together they enable a host of
+positive defining features of OSS, such as transparency, collaboration,
+and decentralization. These features allow OSS to have a remarkable
+level of dynamism and productivity, while also retaining the ability of
+a variety of stakeholders to guide the evolution of the software to take
+their needs and interests into account. The present report seeks to
+explore how OSS processes and tools have affected the development of
+data and metadata standards. The report will triangulate common features
+of a variety of use-cases, will identify some of the challenges and
+pitfalls of this mode of standards development, and will make
+recommendations for future developments and policies that can help this
+mode of standards development thrive and reach its full potential.
 
 \section{Challenges for open source data and metadata standards, and
 some
@@ -352,10 +320,125 @@ resources to invest in establishing data standards.
 \subsection{The importance of automated
 validation}\label{the-importance-of-automated-validation}
 
-\section{Recommendations for open source data and metadata
+\section{Use cases}\label{use-cases}
+
+To understand how OSS development practices affect the development of
+data and metadata standards, it is informative to demonstrate this
+cross-fertilization through a few use cases. As we will see in these
+examples some fields, such as astronomy, high-energy physics and earth
+sciences have a relatively long history of shared data resources from
+organizations such as LSST and CERN, while other fields have only
+relatively recently become aware of the value of data sharing and its
+impact. These disparate histories inform how standards have evolved and
+how OSS practices have pervaded their development.
+
+\subsection{Astronomy}\label{astronomy}
+
+One prominent example of a community-driven standard is the FITS
+(Flexible Image Transport System) file format standard, which was
+developed in the late 1970s and early 1980s (Wells and Greisen 1979),
+and has been adopted worldwide for astronomy data preservation and
+exchange. Essentially every software platform used in astronomy reads
+and writes the FITS format. It was developed by observatories in the
+1980s to store image data in the visible and x-ray spectrum. It has been
+endorsed by IAU, as well as funding agencies. Though the format has
+evolved over time, ``once FITS, always FITS''. That is, the format
+cannot be evolved to introduce changes that break
+backwards-compatibility. Among the features that make FITS so durable is
+that it was designed originally to have a very restricted metadata
+schema. That is, FITS records were designed to be the lowest common
+denominator of word lengths in computer systems at the time. However,
+while FITS is compact, its ability to encode the coordinate frame and
+pixels, means that data from different observational instruments can be
+stored in this format and relationships between data from different
+instruments can be related, rendering manual and error-prone procedures
+for conforming images obsolete.
+
+\subsection{High-energy physics}\label{high-energy-physics}
+
+In HEP standards to collect the data have been established and the
+community is fairly homogeneous, so standards have very high penetration
+(Basaglia et al. 2023). A top-down approach is taken so that within
+every large collaboration standards are enforced, and this adoption is
+centrally managed. Access to raw data is essentially impossible, and
+making it publicly available is both technically very hard and
+potentially ill-advised. Analysis tools are tuned specifically to the
+standards. Incentives to use the standards are provided by funders that
+require the data management plan that specifies how the data is shared.
+
+\subsection{Neuroscience}\label{neuroscience}
+
+In contrast to astronomy and HEP, Neuroscience has traditionally been a
+``cottage industry'', where individual labs have generated experimental
+data designed to answer specific experimental questions. While this
+model still exists, the field has also seen the emergence of new modes
+of data production that focus on generating large shared datasets
+designed to answer many different questions, more akin to the data
+generated in large astronomy data collection efforts (Koch and Clay Reid
+2012). This change has been brought on through a combination of
+technical advances in data acquisition techniques, which now generate
+large and very high-dimensional/information-rich datasets, cultural
+changes, which have ushered in new norms of transparency and
+reproducibility, and funding initiatives that have encouraged this kind
+of data collection (including the US BRAIN Initiative and the Allen
+Institute for Brain Science). Neuroscience presents an interesting
+example because these changes are relatively recent. This means that
+standards for data and metadata in neuroscience have been prone to adopt
+many of the elements of OSS development. Two salient examples in
+neuroscience are the Neurodata Without Borders file format for
+neurophysiology data (Rübel et al. 2022) and the Brain Imaging Data
+Structure standard for neuroimaging data (Gorgolewski et al. 2016). The
+latter in particular has adopted a
+
+\subsection{Automated discovery}\label{automated-discovery}
+
+\subsection{Citizen science}\label{citizen-science}
+
+\section{Cross-sector interactions}\label{cross-sector-interactions}
+
+The importance of standards stems not only from discussions within
+research fields about how research can best be conducted to take
+advantage of existing and growing datasets, but also arises from
+interactions with other sectors.
+
+For example, an ongoing series of policy discussions that address the
+interactions between research communities and the general public. In the
+United States, these policies are expressed, for example, in memos
+issued by the directors of the White House Office of Science and
+Technology Policy (OSTP), James Holdren (in 2013) and Alondra Nelson (in
+2022). While these memos focused primarily on making peer-reviewed
+publications funded by the US Federal government available to the
+general public, they also lay an increasingly detailed path toward the
+publication and general availability of the data that is collected in
+research that is funded by the US government. The general guidance and
+overall spirit of these memos dovetail with more specific policy
+guidance related to data and metadata standards. For example, the
+importance of standards was underscored in a recent report by the
+Subcommittee on Open Science of the National Science and Technology
+Council on the ``Desirable characteristics of data repositories for
+federally funded research'' (The National Science and Technology Council
+2022). The report explicitly called out the importance of
+``allow{[}ing{]} datasets and metadata to be accessed, downloaded, or
+exported from the repository in widely used, preferably non-proprietary,
+formats consistent with standards used in the disciplines the repository
+serves.'' This highlights the need for data and metadata standards
+across a variety of different kinds of data. In addition, a report from
+the National Institute of Standards and Technology on ``U.S. Leadership
+in AI: A Plan for Federal Engagement in Developing Technical Standards
+and Related Tools'' emphasized that -- specifically for the case of AI
+-- ``U.S. government agencies should prioritize AI standards efforts
+that are {[}\ldots{]} Consensus-based, {[}\ldots{]} Inclusive and
+accessible, {[}\ldots{]} Multi-path, {[}\ldots{]} Open and transparent,
+{[}\ldots{]} and {[}that{]} result in globally relevant and
+non-discriminatory standards\ldots{}'' (National Institute of Standards
+and Technology 2019). The converging characteristics of standards that
+arise from these reports suggest that considerable thought needs to be
+given to how standards arise so that these goals are achieved.
+
+\section{Recommendations for open-source data and metadata
 standards}\label{recommendations-for-open-source-data-and-metadata-standards}
 
-We propose the following recommendations:
+In conclusion of this report, we propose the following recommendations:
 
 \subsection{Funding or Grantmaking
 entities:}\label{funding-or-grantmaking-entities}
@@ -363,16 +446,29 @@ entities:}\label{funding-or-grantmaking-entities}
 \subsubsection{Fund Data Standards
 Development}\label{fund-data-standards-development}
 
-Data standards development should be seen integral to science innovation
-and earmarked for funding in research grants. Funding models should
-encourage the development and adoption of standards, and fund associated
-community efforts and tools for this.
+While some funding agencies already support standards development as
+part of the development of informatics infrastructures, data standards
+development should be seen as integral to science innovation and
+earmarked for funding in research grants, not only in specialized
+contexts. Funding models should encourage the development and adoption
+of standards, and fund associated community efforts and tools for this.
+The OSS model is seen as a particularly promising avenue for an
+investment of resources, because it builds on previously-developed
+procedures and technical infrastructure and because it provides avenues
+for community input along the way. The clarity offered by procedures for
+enhancement proposals and semantic versioning schemes adopted in
+standards development offer avenues for a range of stakeholders to
+propose to funding bodies well-defined contributions to large and
+field-wide standards efforts.
 
-\subsubsection{Invest in Data Stewards}\label{invest-in-data-stewards}
+\subsubsection{Invest in Data Stewards Recognize data stewards as a
+distinct role
+in}\label{invest-in-data-stewards-recognize-data-stewards-as-a-distinct-role-in}
 
-Recognize data stewards as a distinct role in research and science
-investment. Set up programs for training for data stewards and invest in
-career paths that encourage this role.
+research and science investment. Set up programs for training for data
+stewards and invest in career paths that encourage this role. Initial
+proposals for the curriculum and scope of the role have already been
+proposed (e.g., in (Mons 2018))
 
 \subsubsection{Review Data Standards
 Pathways}\label{review-data-standards-pathways}
@@ -464,6 +560,72 @@ identifiers for a person using CFF in citations, cffconvert software
 makes the CFF standard usable and useful. Additionally, standards
 evolution should maintain software compatibility, and ability to
 translate and migrate between standards.
+
+\section{Acknowledgements}\label{acknowledgements}
+
+This report was produced following a
+\href{https://uwescience.github.io/2024-open-source-standards-workshop/}{workshop
+held at NSF headquarters in Alexandria, VA on April 8th-9th, 2024}. We
+would like to thank the speakers and participants in this workshop for
+the time and thought that they put into the workshop.
+
+The workshop and this report were funded through
+\href{https://www.nsf.gov/awardsearch/showAward?AWD_ID=2334483&HistoricalAwards=false}{NSF
+grant \#2334483} from the NSF
+\href{https://new.nsf.gov/funding/opportunities/pathways-enable-open-source-ecosystems-pose}{Pathways
+to Enable Open-Source Ecosystems (POSE)} program.
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-Basaglia2023-dq}
+Basaglia, T, M Bellis, J Blomer, J Boyd, C Bozzi, D Britzger, S Campana,
+et al. 2023. {``Data Preservation in High Energy Physics.''} \emph{The
+European Physical Journal C} 83 (9): 795.
+
+\bibitem[\citeproctext]{ref-Gorgolewski2016BIDS}
+Gorgolewski, Krzysztof J, Tibor Auer, Vince D Calhoun, R Cameron
+Craddock, Samir Das, Eugene P Duff, Guillaume Flandin, et al. 2016.
+{``The {Brain} {Imaging} {Data} {Structure}, a Format for Organizing and
+Describing Outputs of Neuroimaging Experiments.''} \emph{Sci Data} 3
+(June): 160044. \url{https://www.nature.com/articles/sdata201644}.
+
+\bibitem[\citeproctext]{ref-Koch2012-ve}
+Koch, Christof, and R Clay Reid. 2012. {``Observatories of the Mind.''}
+\url{http://dx.doi.org/10.1038/483397a}.
+
+\bibitem[\citeproctext]{ref-Mons2018DataStewardshipBook}
+Mons, Barend. 2018. \emph{Data Stewardship for Open Science:
+Implementing FAIR Principles}. 1st ed. Vol. 1. Milton: CRC Press.
+\url{https://doi.org/10.1201/9781315380711}.
+
+\bibitem[\citeproctext]{ref-NIST2019}
+National Institute of Standards and Technology. 2019. {``{U.S}.
+{LEADERSHIP} {IN} {AI}: A Plan for Federal Engagement in Developing
+Technical Standards and Related Tools.''}
+
+\bibitem[\citeproctext]{ref-Rubel2022NWB}
+Rübel, Oliver, Andrew Tritt, Ryan Ly, Benjamin K Dichter, Satrajit
+Ghosh, Lawrence Niu, Pamela Baker, et al. 2022. {``The Neurodata Without
+Borders Ecosystem for Neurophysiological Data Science.''} \emph{Elife}
+11 (October).
+
+\bibitem[\citeproctext]{ref-nstc2022desirable}
+The National Science and Technology Council. 2022. {``Desirable
+Characteristics of Data Repositories for Federally Funded Research.''}
+\emph{Executive Office of the President of the United States, Tech.
+Rep}.
+
+\bibitem[\citeproctext]{ref-wells1979fits}
+Wells, Donald Carson, and Eric W Greisen. 1979. {``FITS-a Flexible Image
+Transport System.''} In \emph{Image Processing in Astronomy}, 445.
+
+\bibitem[\citeproctext]{ref-Wilkinson2016FAIR}
+Wilkinson, Mark D, Michel Dumontier, I Jsbrand Jan Aalbersberg,
+Gabrielle Appleton, Myles Axton, Arie Baak, Niklas Blomberg, et al.
+2016. {``The {FAIR} Guiding Principles for Scientific Data Management
+and Stewardship.''} \emph{Sci Data} 3 (March): 160018.
+
+\end{CSLReferences}
 
 
 

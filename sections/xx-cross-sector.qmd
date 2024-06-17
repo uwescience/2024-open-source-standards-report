@@ -1,0 +1,35 @@
+# Cross-sector interactions
+
+The importance of standards stems not only from discussions within research
+fields about how research can best be conducted to take advantage of existing
+and growing datasets, but also arises from interactions with other sectors.
+
+For example, an ongoing series of policy discussions that address the
+interactions between research communities and the general public. In the United
+States, these policies are expressed, for example, in memos issued by the
+directors of the White House Office of Science and Technology Policy (OSTP),
+James Holdren (in 2013) and Alondra Nelson (in 2022). While these memos focused
+primarily on making peer-reviewed publications funded by the US Federal
+government available to the general public, they also lay an increasingly
+detailed path toward the publication and general availability of the data that
+is collected in research that is funded by the US government. The general
+guidance and overall spirit of these memos dovetail with more specific policy
+guidance related to data and metadata standards. For example, the importance of
+standards was underscored in a recent report by the Subcommittee on Open
+Science of the National Science and Technology Council on the "Desirable
+characteristics of data repositories for federally funded research"
+[@nstc2022desirable]. The report explicitly called out the importance of
+"allow[ing] datasets and metadata to be accessed, downloaded, or exported from
+the repository in widely used, preferably non-proprietary, formats consistent
+with standards used in the disciplines the repository serves." This highlights
+the need for data and metadata standards across a variety of different kinds of
+data. In addition, a report from the National Institute of Standards and
+Technology on "U.S. Leadership in AI: A Plan for Federal Engagement in
+Developing Technical Standards and Related Tools" emphasized that --
+specifically for the case of AI -- "U.S. government agencies should prioritize
+AI standards efforts that are [...] Consensus-based, [...] Inclusive and
+accessible, [...] Multi-path, [...] Open and transparent, [...] and [that]
+result in globally relevant and non-discriminatory standards..." [@NIST2019].
+The converging characteristics of standards that arise from these reports
+suggest that considerable thought needs to be given to how standards arise so
+that these goals are achieved.

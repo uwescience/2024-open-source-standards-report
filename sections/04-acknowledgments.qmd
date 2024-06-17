@@ -1,0 +1,12 @@
+# Acknowledgements
+
+This report was produced following a
+[workshop held at NSF headquarters in Alexandria, VA on April 8th-9th, 2024](https://uwescience.github.io/2024-open-source-standards-workshop/).
+We would like to thank the speakers and participants in this workshop for the
+time and thought that they put into the workshop.
+
+The workshop and this report were funded through [NSF grant
+#2334483](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2334483&HistoricalAwards=false)
+from the NSF [Pathways to Enable Open-Source Ecosystems
+(POSE)](https://new.nsf.gov/funding/opportunities/pathways-enable-open-source-ecosystems-pose)
+program.
