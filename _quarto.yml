@@ -10,8 +10,11 @@ format:
       hypothesis: true
     toc: true
 
-  # docx: default
-  # jats: default
+  docx: default
+    toc: true
+    number-sections: true
+    highlight-style: github
+
   pdf: default
 
 number-sections: true
