@@ -10,7 +10,7 @@ format:
       hypothesis: true
     toc: true
 
-  docx: default
+  docx:
     toc: true
     number-sections: true
     highlight-style: github
