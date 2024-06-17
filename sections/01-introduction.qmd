@@ -9,7 +9,7 @@ Coupled with these new machine learning techniques, these datasets can help us
 understand everything from the cellular operations of the human body, through
 business transactions on the internet, to the structure and history of the
 universe. However, the development of new machine learning methods and
-data-intensive discovery more generally depend on Findability, Accessibility,
+data-intensive discovery more generally depends on Findability, Accessibility,
 Interoperability and Reusability (FAIR) of data [@Wilkinson2016FAIR]. One of
 the main mechanisms through which the FAIR principles are promoted is the
 development of *standards* for data and metadata. Standards can vary in the
@@ -35,11 +35,12 @@ innovations are put together they enable a host of positive defining features
 of OSS, such as transparency, collaboration, and decentralization. These
 features allow OSS to have a remarkable level of dynamism and productivity,
 while also retaining the ability of a variety of stakeholders to guide the
-evolution of the software to take their needs and interests into account. The
-present report seeks to explore how OSS processes and tools have affected the
-development of data and metadata standards. The report will triangulate common
-features of a variety of use-cases, will identify some of the challenges and
-pitfalls of this mode of standards development, and will make recommendations
-for future developments and policies that can help this mode of standards
-development thrive and reach its full potential.
+evolution of the software to take their needs and interests into account.
+
+The present report seeks to explore how OSS processes and tools have affected
+the development of data and metadata standards. The report will triangulate
+common features of a variety of use cases; it will identify some of the
+challenges and pitfalls of this mode of standards development; and it will make
+recommendations for future developments and policies that can help this mode of
+standards development thrive and reach its full potential.
 

@@ -223,7 +223,7 @@ machine learning techniques, these datasets can help us understand
 everything from the cellular operations of the human body, through
 business transactions on the internet, to the structure and history of
 the universe. However, the development of new machine learning methods
-and data-intensive discovery more generally depend on Findability,
+and data-intensive discovery more generally depends on Findability,
 Accessibility, Interoperability and Reusability (FAIR) of data
 (Wilkinson et al. 2016). One of the main mechanisms through which the
 FAIR principles are promoted is the development of \emph{standards} for
@@ -252,13 +252,15 @@ positive defining features of OSS, such as transparency, collaboration,
 and decentralization. These features allow OSS to have a remarkable
 level of dynamism and productivity, while also retaining the ability of
 a variety of stakeholders to guide the evolution of the software to take
-their needs and interests into account. The present report seeks to
-explore how OSS processes and tools have affected the development of
-data and metadata standards. The report will triangulate common features
-of a variety of use-cases, will identify some of the challenges and
-pitfalls of this mode of standards development, and will make
-recommendations for future developments and policies that can help this
-mode of standards development thrive and reach its full potential.
+their needs and interests into account.
+
+The present report seeks to explore how OSS processes and tools have
+affected the development of data and metadata standards. The report will
+triangulate common features of a variety of use cases; it will identify
+some of the challenges and pitfalls of this mode of standards
+development; and it will make recommendations for future developments
+and policies that can help this mode of standards development thrive and
+reach its full potential.
 
 \section{Challenges for open source data and metadata standards, and
 some
@@ -364,7 +366,7 @@ centrally managed. Access to raw data is essentially impossible, and
 making it publicly available is both technically very hard and
 potentially ill-advised. Analysis tools are tuned specifically to the
 standards. Incentives to use the standards are provided by funders that
-require the data management plan that specifies how the data is shared.
+require data management plans that specify how the data is shared.
 
 \subsection{Neuroscience}\label{neuroscience}
 
@@ -387,8 +389,20 @@ standards for data and metadata in neuroscience have been prone to adopt
 many of the elements of OSS development. Two salient examples in
 neuroscience are the Neurodata Without Borders file format for
 neurophysiology data (Rübel et al. 2022) and the Brain Imaging Data
-Structure standard for neuroimaging data (Gorgolewski et al. 2016). The
-latter in particular has adopted a
+Structure (BIDS) standard for neuroimaging data (Gorgolewski et al.
+2016). BIDS in particular owes some of its success to the adoption and
+adaptation of OSS mechanisms (Poldrack et al. 2024). One of the
+challenges that the BIDS standard faces is that it covers only a subset
+of the large range of neuroscience data types that it could cover. To
+evolve and include more different use cases, the BIDS community adopted
+a mechanism called a BIDS Enhancement Proposal (BEP). This mechanism is
+directly inspired by the Python programming language community, which
+developed the Python Enhancement Proposal procedure, that is used to
+introduce new ideas into the language. Though the BEP mechanism takes a
+slightly different technical approach, it tries to emulate the
+open-ended and community-driven aspects of Python development to accept
+contributions from a wide range of stakeholders and tap a broad base of
+expertise.
 
 \subsection{Automated discovery}\label{automated-discovery}
 
@@ -602,6 +616,12 @@ Implementing FAIR Principles}. 1st ed. Vol. 1. Milton: CRC Press.
 National Institute of Standards and Technology. 2019. {``{U.S}.
 {LEADERSHIP} {IN} {AI}: A Plan for Federal Engagement in Developing
 Technical Standards and Related Tools.''}
+
+\bibitem[\citeproctext]{ref-Poldrack2024BIDS}
+Poldrack, Russell A, Christopher J Markiewicz, Stefan Appelhoff, Yoni K
+Ashar, Tibor Auer, Sylvain Baillet, Shashank Bansal, et al. 2024. {``The
+Past, Present, and Future of the Brain Imaging Data Structure
+({BIDS}).''} \emph{ArXiv}, January.
 
 \bibitem[\citeproctext]{ref-Rubel2022NWB}
 Rübel, Oliver, Andrew Tritt, Ryan Ly, Benjamin K Dichter, Satrajit
