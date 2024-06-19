@@ -33,11 +33,11 @@ process.
 
 
 {{< include sections/01-introduction.qmd >}}
-{{< include sections/02-challenges.qmd >}}
-{{< include sections/xx-use-cases.qmd >}}
-{{< include sections/xx-cross-sector.qmd >}}
-{{< include sections/03-recommendations.qmd >}}
-{{< include sections/04-acknowledgments.qmd >}}
+{{< include sections/02-use-cases.qmd >}}
+{{< include sections/03-challenges.qmd >}}
+{{< include sections/04-cross-sector.qmd >}}
+{{< include sections/05-recommendations.qmd >}}
+{{< include sections/06-acknowledgments.qmd >}}
 
 
 # References
