@@ -1,7 +1,4 @@
 /.quarto/
 site_libs/
 .DS_Store
-_manuscript/_tex/
-_manuscript/index.html
-_manuscript/sections/
-sections/.DS_Store
+_manuscript/
