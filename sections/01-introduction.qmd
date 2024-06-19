@@ -30,12 +30,15 @@ non-profit organization that was founded in the 1990s developed a set of
 guidelines for licensing of OSS that is designed to protect the rights of
 developers and users. On the more technical side, tools such as the Git
 Source-code management system support open-source development workflows that
-can be adopted in the development of standards. When these social and technical
-innovations are put together they enable a host of positive defining features
-of OSS, such as transparency, collaboration, and decentralization. These
-features allow OSS to have a remarkable level of dynamism and productivity,
-while also retaining the ability of a variety of stakeholders to guide the
-evolution of the software to take their needs and interests into account.
+can be adopted in the development of standards. Governance approaches have been
+honed to address the challenges of managing a range of stakeholder interests
+and to mediate between large numbers of weakly-connected individuals that
+contribute to OSS. When these social and technical innovations are put together
+they enable a host of positive defining features of OSS, such as transparency,
+collaboration, and decentralization. These features allow OSS to have a
+remarkable level of dynamism and productivity, while also retaining the ability
+of a variety of stakeholders to guide the evolution of the software to take
+their needs and interests into account.
 
 The present report seeks to explore how OSS processes and tools have affected
 the development of data and metadata standards. The report will triangulate
