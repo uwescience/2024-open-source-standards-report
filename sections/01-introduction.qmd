@@ -1,4 +1,4 @@
-# Introduction
+# Introduction {#sec-intro}
 
 Data-intensive discovery has become an important mode of knowledge production
 across many research fields and it is having a significant and broad impact
@@ -40,10 +40,13 @@ remarkable level of dynamism and productivity, while also retaining the ability
 of a variety of stakeholders to guide the evolution of the software to take
 their needs and interests into account.
 
-The present report seeks to explore how OSS processes and tools have affected
-the development of data and metadata standards. The report will triangulate
-common features of a variety of use cases; it will identify some of the
-challenges and pitfalls of this mode of standards development; and it will make
-recommendations for future developments and policies that can help this mode of
-standards development thrive and reach its full potential.
+Data and metadata standards that adopt tools and practices of OSS ("open-source
+standards" henceforth) stand to reap many of the benefits that the OSS model
+has provided in the development of other technologies.The present report
+explore how OSS processes and tools have affected the development of data and
+metadata standards. The report will triangulate common features of a variety of
+use cases; it will identify some of the challenges and pitfalls of this mode of
+standards development, with a particular focus on cross-sector interactions;
+and it will make recommendations for future developments and policies that can
+help this mode of standards development thrive and reach its full potential.
 

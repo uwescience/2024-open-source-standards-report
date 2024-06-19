@@ -1,4 +1,4 @@
-# Cross-sector interactions
+# Cross-sector interactions {#sec-cross-sector}
 
 The importance of standards stems not only from discussions within research
 fields about how research can best be conducted to take advantage of existing
@@ -90,7 +90,7 @@ Interactions of data and meta-data standards with commercial interests may
 provide specific sources of friction. This is because proprietary/closed
 formats of data can create difficulty at various transition points: from one
 instrument vendor to another, from data producer to downstream recipient/user,
-etc. On the other hand, in some cases cross-sector collaborations with
+etc. On the other hand, in some cases, cross-sector collaborations with
 commercial entities may pave the way to robust and useful standards. One
 example is the DICOM standard, which is maintained by working groups that
 encompass commercial imaging device vendors and researchers.

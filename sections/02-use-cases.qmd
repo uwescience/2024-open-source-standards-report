@@ -41,6 +41,9 @@ Therefore, analysis tools are tuned specifically to the standards. Incentives
 to use the standards are provided by funders that require data management plans
 that specify how the data is shared.
 
+## Earth sciences
+
+XXX
 
 ## Neuroscience
 
@@ -63,9 +66,9 @@ are the Neurodata Without Borders file format for neurophysiology data
 neuroimaging data [@Gorgolewski2016BIDS]. BIDS in particular owes some of its
 success to the adoption of OSS development mechanisms [@Poldrack2024BIDS]. For
 example, small changes to the standard are managed through the GitHub pull
-request mechanism; larger changes are managed through a a BIDS Enhancement
+request mechanism; larger changes are managed through a BIDS Enhancement
 Proposal (BEP) process that is directly inspired by the Python programming
-language community's Python Enhancement Proposal procedure, which used to
+language community's Python Enhancement Proposal procedure, which isused to
 introduce new ideas into the language. Though the BEP mechanism takes a
 slightly different technical approach, it tries to emulate the open-ended and
 community-driven aspects of Python development to accept contributions from a
@@ -73,5 +76,7 @@ wide range of stakeholders and tap a broad base of expertise.
 
 ## Automated discovery
 
-## Citizen science
+## Community science
+
+Another interesting use case for open-source standards is community/citizen science. This approach, which has grown  Here, standards are needed to facilitate interactions between an in-group of expert researchers who generate and curate data and a broader set of out-group enthusiasts who would like to make meaningful contributions to the science.
 
