@@ -1,4 +1,4 @@
-# Use cases
+# Use cases {#sec-use-cases}
 
 To understand how OSS development practices affect the development of data and
 metadata standards, it is informative to demonstrate this cross-fertilization

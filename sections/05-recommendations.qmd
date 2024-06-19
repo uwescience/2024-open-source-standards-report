@@ -1,9 +1,9 @@
 
-# Recommendations for open-source data and metadata standards
+# Recommendations for open-source data and metadata standards {#sec-recommendations}
 
 In conclusion of this report, we propose the following recommendations:
 
-## Funding or Grantmaking entities:
+## Policy-making and Funding entities:
 
 ### Fund Data Standards Development
 
@@ -15,17 +15,26 @@ encourage the development and adoption of standards, and fund associated
 community efforts and tools for this. The OSS model is seen as a particularly
 promising avenue for an investment of resources, because it builds on
 previously-developed procedures and technical infrastructure and because it
-provides avenues for community input along the way. The clarity offered by
-procedures for enhancement proposals and semantic versioning schemes adopted in
-standards development offer avenues for a range of stakeholders to propose to
-funding bodies well-defined contributions to large and field-wide standards
-efforts.
+provides avenues for democratization of development processes and for community
+input along the way. The clarity offered by procedures for enhancement
+proposals and semantic versioning schemes adopted in standards development
+offer avenues for a range of stakeholders to propose to funding bodies
+well-defined contributions to large and field-wide standards efforts (e.g., [@pestilli2021community]).
 
-### Invest in Data Stewards Recognize data stewards as a distinct role in
-research and science investment. Set up programs for training for data stewards
-and invest in career paths that encourage this role. Initial proposals for the
-curriculum and scope of the role have already been proposed (e.g., in
-[@Mons2018DataStewardshipBook])
+### Invest in Data Stewards
+
+Advancing the development and adoption of open-source standards requires the
+dissemination of knowledge to researchers in a variety of fields, but this
+dissemination itself may not be enough without the fostering of specialized
+expertise. Therefore, it is important to recognize *data stewards* as a
+distinct role in research. To truly support experts whose role will be to
+develop, maintain, and facilitate the adoption and use of open-source
+standards, it will be necessary to set up programs for training for data
+stewards and invest in career paths that encourage this role. Initial proposals
+for the curriculum and scope of the role have already been proposed (e.g., in
+[@Mons2018DataStewardshipBook]). In addition, in order for these individuals to be able to make the best use of open-source standards, it will be important for these individuals to be facile in the methodology of OSS. This does not mean that they need to become software engineers -- though there may be some overlap with the role of research software engineers [@Connolly2023Software] -- but rather that they
+need to become familiar with those parts of the OSS development life-cycle that
+are useful for development of open-source standards.
 
 ### Review Data Standards Pathways
 
@@ -50,18 +59,22 @@ metadata and descriptions of how to use it.
 
 ### Program Manage Cross Sector alliances
 
-Encourage cross sector and cross domain alliances that can impact successful standards creation. Invest in robust program management of these alliances to align pace and create incentives (for instance via Open Source Program Office / OSPO efforts). Similar to program officers at funding agencies, standards evolution need sustained PM efforts. Multi company partnerships should include strategic initiatives for standard establishment e.g. [Pistoiaalliance](https://www.pistoiaalliance.org/news/press-release-pistoia-alliance-launches-idmp-1-0/).
-
+Encourage cross-sector and cross-domain alliances that can impact successful
+standards creation. Invest in robust program management of these alliances to
+align pace and create incentives (for instance via Open Source Program Office /
+OSPO efforts). Similar to program officers at funding agencies, standards
+evolution need sustained PM efforts. Multi company partnerships should include
+strategic initiatives for standard establishment e.g.
+[Pistoiaalliance](https://www.pistoiaalliance.org/news/press-release-pistoia-alliance-launches-idmp-1-0/).
 
 
 ### Curriculum Development
 
 Stakeholder organizations should invest in training grants to establish curriculum for data and metadata standards education. </ol>
 
-
 ## Science and Technology Communities:
 
-### User Driven Development
+### User-Driven Development
 
 Standards should be needs-driven and developed in close collaboration with users. Changes and enhancements should be in response to community feedback.
 
