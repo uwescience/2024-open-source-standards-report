@@ -253,13 +253,14 @@ business transactions on the internet, to the structure and history of
 the universe. However, the development of new machine learning methods
 and data-intensive discovery more generally depends on Findability,
 Accessibility, Interoperability and Reusability (FAIR) of data
-(Wilkinson et al. 2016). One of the main mechanisms through which the
-FAIR principles are promoted is the development of \emph{standards} for
-data and metadata. Standards can vary in the level of detail and scope,
-and encompass such things as \emph{file formats} for the storage of
-certain data types, \emph{schemas} for databases that organize data,
-\emph{ontologies} to describe and organize metadata in a manner that
-connects it to field-specific meaning, as well as mechanisms to describe
+(Wilkinson et al. 2016) as well as metadata (Musen 2022). One of the
+main mechanisms through which the FAIR principles are promoted is the
+development of \emph{standards} for data and metadata. Standards can
+vary in the level of detail and scope, and encompass such things as
+\emph{file formats} for the storage of certain data types,
+\emph{schemas} for databases that organize data, \emph{ontologies} to
+describe and organize metadata in a manner that connects it to
+field-specific meaning, as well as mechanisms to describe
 \emph{provenance} of analysis products.
 
 Community-driven development of robust, adaptable and useful standards
@@ -272,30 +273,30 @@ of socio-technical mechanisms that support the development and use of
 OSS. For example, the Open Source Initiative (OSI), a non-profit
 organization that was founded in the 1990s developed a set of guidelines
 for licensing of OSS that is designed to protect the rights of
-developers and users. On the more technical side, tools such as the Git
-Source-code management system support open-source development workflows
-that can be adopted in the development of standards. Governance
-approaches have been honed to address the challenges of managing a range
-of stakeholder interests and to mediate between large numbers of
-weakly-connected individuals that contribute to OSS. When these social
-and technical innovations are put together they enable a host of
-positive defining features of OSS, such as transparency, collaboration,
-and decentralization. These features allow OSS to have a remarkable
-level of dynamism and productivity, while also retaining the ability of
-a variety of stakeholders to guide the evolution of the software to take
-their needs and interests into account.
+developers and users. On the technical side, tools such as the Git
+Source-code management system support complex and distributed
+open-source workflows that accelerate, streamline, and robustify OSS
+development. Governance approaches have been honed to address the
+challenges of managing a range of stakeholder interests and to mediate
+between large numbers of weakly-connected individuals that contribute to
+OSS. When these social and technical innovations are put together they
+enable a host of positive defining features of OSS, such as
+transparency, collaboration, and decentralization. These features allow
+OSS to have a remarkable level of dynamism and productivity, while also
+retaining the ability of a variety of stakeholders to guide the
+evolution of the software to take their needs and interests into
+account.
 
-Data and metadata standards that adopt tools and practices of OSS
-(``open-source standards'' henceforth) stand to reap many of the
-benefits that the OSS model has provided in the development of other
-technologies. The present report explore how OSS processes and tools
-have affected the development of data and metadata standards. The report
-will triangulate common features of a variety of use cases; it will
-identify some of the challenges and pitfalls of this mode of standards
-development, with a particular focus on cross-sector interactions; and
-it will make recommendations for future developments and policies that
-can help this mode of standards development thrive and reach its full
-potential.
+Data and metadata standards that use tools and practices of OSS
+(``open-source standards'' henceforth) reap many of the benefits that
+the OSS model has provided in the development of other technologies. The
+present report explores how OSS processes and tools have affected the
+development of data and metadata standards. The report will triangulate
+common features of a variety of use cases; it will identify some of the
+challenges and pitfalls of this mode of standards development, with a
+particular focus on cross-sector interactions; and it will make
+recommendations for future developments and policies that can help this
+mode of standards development thrive and reach its full potential.
 
 \section{Use cases}\label{sec-use-cases}
 
@@ -307,11 +308,14 @@ sciences have a relatively long history of shared data resources from
 organizations such as LSST, CERN, and NASA, while other fields have only
 relatively recently become aware of the value of data sharing and its
 impact. These disparate histories inform how standards have evolved and
-how OSS practices have pervaded their development.
+how OSS practices have pervaded their development. It also demonstrates
+field-specific limitations on the adoption of OSS tools and practices
+that exemplify some of the challenges, which we will explore
+subsequently.
 
 \subsection{Astronomy}\label{astronomy}
 
-One prominent example of a community-driven standard is the FITS
+An early prominent example of a community-driven standard is the FITS
 (Flexible Image Transport System) file format standard, which was
 developed in the late 1970s and early 1980s (Wells and Greisen 1979),
 and has been adopted worldwide for astronomy data preservation and
@@ -320,7 +324,7 @@ and writes the FITS format. It was developed by observatories in the
 1980s to store image data in the visible and x-ray spectrum. It has been
 endorsed by IAU, as well as funding agencies. Though the format has
 evolved over time, ``once FITS, always FITS''. That is, the format
-cannot be evolved to introduce changes that break backwards
+cannot be evolved to introduce changes that break backward
 compatibility. Among the features that make FITS so durable is that it
 was designed originally to have a very restricted metadata schema. That
 is, FITS records were designed to be the lowest common denominator of
@@ -336,13 +340,14 @@ images obsolete.
 Because data collection is centralized, standards to collect and store
 HEP data have been established and the adoption of these standards in
 data analysis has high penetration (Basaglia et al. 2023). A top-down
-approach is taken so that within every large collaboration standards are
-enforced, and this adoption is centrally managed. Access to raw data is
-essentially impossible, and making it publicly available is both
-technically very hard and potentially ill-advised. Therefore, analysis
-tools are tuned specifically to the standards. Incentives to use the
-standards are provided by funders that require data management plans
-that specify how the data is shared.
+approach is taken so that within every large collaboration, standards
+are enforced, and this adoption is centrally managed. Access to raw data
+is essentially impossible because of its large volume, and making it
+publicly available is both technically very hard and potentially
+ill-advised. Therefore, analysis tools are tuned specifically to the
+standards of the released data. Incentives to use the standards are
+provided by funders that require data management plans that specify how
+the data is shared (i.e., in a standards-compliant manner).
 
 \subsection{Earth sciences}\label{earth-sciences}
 
@@ -380,16 +385,32 @@ tries to emulate the open-ended and community-driven aspects of Python
 development to accept contributions from a wide range of stakeholders
 and tap a broad base of expertise.
 
-\subsection{Automated discovery}\label{automated-discovery}
-
 \subsection{Community science}\label{community-science}
 
 Another interesting use case for open-source standards is
-community/citizen science. This approach, which has grown Here,
-standards are needed to facilitate interactions between an in-group of
-expert researchers who generate and curate data and a broader set of
-out-group enthusiasts who would like to make meaningful contributions to
-the science.
+community/citizen science. This approach, which has grown in the last 20
+years, has many benefits for both the research field that harnesses the
+energy of non-scientist members of the community to engage with
+scientific data, as well as to the community members themselves who can
+draw both knowledge and pride in their participation in the scientific
+endeavor. It is also recognized that unique broader benefits are accrued
+from this mode of scientific research, through the inclusion of
+perspectives and data that would not otherwise be included. To make data
+accessible to community scientists, and to make the data collected by
+community scientists accessible to professional scientists, it needs to
+be provided in a manner that can be created and accessed without
+specialized instruments or specialized knowledge. Here, standards are
+needed to facilitate interactions between an in-group of expert
+researchers who generate and curate data and a broader set of out-group
+enthusiasts who would like to make meaningful contributions to the
+science. This creates a particularly stringent constraint on
+transparency and simplicity of standards. Creating these standards in a
+manner that addresses these unique constraints can benefit from OSS
+tools, with the caveat that some of these tools require additional
+expertise. For example, if the standard is developed using git/GitHub
+for versioning, this would require learning the complex and obscure
+technical aspects of these system that are far from easy to adopt, even
+for many professional scientists.
 
 \section{Opportunities and risks for open-source
 standards}\label{sec-challenges}
@@ -850,6 +871,10 @@ Papadopoulos Orfanos, Davis Bennett, David Stansby, et al. 2024.
 Mons, Barend. 2018. \emph{Data Stewardship for Open Science:
 Implementing FAIR Principles}. 1st ed. Vol. 1. Milton: CRC Press.
 \url{https://doi.org/10.1201/9781315380711}.
+
+\bibitem[\citeproctext]{ref-Musen2022metadata}
+Musen, Mark A. 2022. {``Without Appropriate Metadata, Data-Sharing
+Mandates Are Pointless.''} \emph{Nature} 609 (7926): 222.
 
 \bibitem[\citeproctext]{ref-NIST2019}
 National Institute of Standards and Technology. 2019. {``{U.S}.
