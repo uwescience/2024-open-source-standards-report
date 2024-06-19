@@ -53,7 +53,7 @@ jobs:
                 author_name: 'GitHub Actions'
                 message: 'Add paper.pdf at ${{ github.sha }}'
                 new_branch: products
-
+                push: origin products --force
 
             - name: Commit DOCX
               if: github.event_name != 'pull_request'
@@ -63,4 +63,4 @@ jobs:
                 author_name: 'GitHub Actions'
                 message: 'Add paper.doxc at ${{ github.sha }}'
                 new_branch: products
-
+                push: origin products --force
