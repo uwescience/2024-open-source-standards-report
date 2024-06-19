@@ -7,8 +7,7 @@ astronomy, high-energy physics and earth sciences have a relatively long
 history of shared data resources from organizations such as LSST and CERN,
 while other fields have only relatively recently become aware of the value of
 data sharing and its impact. These disparate histories inform how standards
-have evolved and how OSS practices have pervaded their
-development.
+have evolved and how OSS practices have pervaded their development.
 
 ## Astronomy
 
@@ -20,7 +19,7 @@ used in astronomy reads and writes the FITS format. It was developed by
 observatories in the 1980s to store image data in the visible and x-ray
 spectrum. It has been endorsed by IAU, as well as funding agencies. Though the
 format has evolved over time, “once FITS, always FITS”. That is, the format
-cannot be evolved to introduce changes that break backwards-compatibility.
+cannot be evolved to introduce changes that break backwards compatibility.
 Among the features that make FITS so durable is that it was designed originally
 to have a very restricted metadata schema. That is, FITS records were designed
 to be the lowest common denominator of word lengths in computer systems at the
@@ -30,16 +29,17 @@ be stored in this format and relationships between data from different
 instruments can be related, rendering manual and error-prone procedures for
 conforming images obsolete.
 
-## High-energy physics
+## High-energy physics (HEP)
 
-In HEP standards to collect the data have been established and the community is
-fairly homogeneous, so standards have very high penetration [@Basaglia2023-dq].
-A top-down approach is taken so that within every large collaboration standards
-are enforced, and this adoption is centrally managed. Access to raw data is
-essentially impossible, and making it publicly available is both technically
-very hard and potentially ill-advised. Analysis tools are tuned specifically to
-the standards. Incentives to use the standards are provided by funders that
-require data management plans that specify how the data is shared.
+Because data collection is centralized, standards to collect and store HEP data
+have been established and the adoption of these standards in data analysis has
+high penetration [@Basaglia2023-dq]. A top-down approach is taken so that
+within every large collaboration standards are enforced, and this adoption is
+centrally managed. Access to raw data is essentially impossible, and making it
+publicly available is both technically very hard and potentially ill-advised.
+Therefore, analysis tools are tuned specifically to the standards. Incentives
+to use the standards are provided by funders that require data management plans
+that specify how the data is shared.
 
 
 ## Neuroscience
@@ -54,22 +54,19 @@ collection efforts [@Koch2012-ve]. This change has been brought on through a
 combination of technical advances in data acquisition techniques, which now
 generate large and very high-dimensional/information-rich datasets, cultural
 changes, which have ushered in new norms of transparency and reproducibility,
-and funding initiatives that have encouraged this kind of data collection
-(including the US BRAIN Initiative and the Allen Institute for Brain Science).
-Neuroscience presents an interesting example because these changes are
-relatively recent. This means that standards for data and metadata in
-neuroscience have been prone to adopt many of the elements of OSS development.
-Two salient examples in neuroscience are the Neurodata Without Borders file
-format for neurophysiology data [@Rubel2022NWB] and the Brain Imaging Data
-Structure (BIDS) standard for neuroimaging data [@Gorgolewski2016BIDS]. BIDS in
-particular owes some of its success to the adoption and adaptation of OSS
-mechanisms [@Poldrack2024BIDS]. One of the challenges that the BIDS standard
-faces is that it covers only a subset of the large range of neuroscience data
-types that it could cover. To evolve and include more different use cases, the
-BIDS community adopted a mechanism called a BIDS Enhancement Proposal (BEP).
-This mechanism is directly inspired by the Python programming language
-community, which developed the Python Enhancement Proposal procedure, that is
-used to introduce new ideas into the language. Though the BEP mechanism takes a
+and funding initiatives that have encouraged this kind of data collection.
+However, because these changes are recent relative to the other cases mentioned
+above, standards for data and metadata in neuroscience have been prone to adopt
+many elements of modern OSS development. Two salient examples in neuroscience
+are the Neurodata Without Borders file format for neurophysiology data
+[@Rubel2022NWB] and the Brain Imaging Data Structure (BIDS) standard for
+neuroimaging data [@Gorgolewski2016BIDS]. BIDS in particular owes some of its
+success to the adoption of OSS development mechanisms [@Poldrack2024BIDS]. For
+example, small changes to the standard are managed through the GitHub pull
+request mechanism; larger changes are managed through a a BIDS Enhancement
+Proposal (BEP) process that is directly inspired by the Python programming
+language community's Python Enhancement Proposal procedure, which used to
+introduce new ideas into the language. Though the BEP mechanism takes a
 slightly different technical approach, it tries to emulate the open-ended and
 community-driven aspects of Python development to accept contributions from a
 wide range of stakeholders and tap a broad base of expertise.
