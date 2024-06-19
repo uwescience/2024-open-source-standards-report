@@ -42,7 +42,7 @@ their needs and interests into account.
 
 Data and metadata standards that adopt tools and practices of OSS ("open-source
 standards" henceforth) stand to reap many of the benefits that the OSS model
-has provided in the development of other technologies.The present report
+has provided in the development of other technologies. The present report
 explore how OSS processes and tools have affected the development of data and
 metadata standards. The report will triangulate common features of a variety of
 use cases; it will identify some of the challenges and pitfalls of this mode of

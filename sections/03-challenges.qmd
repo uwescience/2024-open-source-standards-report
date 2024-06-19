@@ -1,7 +1,8 @@
 # Opportunities and risks for open-source standards {#sec-challenges}
 
-At the same time, these tools and practices are associated with risks that need
-to be mitigated.
+While open-source standards benefit from the technical and social aspects of
+OSS, these tools and practices are associated with risks that need to be
+mitigated.
 
 ## Flexibility vs. Stability
 
@@ -33,17 +34,21 @@ maintainers of a standard who will need to accommodate long deprecation cycles.
 
 ## Mismatches between standards developers and user communities
 
-There is an inherent gap in both interest and ability to engage with the
-technical details undergirding standards and their development between the core
-developers of the standard and their users. In extreme cases, these interests
-may even be at odds, as developers implement sophisticated mechanisms to
-automate the creation and validation of the standard or advocate for more
-technically advanced mechanisms for evolving the standard. These advanced
-capabilities offer more robust development practices and consistency in cases
-where the standards are complex and elaborate. On the other hand, they may end
-up leaving potential users sidelined in the development of the standard, and
-limiting their ability to provide feedback about the practical implications of
-changes to the standards.
+In contrast to the OSS case, in open-source standards there is often an
+inherent gap in both interest and ability to engage with the technical details
+undergirding standards and their development between the core developers of the
+standard and the users of the standard, which are the broader field to which
+the standard pertains. This gap, in and of itself, creates friction on the path
+to broad adoption and best utilization of the standards. In extreme cases, the
+interests of researchers and standards developers may even seem at odds, as
+developers implement sophisticated mechanisms to automate the creation and
+validation of the standard or advocate for more technically advanced mechanisms
+for evolving the standard. These advanced capabilities offer more robust
+development practices and consistency in cases where the standards are complex
+and elaborate. They can ease the maintenance burden of the standard. On the
+other hand, they may end up leaving potential users sidelined in the
+development of the standard, and limiting their ability to provide feedback
+about the practical implications of changes to the standards.
 
 ## Unclear pathways for standards success
 
@@ -51,27 +56,46 @@ Standards typically develop organically through sustained and persistent
 efforts from dedicated groups of data practitioners. These include scientists
 and the broader ecosystem of data curators and users. However, there is no
 playbook on the structure and components of a data standard, or the pathway
-that moves a data implementation to a data standard. As a result, data
-standardization lacks formal avenues for success and recognition, for example through dedicated research grants (and see @sec-cross-sector)
+that moves the implementation of a specific data architecture (e.g., a
+particular file format) to become a data standard. As a result, data
+standardization lacks formal avenues for success and recognition, for example
+through dedicated research grants (and see @sec-cross-sector). This hampers the long-term trajectory that is needed in order to inculcate a standard into the
+day-to-day practice of researchers.
 
-## Cross-domain funding gaps
+## Cross-domain gaps
 
-Data standardization investment is justified if the standard is generalizable
-beyond any specific science domain. However while the use cases are domain
-sciences based, data standardization is seen as a data infrastructure and not a
-science investment. Moreover, due to how science research funding works,
-scientists lack incentives to work across domains or to work on infrastructure
-problems.
+There is much to be gained from the development of standards that apply in
+multiple different domains. For example, many research fields use images as
+data and array-based computing that is applicable to images in various research
+fields is at the core of many scientific computing codes. This means that
+practitioners within any given field should be motivated to draw on shared data
+standards and shared software implementations of operations that are common
+across fields. On the other hand, it is very hard to justify the investment in
+these common resources. On the one hand, data standardization investment is
+even more justified if the standard is generalizable beyond any specific
+science domain. On the other hand, while the use cases are domain sciences
+based, data standardization is seen as a data infrastructure and not a science
+investment, reducing the immediate incentives for researchers to engage with
+such efforts. This is exacerbated by science research funding schemes that
+eschew generalized cross-domain solutions, and that seek to generate tangible
+impact only with a specific domain.
 
 ## Data instrumentation issues
 
-Data for scientific observations are often generated by proprietary
-instrumentation due to commercialization or other profit-driven incentives.
-There is a lack of regulatory oversight to adhere to available standards or
-evolve Significant data transformation is required to get data to a state that
-is amenable to standards, if available. If not available, there is a lack of
-incentive to set aside investment or resources to invest in establishing data
-standards.
+Where there is commercial interest in the development of data analysis tools
+(e.g., in biomedical applications or applications were research funding can be
+directed towards commercial solutions) there is an incentive to create data
+formats and data analysis platforms that are proprietary. This may drive
+innovative applications of scientific measurements, but also creates sub-fields
+where scientific observations are generated by proprietary instrumentation, due
+to these commercialization or other profit-driven incentives. There is a lack
+of regulatory oversight to adhere to available standards or evolve common
+tools, limiting integration across different measurements. In cases where a
+significant amount of data is already stored in proprietary formats,
+significant data transformations may be required to get data to a state that is
+amenable to open-source standards. In these sub-fields there may also be a lack
+of incentive to set aside investment or resources to invest in establishing
+open-source data standards, leaving these sub-fields relatively siloed.
 
 ### Harnessing new computing paradigms and technologies
 
@@ -112,6 +136,8 @@ such as HDF5 and TIFF have been adapted to cloud use (e.g., through the
 cloud-optimized geoTIFF format).
 
 ## Sustainability
+
+
 
 ## The importance of automated validation
 
