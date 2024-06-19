@@ -28,7 +28,7 @@ Advancing the development and adoption of open-source standards requires the
 dissemination of knowledge to researchers in a variety of fields, but this
 dissemination itself may not be enough without the fostering of specialized
 expertise. Therefore, it is important to recognize the distinct role that *data
-stewards* play in contemporary research. As policy demands for openess become
+stewards* play in contemporary research. As policy demands for openness become
 increasingly high, it is crucial to truly support experts whose role will be to
 develop, maintain, and facilitate the adoption and use of open-source
 standards. This support needs to manifest in all stages of the career of these
@@ -101,7 +101,7 @@ assessment of an existing standard, or as guidelines to develop new standards.
 For instance, barriers to adopting a data standard irrespective of team size
 and technological capabilities should be considered. Meta-standards should
 include formalization for versioning of standards and interactions with
-speficic related software. Aspects of communication with potential user
+specific related software. Aspects of communication with potential user
 audiences (e.g., researchers in particular domains) should be taken into
 account as well. For example, in the quality of onboarding documentation and
 tools for ingestion or conversion into standards-compliant datasets. Relatedly,
