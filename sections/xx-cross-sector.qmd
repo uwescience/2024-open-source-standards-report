@@ -2,8 +2,10 @@
 
 The importance of standards stems not only from discussions within research
 fields about how research can best be conducted to take advantage of existing
-and growing datasets, but also arises from interactions with other sectors. Several different kinds of cross-sector interactions can be defined as having important
-impact on the development of open-source standards.
+and growing datasets, but also arises from interactions with stakeholders in
+other sectors. Several different kinds of cross-sector interactions can be
+defined as having an important impact on the development of open-source
+standards.
 
 ## Governmental policy-setting
 
@@ -13,8 +15,8 @@ research. For example, for research that is funded by the public, this entails
 an ongoing series of policy discussions that address the interactions between
 research communities and the general public. One way in which this manifests in
 the United States specifically is in memos issued by the directors of the White
-House Office of Science and Technology Policy (OSTP), James Holdren (in 1) and
-Alondra Nelson (in 2022). While these memos focused primarily on making
+House Office of Science and Technology Policy (OSTP), James Holdren (in 2013)
+and Alondra Nelson (in 2022). While these memos focused primarily on making
 peer-reviewed publications funded by the US Federal government available to the
 general public, they also lay an increasingly detailed path toward the
 publication and general availability of the data that is collected in research
@@ -37,19 +39,23 @@ agencies should prioritize AI standards efforts that are [...] Consensus-based,
 [...] and [that] result in globally relevant and non-discriminatory
 standards..." [@NIST2019]. The converging characteristics of standards that
 arise from these reports suggest that considerable thought needs to be given to
-how standards arise so that these goals are achieved.
+how standards arise so that these goals are achieved. Importantly, open-source
+standards seem to well-match at least some of these characteristics.
 
-A compelling road map towards implementation and adoption of
-community-developed standards is offered in a blog post authored by the Center
-for Open Science's Brian Nosek, entitled "Strategy for Culture Change"
+The other side of policies is the implementation of these policies in practice
+by developers of open-source standards and by the communities to which the
+standards pertain. A compelling road map towards implementation and adoption of
+open science practices in general and open-source standards in particular is
+offered in a blog post authored by the Center for Open Science's co-founder and
+executive director, Brian Nosek, entitled "Strategy for Culture Change"
 [@Nosek2019CultureChange]. The core idea is that affecting a turn toward open
 science requires an alignment of not only incentives and values, but also
 technical infrastructure and user experience. A sociotechnical bridge between
-these pieces, which make adoption of standards possible, and maybe even easy,
-and the policy goals, arises from a community of practice that makes adoption
-of standards normative. Once all of these pieces are in place, making adoption
-of open science standards required becomes more straightforward and less
-onerous.
+these pieces, which makes the adoption of standards possible, and maybe even
+easy, and the policy goals, arises from a community of practice that makes
+adoption of standards *normative*. Once all of these pieces are in place,
+making adoption of open science standards *required* through policy becomes
+more straightforward and less onerous.
 
 ## Funding
 
@@ -58,7 +64,7 @@ funded through governmental funding agencies, there are other ways in which
 funding relates to the development of open-source standards. One way is in
 funding the development of these standards. For example, the National
 Institutes of Health have provided some of the funding for the development of
-the Brain Imaging Data Structure standard in neuroscience.
+the Brain Imaging Data Structure standard in neuroscience. Where large governmental funding agencies may not have
 
 
 
