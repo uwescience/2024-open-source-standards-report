@@ -246,7 +246,10 @@ organization that was founded in the 1990s developed a set of guidelines
 for licensing of OSS that is designed to protect the rights of
 developers and users. On the more technical side, tools such as the Git
 Source-code management system support open-source development workflows
-that can be adopted in the development of standards. When these social
+that can be adopted in the development of standards. Governance
+approaches have been honed to address the challenges of managing a range
+of stakeholder interests and to mediate between large numbers of
+weakly-connected individuals that contribute to OSS. When these social
 and technical innovations are put together they enable a host of
 positive defining features of OSS, such as transparency, collaboration,
 and decentralization. These features allow OSS to have a remarkable
@@ -262,25 +265,45 @@ development; and it will make recommendations for future developments
 and policies that can help this mode of standards development thrive and
 reach its full potential.
 
-\section{Challenges for open source data and metadata standards, and
-some
-solutions}\label{challenges-for-open-source-data-and-metadata-standards-and-some-solutions}
+\section{Opportunities and risks for open-source
+standards}\label{opportunities-and-risks-for-open-source-standards}
 
-\subsection{Too much flexibility, or too
-little}\label{too-much-flexibility-or-too-little}
+Data and metadata standards that adopt tools and practices of OSS
+(``open-source standards'' henceforth) stand to reap many of the
+benefits that the OSS model has provided in the development of other
+technologies. At the same time, these tools and practices are associated
+with risks that need to be mitigated.
 
-It's a story as old as time (or at least as old as standards): users
-fail to consider existing standards, or perceive an existing standard as
-not offering enough flexibility to cover some use case, and they embark
-on the development of a new standard \footnote{So old in fact that an
-  oft-cited \href{https://xkcd.com/927/}{XKCD comic} has been devoted to
-  it.}.
+\subsection{Flexibility vs.~stability}\label{flexibility-vs.-stability}
 
-Another failure is the mismatch between developers of the standard and
-users. There is an inherent gap in both interest and ability to engage
-with the technical details undergirding standards and their development
-between the developers of the standard and their users. In extreme
-cases, these interests may be at odds, as developers implement
+One of the defining characteristics of OSS is its dynamism and its rapid
+evolution. Because OSS can be used by anyone and, in most cases,
+contributions can be made by anyone, innovations flow into OSS in a
+bottom-up fashion from user/developers. Pathways to contribution by
+members of the community are often well-defined: both from the technical
+perspective (e.g., through a pull request on GitHub, or other similar
+mechanisms), as well as from the social perspective (e.g., whether
+contributors need to accept certain licensing conditions through a
+contributor licensing agreement) and the socio-technical perspective
+(e.g., how many people need to review a contribution, what are the
+timelines for a contribution to be reviewed and accepted, what are the
+release cycles of the software that make the contribution available to a
+broader community of users, etc.). Similarly, open-source standards may
+also find themselves addressing use cases and solutions that were not
+originally envisioned through bottom-up contributions of members of a
+research community to which the standard pertains. However, while this
+dynamism provides an avenue for flexibility it also presents a source of
+tension. This is because data and metadata standards apply to already
+existing datasets, and changes may affect the compliance of these
+existing datasets.
+
+\subsection{Mismatches between standards developers and user
+communities}\label{mismatches-between-standards-developers-and-user-communities}
+
+There is an inherent gap in both interest and ability to engage with the
+technical details undergirding standards and their development between
+the core developers of the standard and their users. In extreme cases,
+these interests may even be at odds, as developers implement
 sophisticated mechanisms to automate the creation of the standard or
 advocate for more technically advanced mechanisms for evolving the
 standard, leaving potential users sidelined in the development of the
@@ -302,7 +325,7 @@ result, data standardization lacks formal avenues for research grants.
 Data standardization investment is justified if the standard is
 generalizable beyond any specific science domain. However while the use
 cases are domain sciences based, data standardization is seen as a data
-infrastrucutre and not a science investment. Moreover due to how science
+infrastructure and not a science investment. Moreover due to how science
 research funding works, scientists lack incentives to work across
 domains, or work on infrastructure problems.
 
@@ -345,28 +368,29 @@ and writes the FITS format. It was developed by observatories in the
 1980s to store image data in the visible and x-ray spectrum. It has been
 endorsed by IAU, as well as funding agencies. Though the format has
 evolved over time, ``once FITS, always FITS''. That is, the format
-cannot be evolved to introduce changes that break
-backwards-compatibility. Among the features that make FITS so durable is
-that it was designed originally to have a very restricted metadata
-schema. That is, FITS records were designed to be the lowest common
-denominator of word lengths in computer systems at the time. However,
-while FITS is compact, its ability to encode the coordinate frame and
-pixels, means that data from different observational instruments can be
-stored in this format and relationships between data from different
-instruments can be related, rendering manual and error-prone procedures
-for conforming images obsolete.
+cannot be evolved to introduce changes that break backwards
+compatibility. Among the features that make FITS so durable is that it
+was designed originally to have a very restricted metadata schema. That
+is, FITS records were designed to be the lowest common denominator of
+word lengths in computer systems at the time. However, while FITS is
+compact, its ability to encode the coordinate frame and pixels, means
+that data from different observational instruments can be stored in this
+format and relationships between data from different instruments can be
+related, rendering manual and error-prone procedures for conforming
+images obsolete.
 
-\subsection{High-energy physics}\label{high-energy-physics}
+\subsection{High-energy physics (HEP)}\label{high-energy-physics-hep}
 
-In HEP standards to collect the data have been established and the
-community is fairly homogeneous, so standards have very high penetration
-(Basaglia et al. 2023). A top-down approach is taken so that within
-every large collaboration standards are enforced, and this adoption is
-centrally managed. Access to raw data is essentially impossible, and
-making it publicly available is both technically very hard and
-potentially ill-advised. Analysis tools are tuned specifically to the
-standards. Incentives to use the standards are provided by funders that
-require data management plans that specify how the data is shared.
+Because data collection is centralized, standards to collect and store
+HEP data have been established and the adoption of these standards in
+data analysis has high penetration (Basaglia et al. 2023). A top-down
+approach is taken so that within every large collaboration standards are
+enforced, and this adoption is centrally managed. Access to raw data is
+essentially impossible, and making it publicly available is both
+technically very hard and potentially ill-advised. Therefore, analysis
+tools are tuned specifically to the standards. Incentives to use the
+standards are provided by funders that require data management plans
+that specify how the data is shared.
 
 \subsection{Neuroscience}\label{neuroscience}
 
@@ -382,27 +406,23 @@ technical advances in data acquisition techniques, which now generate
 large and very high-dimensional/information-rich datasets, cultural
 changes, which have ushered in new norms of transparency and
 reproducibility, and funding initiatives that have encouraged this kind
-of data collection (including the US BRAIN Initiative and the Allen
-Institute for Brain Science). Neuroscience presents an interesting
-example because these changes are relatively recent. This means that
-standards for data and metadata in neuroscience have been prone to adopt
-many of the elements of OSS development. Two salient examples in
-neuroscience are the Neurodata Without Borders file format for
-neurophysiology data (Rübel et al. 2022) and the Brain Imaging Data
-Structure (BIDS) standard for neuroimaging data (Gorgolewski et al.
-2016). BIDS in particular owes some of its success to the adoption and
-adaptation of OSS mechanisms (Poldrack et al. 2024). One of the
-challenges that the BIDS standard faces is that it covers only a subset
-of the large range of neuroscience data types that it could cover. To
-evolve and include more different use cases, the BIDS community adopted
-a mechanism called a BIDS Enhancement Proposal (BEP). This mechanism is
-directly inspired by the Python programming language community, which
-developed the Python Enhancement Proposal procedure, that is used to
-introduce new ideas into the language. Though the BEP mechanism takes a
-slightly different technical approach, it tries to emulate the
-open-ended and community-driven aspects of Python development to accept
-contributions from a wide range of stakeholders and tap a broad base of
-expertise.
+of data collection. However, because these changes are recent relative
+to the other cases mentioned above, standards for data and metadata in
+neuroscience have been prone to adopt many elements of modern OSS
+development. Two salient examples in neuroscience are the Neurodata
+Without Borders file format for neurophysiology data (Rübel et al. 2022)
+and the Brain Imaging Data Structure (BIDS) standard for neuroimaging
+data (Gorgolewski et al. 2016). BIDS in particular owes some of its
+success to the adoption of OSS development mechanisms (Poldrack et al.
+2024). For example, small changes to the standard are managed through
+the GitHub pull request mechanism; larger changes are managed through a
+a BIDS Enhancement Proposal (BEP) process that is directly inspired by
+the Python programming language community's Python Enhancement Proposal
+procedure, which used to introduce new ideas into the language. Though
+the BEP mechanism takes a slightly different technical approach, it
+tries to emulate the open-ended and community-driven aspects of Python
+development to accept contributions from a wide range of stakeholders
+and tap a broad base of expertise.
 
 \subsection{Automated discovery}\label{automated-discovery}
 
@@ -413,20 +433,28 @@ expertise.
 The importance of standards stems not only from discussions within
 research fields about how research can best be conducted to take
 advantage of existing and growing datasets, but also arises from
-interactions with other sectors.
+interactions with other sectors. Several different kinds of cross-sector
+interactions can be defined as having important impact on the
+development of open-source standards.
 
-For example, an ongoing series of policy discussions that address the
-interactions between research communities and the general public. In the
-United States, these policies are expressed, for example, in memos
-issued by the directors of the White House Office of Science and
-Technology Policy (OSTP), James Holdren (in 2013) and Alondra Nelson (in
-2022). While these memos focused primarily on making peer-reviewed
-publications funded by the US Federal government available to the
-general public, they also lay an increasingly detailed path toward the
-publication and general availability of the data that is collected in
-research that is funded by the US government. The general guidance and
-overall spirit of these memos dovetail with more specific policy
-guidance related to data and metadata standards. For example, the
+\subsection{Governmental
+policy-setting}\label{governmental-policy-setting}
+
+The development of open practices in research has entailed an ongoing
+interaction and dialogue with various governmental bodies that set
+policies for research. For example, for research that is funded by the
+public, this entails an ongoing series of policy discussions that
+address the interactions between research communities and the general
+public. One way in which this manifests in the United States
+specifically is in memos issued by the directors of the White House
+Office of Science and Technology Policy (OSTP), James Holdren (in 1) and
+Alondra Nelson (in 2022). While these memos focused primarily on making
+peer-reviewed publications funded by the US Federal government available
+to the general public, they also lay an increasingly detailed path
+toward the publication and general availability of the data that is
+collected in research that is funded by the US government. The general
+guidance and overall spirit of these memos dovetail with more specific
+policy guidance related to data and metadata standards. For example, the
 importance of standards was underscored in a recent report by the
 Subcommittee on Open Science of the National Science and Technology
 Council on the ``Desirable characteristics of data repositories for
@@ -448,6 +476,28 @@ non-discriminatory standards\ldots{}'' (National Institute of Standards
 and Technology 2019). The converging characteristics of standards that
 arise from these reports suggest that considerable thought needs to be
 given to how standards arise so that these goals are achieved.
+
+A compelling road map towards implementation and adoption of
+community-developed standards is offered in a blog post authored by the
+Center for Open Science's Brian Nosek, entitled ``Strategy for Culture
+Change'' (Nosek, n.d.). The core idea is that affecting a turn toward
+open science requires an alignment of not only incentives and values,
+but also technical infrastructure and user experience. A sociotechnical
+bridge between these pieces, which make adoption of standards possible,
+and maybe even easy, and the policy goals, arises from a community of
+practice that makes adoption of standards normative. Once all of these
+pieces are in place, making adoption of open science standards required
+becomes more straightforward and less onerous.
+
+\subsection{Funding}\label{funding}
+
+While government-set policy is primarily directed towards research that
+is funded through governmental funding agencies, there are other ways in
+which funding relates to the development of open-source standards. One
+way is in funding the development of these standards. For example, the
+National Institutes of Health have provided some of the funding for the
+development of the Brain Imaging Data Structure standard in
+neuroscience.
 
 \section{Recommendations for open-source data and metadata
 standards}\label{recommendations-for-open-source-data-and-metadata-standards}
@@ -616,6 +666,10 @@ Implementing FAIR Principles}. 1st ed. Vol. 1. Milton: CRC Press.
 National Institute of Standards and Technology. 2019. {``{U.S}.
 {LEADERSHIP} {IN} {AI}: A Plan for Federal Engagement in Developing
 Technical Standards and Related Tools.''}
+
+\bibitem[\citeproctext]{ref-Nosek2019CultureChange}
+Nosek, Brian. n.d. {``Strategy for Culture Change.''}
+\url{https://www.cos.io/blog/strategy-for-culture-change}.
 
 \bibitem[\citeproctext]{ref-Poldrack2024BIDS}
 Poldrack, Russell A, Christopher J Markiewicz, Stefan Appelhoff, Yoni K

@@ -134,7 +134,7 @@
     <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
       
       <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
-      <h6><i class="bi bi-journal-code"></i> Challenges for open source data and metadata standards, and some solutions</h6>
+      <h6><i class="bi bi-journal-code"></i> Opportunities and risks for open-source standards</h6>
 
             <a href="../sections/02-challenges.qmd" class="btn btn-primary quarto-download-embed" download="02-challenges.qmd">Download Source</a>
           </div>
@@ -145,9 +145,10 @@
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#challenges-for-open-source-data-and-metadata-standards-and-some-solutions" id="toc-challenges-for-open-source-data-and-metadata-standards-and-some-solutions" class="nav-link active" data-scroll-target="#challenges-for-open-source-data-and-metadata-standards-and-some-solutions">Challenges for open source data and metadata standards, and some solutions</a>
+  <li><a href="#opportunities-and-risks-for-open-source-standards" id="toc-opportunities-and-risks-for-open-source-standards" class="nav-link active" data-scroll-target="#opportunities-and-risks-for-open-source-standards">Opportunities and risks for open-source standards</a>
   <ul class="collapse">
-  <li><a href="#too-much-flexibility-or-too-little" id="toc-too-much-flexibility-or-too-little" class="nav-link" data-scroll-target="#too-much-flexibility-or-too-little">Too much flexibility, or too little</a></li>
+  <li><a href="#flexibility-vs.-stability" id="toc-flexibility-vs.-stability" class="nav-link" data-scroll-target="#flexibility-vs.-stability">Flexibility vs.&nbsp;stability</a></li>
+  <li><a href="#mismatches-between-standards-developers-and-user-communities" id="toc-mismatches-between-standards-developers-and-user-communities" class="nav-link" data-scroll-target="#mismatches-between-standards-developers-and-user-communities">Mismatches between standards developers and user communities</a></li>
   <li><a href="#unclear-pathways-for-standards-success" id="toc-unclear-pathways-for-standards-success" class="nav-link" data-scroll-target="#unclear-pathways-for-standards-success">Unclear pathways for standards success</a></li>
   <li><a href="#cross-domain-funding-gaps" id="toc-cross-domain-funding-gaps" class="nav-link" data-scroll-target="#cross-domain-funding-gaps">Cross domain funding gaps</a></li>
   <li><a href="#data-instrumentation-issues" id="toc-data-instrumentation-issues" class="nav-link" data-scroll-target="#data-instrumentation-issues">Data instrumentation issues</a></li>
@@ -159,12 +160,16 @@
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
 </div>
-<main class="content quarto-banner-title-block" id="quarto-document-content">      <section id="challenges-for-open-source-data-and-metadata-standards-and-some-solutions" class="level1">
-<h1>Challenges for open source data and metadata standards, and some solutions</h1>
-<section id="too-much-flexibility-or-too-little" class="level2">
-<h2 class="anchored" data-anchor-id="too-much-flexibility-or-too-little">Too much flexibility, or too little</h2>
-<p>It’s a story as old as time (or at least as old as standards): users fail to consider existing standards, or perceive an existing standard as not offering enough flexibility to cover some use case, and they embark on the development of a new standard <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<p>Another failure is the mismatch between developers of the standard and users. There is an inherent gap in both interest and ability to engage with the technical details undergirding standards and their development between the developers of the standard and their users. In extreme cases, these interests may be at odds, as developers implement sophisticated mechanisms to automate the creation of the standard or advocate for more technically advanced mechanisms for evolving the standard, leaving potential users sidelined in the development of the standard, and limiting their ability to provide feedback about the practical implications of changes to the standards.</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content">      <section id="opportunities-and-risks-for-open-source-standards" class="level1">
+<h1>Opportunities and risks for open-source standards</h1>
+<p>Data and metadata standards that adopt tools and practices of OSS (“open-source standards” henceforth) stand to reap many of the benefits that the OSS model has provided in the development of other technologies. At the same time, these tools and practices are associated with risks that need to be mitigated.</p>
+<section id="flexibility-vs.-stability" class="level2">
+<h2 class="anchored" data-anchor-id="flexibility-vs.-stability">Flexibility vs.&nbsp;stability</h2>
+<p>One of the defining characteristics of OSS is its dynamism and its rapid evolution. Because OSS can be used by anyone and, in most cases, contributions can be made by anyone, innovations flow into OSS in a bottom-up fashion from user/developers. Pathways to contribution by members of the community are often well-defined: both from the technical perspective (e.g., through a pull request on GitHub, or other similar mechanisms), as well as from the social perspective (e.g., whether contributors need to accept certain licensing conditions through a contributor licensing agreement) and the socio-technical perspective (e.g., how many people need to review a contribution, what are the timelines for a contribution to be reviewed and accepted, what are the release cycles of the software that make the contribution available to a broader community of users, etc.). Similarly, open-source standards may also find themselves addressing use cases and solutions that were not originally envisioned through bottom-up contributions of members of a research community to which the standard pertains. However, while this dynamism provides an avenue for flexibility it also presents a source of tension. This is because data and metadata standards apply to already existing datasets, and changes may affect the compliance of these existing datasets.</p>
+</section>
+<section id="mismatches-between-standards-developers-and-user-communities" class="level2">
+<h2 class="anchored" data-anchor-id="mismatches-between-standards-developers-and-user-communities">Mismatches between standards developers and user communities</h2>
+<p>There is an inherent gap in both interest and ability to engage with the technical details undergirding standards and their development between the core developers of the standard and their users. In extreme cases, these interests may even be at odds, as developers implement sophisticated mechanisms to automate the creation of the standard or advocate for more technically advanced mechanisms for evolving the standard, leaving potential users sidelined in the development of the standard, and limiting their ability to provide feedback about the practical implications of changes to the standards.</p>
 </section>
 <section id="unclear-pathways-for-standards-success" class="level2">
 <h2 class="anchored" data-anchor-id="unclear-pathways-for-standards-success">Unclear pathways for standards success</h2>
@@ -172,7 +177,7 @@
 </section>
 <section id="cross-domain-funding-gaps" class="level2">
 <h2 class="anchored" data-anchor-id="cross-domain-funding-gaps">Cross domain funding gaps</h2>
-<p>Data standardization investment is justified if the standard is generalizable beyond any specific science domain. However while the use cases are domain sciences based, data standardization is seen as a data infrastrucutre and not a science investment. Moreover due to how science research funding works, scientists lack incentives to work across domains, or work on infrastructure problems.</p>
+<p>Data standardization investment is justified if the standard is generalizable beyond any specific science domain. However while the use cases are domain sciences based, data standardization is seen as a data infrastructure and not a science investment. Moreover due to how science research funding works, scientists lack incentives to work across domains, or work on infrastructure problems.</p>
 </section>
 <section id="data-instrumentation-issues" class="level2">
 <h2 class="anchored" data-anchor-id="data-instrumentation-issues">Data instrumentation issues</h2>
@@ -184,12 +189,6 @@
 <section id="the-importance-of-automated-validation" class="level2">
 <h2 class="anchored" data-anchor-id="the-importance-of-automated-validation">The importance of automated validation</h2>
 </section>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>So old in fact that an oft-cited <a href="https://xkcd.com/927/">XKCD comic</a> has been devoted to it.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">

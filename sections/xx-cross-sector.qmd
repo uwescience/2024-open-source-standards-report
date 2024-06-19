@@ -2,34 +2,63 @@
 
 The importance of standards stems not only from discussions within research
 fields about how research can best be conducted to take advantage of existing
-and growing datasets, but also arises from interactions with other sectors.
+and growing datasets, but also arises from interactions with other sectors. Several different kinds of cross-sector interactions can be defined as having important
+impact on the development of open-source standards.
 
-For example, an ongoing series of policy discussions that address the
-interactions between research communities and the general public. In the United
-States, these policies are expressed, for example, in memos issued by the
-directors of the White House Office of Science and Technology Policy (OSTP),
-James Holdren (in 2013) and Alondra Nelson (in 2022). While these memos focused
-primarily on making peer-reviewed publications funded by the US Federal
-government available to the general public, they also lay an increasingly
-detailed path toward the publication and general availability of the data that
-is collected in research that is funded by the US government. The general
-guidance and overall spirit of these memos dovetail with more specific policy
-guidance related to data and metadata standards. For example, the importance of
-standards was underscored in a recent report by the Subcommittee on Open
-Science of the National Science and Technology Council on the "Desirable
-characteristics of data repositories for federally funded research"
-[@nstc2022desirable]. The report explicitly called out the importance of
-"allow[ing] datasets and metadata to be accessed, downloaded, or exported from
-the repository in widely used, preferably non-proprietary, formats consistent
-with standards used in the disciplines the repository serves." This highlights
-the need for data and metadata standards across a variety of different kinds of
-data. In addition, a report from the National Institute of Standards and
-Technology on "U.S. Leadership in AI: A Plan for Federal Engagement in
-Developing Technical Standards and Related Tools" emphasized that --
-specifically for the case of AI -- "U.S. government agencies should prioritize
-AI standards efforts that are [...] Consensus-based, [...] Inclusive and
-accessible, [...] Multi-path, [...] Open and transparent, [...] and [that]
-result in globally relevant and non-discriminatory standards..." [@NIST2019].
-The converging characteristics of standards that arise from these reports
-suggest that considerable thought needs to be given to how standards arise so
-that these goals are achieved.
+## Governmental policy-setting
+
+The development of open practices in research has entailed an ongoing
+interaction and dialogue with various governmental bodies that set policies for
+research. For example, for research that is funded by the public, this entails
+an ongoing series of policy discussions that address the interactions between
+research communities and the general public. One way in which this manifests in
+the United States specifically is in memos issued by the directors of the White
+House Office of Science and Technology Policy (OSTP), James Holdren (in 1) and
+Alondra Nelson (in 2022). While these memos focused primarily on making
+peer-reviewed publications funded by the US Federal government available to the
+general public, they also lay an increasingly detailed path toward the
+publication and general availability of the data that is collected in research
+that is funded by the US government. The general guidance and overall spirit of
+these memos dovetail with more specific policy guidance related to data and
+metadata standards. For example, the importance of standards was underscored in
+a recent report by the Subcommittee on Open Science of the National Science and
+Technology Council on the "Desirable characteristics of data repositories for
+federally funded research" [@nstc2022desirable]. The report explicitly called
+out the importance of "allow[ing] datasets and metadata to be accessed,
+downloaded, or exported from the repository in widely used, preferably
+non-proprietary, formats consistent with standards used in the disciplines the
+repository serves." This highlights the need for data and metadata standards
+across a variety of different kinds of data. In addition, a report from the
+National Institute of Standards and Technology on "U.S. Leadership in AI: A
+Plan for Federal Engagement in Developing Technical Standards and Related
+Tools" emphasized that -- specifically for the case of AI -- "U.S. government
+agencies should prioritize AI standards efforts that are [...] Consensus-based,
+[...] Inclusive and accessible, [...] Multi-path, [...] Open and transparent,
+[...] and [that] result in globally relevant and non-discriminatory
+standards..." [@NIST2019]. The converging characteristics of standards that
+arise from these reports suggest that considerable thought needs to be given to
+how standards arise so that these goals are achieved.
+
+A compelling road map towards implementation and adoption of
+community-developed standards is offered in a blog post authored by the Center
+for Open Science's Brian Nosek, entitled "Strategy for Culture Change"
+[@Nosek2019CultureChange]. The core idea is that affecting a turn toward open
+science requires an alignment of not only incentives and values, but also
+technical infrastructure and user experience. A sociotechnical bridge between
+these pieces, which make adoption of standards possible, and maybe even easy,
+and the policy goals, arises from a community of practice that makes adoption
+of standards normative. Once all of these pieces are in place, making adoption
+of open science standards required becomes more straightforward and less
+onerous.
+
+## Funding
+
+While government-set policy is primarily directed towards research that is
+funded through governmental funding agencies, there are other ways in which
+funding relates to the development of open-source standards. One way is in
+funding the development of these standards. For example, the National
+Institutes of Health have provided some of the funding for the development of
+the Brain Imaging Data Structure standard in neuroscience.
+
+
+
