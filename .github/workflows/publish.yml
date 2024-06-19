@@ -52,6 +52,7 @@ jobs:
                 add: '_manuscript/index.pdf'
                 author_name: 'GitHub Actions'
                 message: 'Add paper.pdf at ${{ github.sha }}'
+                new_branch: products
 
 
             - name: Commit DOCX
@@ -61,4 +62,5 @@ jobs:
                 add: '_manuscript/index.docx'
                 author_name: 'GitHub Actions'
                 message: 'Add paper.doxc at ${{ github.sha }}'
+                new_branch: products
 
