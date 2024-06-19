@@ -2,12 +2,12 @@
 
 To understand how OSS development practices affect the development of data and
 metadata standards, it is informative to demonstrate this cross-fertilization
-through a few use cases. As we will see in these examples some fields, such as
+through a few use cases. As we will see in these examples, some fields, such as
 astronomy, high-energy physics and earth sciences have a relatively long
-history of shared data resources from organizations such as LSST and CERN,
-while other fields have only relatively recently become aware of the value of
-data sharing and its impact. These disparate histories inform how standards
-have evolved and how OSS practices have pervaded their development.
+history of shared data resources from organizations such as LSST, CERN, and
+NASA, while other fields have only relatively recently become aware of the
+value of data sharing and its impact. These disparate histories inform how
+standards have evolved and how OSS practices have pervaded their development.
 
 ## Astronomy
 
