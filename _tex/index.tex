@@ -153,6 +153,39 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
+\makeatletter
+\@ifpackageloaded{fontspec}{}{\usepackage{fontspec}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{draftwatermark}{}{\usepackage{draftwatermark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{xcolor}{}{\usepackage{xcolor}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{forloop}{}{\usepackage{forloop}}
+\makeatother
+    \definecolor{watermark}{HTML}{000000}
+    
+    \newcounter{watermarkrow}
+    \newcounter{watermarkcol}
+
+    \DraftwatermarkOptions{
+      text={
+        \begin{tabular}{c}
+          \forloop{watermarkrow}{0}{\value{watermarkrow} < 50}{
+            \forloop{watermarkcol}{0}{\value{watermarkcol} < 10}{
+              { DRAFT}\hspace{4.000000em}
+            }
+            \\[4.000000em]
+          }
+        \end{tabular}
+      },
+      fontsize=1.000000em,
+      angle=15.000000,
+      color=watermark!10
+    }
+    
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
