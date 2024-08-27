@@ -1,6 +1,7 @@
 project:
   type: manuscript
 
+
 manuscript:
   article: index.qmd
 
@@ -10,9 +11,15 @@ format:
       hypothesis: true
     toc: true
 
-  # docx: default
-  # jats: default
+  docx:
+    toc: true
+    number-sections: true
+    highlight-style: github
+
   pdf: default
+
+filters:
+  - watermark
 
 number-sections: true
 bibliography: references.bib

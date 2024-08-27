@@ -35,6 +35,7 @@ jobs:
             - name: Render Quarto
               uses: quarto-dev/quarto-actions/render@v2
 
+
             - name: Publish to GitHub Pages
               if: github.event_name != 'pull_request'
               uses: quarto-dev/quarto-actions/publish@v2
@@ -43,3 +44,23 @@ jobs:
                 target: gh-pages
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Commit PDF
+              if: github.event_name != 'pull_request'
+              uses: EndBug/add-and-commit@v9
+              with:
+                add: '_manuscript/index.pdf'
+                author_name: 'GitHub Actions'
+                message: 'Add paper.pdf at ${{ github.sha }}'
+                new_branch: products
+                push: origin products --force
+
+            - name: Commit DOCX
+              if: github.event_name != 'pull_request'
+              uses: EndBug/add-and-commit@v9
+              with:
+                add: '_manuscript/index.docx'
+                author_name: 'GitHub Actions'
+                message: 'Add paper.doxc at ${{ github.sha }}'
+                new_branch: products
+                push: origin products --force

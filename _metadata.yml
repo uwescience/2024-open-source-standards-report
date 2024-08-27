@@ -11,5 +11,10 @@ authors:
     roles: writing
     corresponding: true
     orcid: 0000-0003-3592-9453
+  - name: Nicoleta Cristea
+    affiliation: University of Washington
+    roles: writing
+    corresponding: true
+    orcid: 0000-0002-9091-0280
 
 bibliography: references.bib
