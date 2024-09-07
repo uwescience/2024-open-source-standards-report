@@ -31,6 +31,12 @@ community, and migration away from the standard. Similarly, if a standard
 evolves too rapidly, users may choose to stick to an outdated version of a
 standard for a long time, creating strains on the community of developers and
 maintainers of a standard who will need to accommodate long deprecation cycles.
+On the other hand, in cases in which some forms of dynamic change is prohibited
+-- as in the case of the FITS file format, which prohibits changes that break
+backwards-compatibility -- there is also a cost associated with the stability
+[@Scroggins2020-ut]: limiting adoption and combinations of new types of
+measurements, new analysis methods or new modes of data storage and data
+sharing.
 
 ## Mismatches between standards developers and user communities
 

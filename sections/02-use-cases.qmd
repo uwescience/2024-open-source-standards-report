@@ -20,17 +20,21 @@ Image Transport System) file format standard, which was developed in the late
 astronomy data preservation and exchange. Essentially every software platform
 used in astronomy reads and writes the FITS format. It was developed by
 observatories in the 1980s to store image data in the visible and x-ray
-spectrum. It has been endorsed by IAU, as well as funding agencies. Though the
-format has evolved over time, “once FITS, always FITS”. That is, the format
-cannot be evolved to introduce changes that break backward compatibility.
-Among the features that make FITS so durable is that it was designed originally
-to have a very restricted metadata schema. That is, FITS records were designed
-to be the lowest common denominator of word lengths in computer systems at the
-time. However, while FITS is compact, its ability to encode the coordinate
-frame and pixels, means that data from different observational instruments can
-be stored in this format and relationships between data from different
-instruments can be related, rendering manual and error-prone procedures for
-conforming images obsolete.
+spectrum. It has been endorsed by the International Astronomical Union (IAU),
+as well as funding agencies. Though the format has evolved over time, “once
+FITS, always FITS”. That is, the format cannot be evolved to introduce changes
+that break backward compatibility. Among the features that make FITS so durable
+is that it was designed originally to have a very restricted metadata schema.
+That is, FITS records were designed to be the lowest common denominator of word
+lengths in computer systems at the time. However, while FITS is compact, its
+ability to encode the coordinate frame and pixels, means that data from
+different observational instruments can be stored in this format and
+relationships between data from different instruments can be related, rendering
+manual and error-prone procedures for conforming images obsolete. Nevertheless,
+the stability has also raised some issues as the field continues to adapt to
+new measurement methods and the demands of ever-increasing data volumes and
+complex data analysis use-case, such as interchange with other data and the use
+of complex data bases to store and share data [@Scroggins2020-ut].
 
 ## High-energy physics (HEP)
 
@@ -47,7 +51,32 @@ data is shared (i.e., in a standards-compliant manner).
 
 ## Earth sciences
 
-The need for geospatial data exchange between different systems began to be recognized in the 1970s and 1980s, but proprietary formats still dominated. Coordinated standardization efforts brought the Open Geospatial Consortium (OGC) establishment in the 1990s, a critical step towards open standards for geospatial data. The 1990s have also seen the development of key standards such as the Network Common Data Form (NetCDF) developed by the University Corporation for Atmospheric Research (UCAR) and the Hierarchical Data Format (HDF), a set of file formats (HDF4, HDF5) that are widely used, particularly in climate research. The GeoTIFF format, which originated at NASA in the late 1990s, is extensively used to share image data. In the 1990s, open web mapping also began with MapServer (https://mapserver.org) and continued later with other projects such as OpenStreetMap (www.openstreetmap.org). The following two decades, the 2000s-2020s, brought an expansion of open standards and integration with web technologies developed by OGC, as well as other standards such as the Keyhole Markup Language (KML) for displaying geographic data in Earth browsers.  Formats suitable for cloud computing also emerged, such as the Cloud Optimized GeoTIFF (COG), followed by Zarr and Apache Parquet for array and tabular data, respectively. In 2006, the Open Source Geospatial Foundation (OSGeo, https://www.osgeo.org) was established, demonstrating the community's commitment to the development of open-source geospatial technologies. While some standards have been developed in the industry (e.g., Keyhole Markup Language (KML) by Keyhole Inc., which Google later acquired), they later became international standards of the OGC, which now encompasses more than 450 commercial, governmental, nonprofit, and research organizations working together on the development and implementation of open standards (https://www.ogc.org).
+The need for geospatial data exchange between different systems began to be
+recognized in the 1970s and 1980s, but proprietary formats still dominated.
+Coordinated standardization efforts brought the Open Geospatial Consortium
+(OGC) establishment in the 1990s, a critical step towards open standards for
+geospatial data. The 1990s have also seen the development of key standards such
+as the Network Common Data Form (NetCDF) developed by the University
+Corporation for Atmospheric Research (UCAR) and the Hierarchical Data Format
+(HDF), a set of file formats (HDF4, HDF5) that are widely used, particularly in
+climate research. The GeoTIFF format, which originated at NASA in the late
+1990s, is extensively used to share image data. In the 1990s, open web mapping
+also began with MapServer (https://mapserver.org) and continued later with
+other projects such as OpenStreetMap (www.openstreetmap.org). The following two
+decades, the 2000s-2020s, brought an expansion of open standards and
+integration with web technologies developed by OGC, as well as other standards
+such as the Keyhole Markup Language (KML) for displaying geographic data in
+Earth browsers. Formats suitable for cloud computing also emerged, such as the
+Cloud Optimized GeoTIFF (COG), followed by Zarr and Apache Parquet for array
+and tabular data, respectively. In 2006, the Open Source Geospatial Foundation
+(OSGeo, https://www.osgeo.org) was established, demonstrating the community's
+commitment to the development of open-source geospatial technologies. While
+some standards have been developed in the industry (e.g., Keyhole Markup
+Language (KML) by Keyhole Inc., which Google later acquired), they later became
+international standards of the OGC, which now encompasses more than 450
+commercial, governmental, nonprofit, and research organizations working
+together on the development and implementation of open standards
+(https://www.ogc.org).
 
 ## Neuroscience
 
@@ -72,11 +101,28 @@ success to the adoption of OSS development mechanisms [@Poldrack2024BIDS]. For
 example, small changes to the standard are managed through the GitHub pull
 request mechanism; larger changes are managed through a BIDS Enhancement
 Proposal (BEP) process that is directly inspired by the Python programming
-language community's Python Enhancement Proposal procedure, which isused to
+language community's Python Enhancement Proposal procedure, which is used to
 introduce new ideas into the language. Though the BEP mechanism takes a
 slightly different technical approach, it tries to emulate the open-ended and
 community-driven aspects of Python development to accept contributions from a
 wide range of stakeholders and tap a broad base of expertise.
+
+Neuroscience measurements in human subjects also significantly interact with
+standards for medical imaging, and chiefly the Digital Imaging and
+Communications in Medicine (DICOM) standard, which is widely used in a range of
+medical imaging applications, including in clinical settings [@Larobina2023-vq,
+@Mustra2008-xk]. The standard emerged from the demands of the clinical practice
+in the 1980s, as digital technologies were came into widespread use in medical
+imaging, through joint work of industry organizations: the American College of
+Radiology and the National Association of Electronic Manufacturers. One of the
+defining features of the DICOM standard is that it allows manufacturers of
+instruments to define "private fields" that are compliant with the standard,
+but which may include idiosyncratically organized data and/or metadata. This
+provides significant flexibility, but can also easily lead to the loss of
+important information. Nevertheless, the human brain imaging case is exemplary
+of a case in which industry standards and research standards coexist and need
+to communicate with each other effectively to advance research use-cases, while
+keeping up with the rapid development of the technologies.
 
 ## Community science
 
