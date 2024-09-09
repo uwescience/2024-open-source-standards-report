@@ -31,6 +31,12 @@ community, and migration away from the standard. Similarly, if a standard
 evolves too rapidly, users may choose to stick to an outdated version of a
 standard for a long time, creating strains on the community of developers and
 maintainers of a standard who will need to accommodate long deprecation cycles.
+On the other hand, in cases in which some forms of dynamic change is prohibited
+-- as in the case of the FITS file format, which prohibits changes that break
+backwards-compatibility -- there is also a cost associated with the stability
+[@Scroggins2020-ut]: limiting adoption and combinations of new types of
+measurements, new analysis methods or new modes of data storage and data
+sharing.
 
 ## Mismatches between standards developers and user communities
 
@@ -55,6 +61,18 @@ standards development for researchers in fields of research in which git/GitHub
 have not yet had significant adoption as tools of day-to-day computational
 practice. At the same time, it provides clarity and robustness for standards
 developers communities that are well-versed in these tools.
+
+Another layer of potential mismatches arises when a more complex set of
+stakeholders needs to be considered. For example, the Group on Earth
+Observations (GEO) is a network that aims to coordinate decision making around
+satellite missions and to standardize the data that results from these
+missions. Because this group involves a range of different stakeholders,
+including individuals who more closely understand potential legal issues and
+researchers who are better equipped to evaluate technical and domain questions,
+communication is slower and hindered. As the group aims to move forward by
+consensus, these communication difficulties can slow down progress. This is
+just an example, which exemplifies the many cases in which OSS process which
+strives for consensus can slow progress.
 
 
 ## Cross-domain gaps
@@ -146,6 +164,5 @@ grants (and see @sec-cross-sector). This hampers the long-term trajectory that
 is needed to inculcate a standard into the day-to-day practice of researchers.
 
 
-## The importance of automated validation
 
 

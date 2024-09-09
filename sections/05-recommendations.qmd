@@ -1,11 +1,87 @@
 
 # Recommendations for open-source data and metadata standards {#sec-recommendations}
 
-In conclusion of this report, we propose the following recommendations:
+In conclusion of this report, we would like to propose a set of recommendations
+that distill the lessons learned from an examination of data and metadata
+standards through the lense of open-source software development practices. We
+divide this section into two parts: one aimed at the science and technology
+communities that develop and maintain open-source standards, and the other
+aimed at policy-making and funding agencies, who have an interest in fostering
+more efficient, more robust, and more transparent open-source standards.
 
-## Policy-making and Funding entities:
+## Science and technology communities:
 
-### Fund Data Standards Development
+### Establish standards governance based on OSS best practices
+
+While best-practice governance principles are also relatively new in OSS
+communities, there is already a substantial set of prior art in this domain, on
+which the developers and maintainers of open-source data and metadata standards
+can rely. For example, it is now clear that governance principles and rules can
+mitigate some of the risks and challenges mentioned in @sec-challenges,
+especially for communities beyond a certain size that need to converge toward a
+new standard or rely on an existing standard. Developers and maintainers should
+review existing governance practices such as [The Open Source
+Way](https://www.theopensourceway.org/the_open_source_way-guidebook-2.0.html#_project_and_community_governance).
+
+
+### Foster meta-standards development
+
+One of the main conclusions that arise from our survey of the landscape of
+existing standards is that there is significant knowledge that exists across
+fields and domains and that informs the development of standards within each
+field, but that could be surfaced to the level where it may be adopted more
+widely in different domains and be more broadly useful. One approach to this is
+a comparative approach: In this approach, a readiness and/or maturity model can
+be developed that assesses the challenges and opportunities that a specific
+standard faces at its current phase of development. Developing such a maturity
+model, while it goes beyond the scope of the current report, could lead to the
+eventual development of a meta-standard or a standard-of-standards. This would
+encompass a succinct description of cross-cutting best-practices that can be
+used as a basis for the analysis or assessment of an existing standard, or as
+guidelines to develop new standards. For instance, specific barriers to
+adopting a data standard that take into account the size of the community and
+its specific technological capabilities should be considered.
+
+More generally, meta-standards could include formalization for versioning of
+standards and interactions with specific related software. This includes
+amplifying formalization/guidelines on how to create standards (for example,
+metadata schema specifications using LinkML (https://linkml.io)). However,
+aspects of communication with potential user audiences (e.g., researchers in
+particular domains) should be taken into account as well. For example, in the
+quality of onboarding documentation and tools for ingestion or conversion into
+standards-compliant datasets.
+
+An ontology for the standards-development process -- for example top-down vs
+bottom-up, minimum number of datasets, target community size and technical
+expertise typical of this community, and so forth -- could help guide the
+standards-development process towards more effective adoption and use. A set of
+meta-standards and high-level descriptions of the standards-development process
+-- some of which is laid out in this report -- could help standard developers
+avoid known pitfalls, such as the dreaded proliferation of standards, or such
+as complexity-impeded adoption. Surveying and documenting the success and
+failures of current standards for a specific dataset / domain can help
+disseminate knowledge about the standardization process. Resources such as
+[Fairsharing](https://fairsharing.org/) or [Digital Curation
+Center](https://www.dcc.ac.uk/guidance/standards) can help guide this process.
+
+### Develop standards in tandem with standards-associated software
+
+Development of standards should be coupled and tightly linked with development
+of associated software. This produces a virtuous cycle where the use-cases and
+technical issues that arise in software development informs the development of
+the standard and vice versa. One of the lessons learned across a variety of
+different standards is the importance of automated validation of the standard.
+Automated validation is broadly seen as a requirement for the adoption of a
+standard and a factor in managing change of the standard over time. To advance
+this virtuous cycle, we recommend to make data standards machine readable, and
+make software creation an integral part of establishing a standard's schema.
+Additionally, standards evolution should maintain software compatibility, and
+ability to translate and migrate between standards.
+
+
+## Policy-making and funding entities:
+
+### Fund the development of open-source standards
 
 While some funding agencies already support standards development as part of
 the development of informatics infrastructures, data standards development
@@ -16,13 +92,18 @@ community efforts and tools for this. The OSS model is seen as a particularly
 promising avenue for an investment of resources, because it builds on
 previously-developed procedures and technical infrastructure and because it
 provides avenues for the democratization of development processes and for
-community input along the way. The clarity offered by procedures for
-enhancement proposals and semantic versioning schemes adopted in standards
-development offers avenues for a range of stakeholders to propose well-defined
+community input along the way. At the same time, there is significant
+challenges associated with incentives to engage, ranging from the dilution of
+credit to individual contributors, and ranging through the burnout of
+maintainers and developers. The clarity offered by procedures for enhancement
+proposals and semantic versioning schemes adopted in standards development
+offers avenues for a range of stakeholders to propose well-defined
 contributions to large and field-wide standards efforts (e.g.,
-[@pestilli2021community]).
+[@pestilli2021community]), and potentially helps alleviate some of these
+concerns by providing avenues for individual contributions to surface, as well
+as clarity of process, which can alleviate the risks of maintainer burnout.
 
-### Invest in Data Stewards
+### Invest in data stewards
 
 Advancing the development and adoption of open-source standards requires the
 dissemination of knowledge to researchers in a variety of fields, but this
@@ -43,9 +124,14 @@ methodology of OSS. This does not mean that they need to become software
 engineers -- though for some of them there may be some overlap with the role of
 research software engineers [@Connolly2023Software] -- but rather that they
 need to become familiar with those parts of the OSS development life-cycle that
-are specifically useful for the development of open-source standards. For example, tools for version control, tools for versioning, and tools for creation and validation of compliant data and metadata.
+are specifically useful for the development of open-source standards. For
+example, tools for version control, tools for versioning, and tools for
+creation and validation of compliant data and metadata.
 
-### Review Data Standards Pathways
+Stakeholder organizations should invest in training grants to establish
+curriculum for data and metadata standards education. </ol>
+
+### Review open-source standards pathways
 
 Invest in programs that examine retrospective pathways for establishing data
 standards. Encourage publication of lifecycles for successful data standards.
@@ -57,73 +143,16 @@ step of the work of standards creators and granting agencies. In the meanwhile,
 it would be good to also retroactively document the lifecycle of existing
 standards that are seen as success stories. Research on the principles that
 underlie successful open-source standards development can be used to formulate
-new standards and iterate on existing ones.
+new standards and iterate on existing ones. Data management plans should
+promote the sharing of not only data, but also metadata and descriptions of how
+to use it.
 
-### Establish Governance
-
-Establish governance for standards creation and adoption, especially for
-communities beyond a certain size that need to converge toward a new standard
-or rely on an existing standard. Review existing governance practices such as
-[TheOpenSourceWay](https://www.theopensourceway.org/the_open_source_way-guidebook-2.0.html#_project_and_community_governance).
-Data management plans should promote the sharing of not only data, but also
-metadata and descriptions of how to use it.
-
-
-### Program Manage Cross Sector alliances
+### Manage Cross Sector alliances
 
 Encourage cross-sector and cross-domain alliances that can impact successful
 standards creation. Invest in robust program management of these alliances to
-align pace and create incentives (for instance via Open Source Program Office /
-OSPO efforts). Similar to program officers at funding agencies, standards
-evolution need sustained PM efforts. Multi company partnerships should include
-strategic initiatives for standard establishment e.g.
-[Pistoiaalliance](https://www.pistoiaalliance.org/news/press-release-pistoia-alliance-launches-idmp-1-0/).
-
-
-### Curriculum Development
-
-Stakeholder organizations should invest in training grants to establish curriculum for data and metadata standards education. </ol>
-
-## Science and Technology Communities:
-
-### User-Driven Development
-
-Standards should be needs-driven and developed in close collaboration with users. Changes and enhancements should be in response to community feedback.
-
-### Meta-Standards development
-
-In surveying the landscape of existing standards, a readiness/maturity model
-can be developed that assesses the challenges and opportunities that a specific
-standard faces. This process in itself can be standardized to develop
-meta-standards or standards-of-standards. These are the succinct descriptions
-of cross-cutting best-practices that can be used as a basis for the analysis or
-assessment of an existing standard, or as guidelines to develop new standards.
-For instance, barriers to adopting a data standard irrespective of team size
-and technological capabilities should be considered. Meta-standards should
-include formalization for versioning of standards and interactions with
-specific related software. Aspects of communication with potential user
-audiences (e.g., researchers in particular domains) should be taken into
-account as well. For example, in the quality of onboarding documentation and
-tools for ingestion or conversion into standards-compliant datasets. Relatedly,
-it would be good to create an ontology for standards process such as top down
-vs bottom up, minimum number of datasets, target community size and technical
-expertise typical of this community, etc. This ontology can help guide the
-standards-development process towards more effective adoption and use.
-
-
-### Formalization Guidelines
-
-Amplify formalization/guidelines on how to create standards (example metadata schema specifications using [LinkML](https://linkml.io).
-
-### Landscape and Failure Analysis
-
-Before establishing a new standard, survey and document failure of current standards for a specific dataset / domain. Use resources such as [Fairsharing](https://fairsharing.org/) or [Digital Curation Center](https://www.dcc.ac.uk/guidance/standards).
-
-### Machine Readability
-
-Development of standards should be coupled with development of associated software. Make data standards machine readable, and software creation an integral part of establishing a standard's schema e.g. For identifiers for a person using CFF in citations, cffconvert software makes the CFF standard usable and useful.
-Additionally, standards evolution should maintain software compatibility, and ability to translate and migrate between standards.
-
-
-
-
+align pace and create incentives (for instance via Open Source Program Offices
+at Universities or other research organizations). Similar to program officers
+at funding agencies, standards evolution need sustained PM efforts.
+Multi-company partnerships should include strategic initiatives for standard
+establishment such as the Pistoia Alliance (https://www.pistoiaalliance.org/).
