@@ -37,15 +37,17 @@ complex data analysis use-case, such as interchange with other data and the use
 of complex data bases to store and share data [@Scroggins2020-ut]. Another
 prominent example of the use of open-source processes to develop standards in
 Astronomy is in the tools and protocols developed by the International Virtual
-Observatory Alliance (IVOA) and its national implementations, e.g. in the US
+Observatory Alliance (IVOA) and its national implementations, e.g., in the US
 Virtual Astronomical Observatory[@Hanisch2015-cu]. The virtual observatories
 facilitate discovery and access across observatories around the world and
-underpin data discovery in astronomy. One query can be used to find images
-across a range of different archives. The IVOA took inspiration from the
+underpin data discovery in astronomy. The IVOA took inspiration from the
 World-Wide Web Consortium (W3C) and adopted its process for the development of
-its standards (i.e., Working drafts $\rightarrow$ Proposed Reccomendations
+its standards (i.e., Working drafts $\rightarrow$ Proposed Recommendations
 $\rightarrow$ Recommendations), with individual standards developed by
-inter-institutional and international working groups.
+inter-institutional and international working groups. One of the outcomes of
+the coordination effort is the development of an ecosystem of software tools
+both developed within the observatory teams and within the user community that
+interoperate with the standards that were adopted by the observatories.
 
 ## High-energy physics (HEP)
 

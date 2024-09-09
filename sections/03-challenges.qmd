@@ -62,6 +62,18 @@ have not yet had significant adoption as tools of day-to-day computational
 practice. At the same time, it provides clarity and robustness for standards
 developers communities that are well-versed in these tools.
 
+Another layer of potential mismatches arises when a more complex set of
+stakeholders needs to be considered. For example, the Group on Earth
+Observations (GEO) is a network that aims to coordinate decision making around
+sattelite missions and to standardize the data that results from these
+missions. Because this group involves a range of different stakeholders,
+including individuals who more closely understand potential legal issues and
+researchers who are better equipped to evaluate technical and domain questions,
+communication is slower and hindered. As the group aims to move forward by
+consensus, these communication difficulties can slow down progress. This is
+just an example, which exemplifies the many cases in which OSS process which
+strives for consensus can slow progress.
+
 
 ## Cross-domain gaps
 
@@ -151,7 +163,5 @@ avenues for success and recognition, for example through dedicated research
 grants (and see @sec-cross-sector). This hampers the long-term trajectory that
 is needed to inculcate a standard into the day-to-day practice of researchers.
 
-
-## The importance of automated validation
 
 
