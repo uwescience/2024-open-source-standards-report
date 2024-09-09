@@ -145,5 +145,3 @@ require learning the complex and obscure technical aspects of these system that
 are far from easy to adopt, even for many professional scientists.
 
 
-For identifiers for a person using CFF in citations, cffconvert software makes
-the CFF standard usable and useful.
