@@ -9,7 +9,7 @@ communities that develop and maintain open-source standards, and the other
 aimed at policy-making and funding agencies, who have an interest in fostering
 more efficient, more robust, and more transparent open-source standards.
 
-## Science and Technology Communities:
+## Science and technology communities:
 
 ### Establish standards governance based on OSS best practices
 
@@ -79,9 +79,9 @@ Additionally, standards evolution should maintain software compatibility, and
 ability to translate and migrate between standards.
 
 
-## Policy-making and Funding entities:
+## Policy-making and funding entities:
 
-### Fund Data Standards Development
+### Fund the development of open-source standards
 
 While some funding agencies already support standards development as part of
 the development of informatics infrastructures, data standards development
@@ -103,7 +103,7 @@ contributions to large and field-wide standards efforts (e.g.,
 concerns by providing avenues for individual contributions to surface, as well
 as clarity of process, which can alleviate the risks of maintainer burnout.
 
-### Invest in Data Stewards
+### Invest in data stewards
 
 Advancing the development and adoption of open-source standards requires the
 dissemination of knowledge to researchers in a variety of fields, but this
@@ -131,7 +131,7 @@ creation and validation of compliant data and metadata.
 Stakeholder organizations should invest in training grants to establish
 curriculum for data and metadata standards education. </ol>
 
-### Review Data Standards Pathways
+### Review open-source standards pathways
 
 Invest in programs that examine retrospective pathways for establishing data
 standards. Encourage publication of lifecycles for successful data standards.
