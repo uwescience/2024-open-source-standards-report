@@ -43,14 +43,28 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
+\makeatletter
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
 \fi
 \ifx\subparagraph\undefined\else
   \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+\makeatother
 
 
 \providecommand{\tightlist}{%
@@ -186,6 +200,7 @@
       color=watermark!10
     }
     
+
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -202,12 +217,14 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
+
 \title{Towards an open-source model for data and metadata standards}
 \author{Ariel Rokem \and Vani Mandava \and Nicoleta Cristea}
 \date{}
 
 \begin{document}
 \maketitle
+
 
 \section{Abstract}\label{abstract}
 
@@ -322,18 +339,38 @@ and has been adopted worldwide for astronomy data preservation and
 exchange. Essentially every software platform used in astronomy reads
 and writes the FITS format. It was developed by observatories in the
 1980s to store image data in the visible and x-ray spectrum. It has been
-endorsed by IAU, as well as funding agencies. Though the format has
-evolved over time, ``once FITS, always FITS''. That is, the format
-cannot be evolved to introduce changes that break backward
-compatibility. Among the features that make FITS so durable is that it
-was designed originally to have a very restricted metadata schema. That
-is, FITS records were designed to be the lowest common denominator of
-word lengths in computer systems at the time. However, while FITS is
-compact, its ability to encode the coordinate frame and pixels, means
-that data from different observational instruments can be stored in this
-format and relationships between data from different instruments can be
-related, rendering manual and error-prone procedures for conforming
-images obsolete.
+endorsed by the International Astronomical Union (IAU), as well as
+funding agencies. Though the format has evolved over time, ``once FITS,
+always FITS''. That is, the format cannot be evolved to introduce
+changes that break backward compatibility. Among the features that make
+FITS so durable is that it was designed originally to have a very
+restricted metadata schema. That is, FITS records were designed to be
+the lowest common denominator of word lengths in computer systems at the
+time. However, while FITS is compact, its ability to encode the
+coordinate frame and pixels, means that data from different
+observational instruments can be stored in this format and relationships
+between data from different instruments can be related, rendering manual
+and error-prone procedures for conforming images obsolete. Nevertheless,
+the stability has also raised some issues as the field continues to
+adapt to new measurement methods and the demands of ever-increasing data
+volumes and complex data analysis use-case, such as interchange with
+other data and the use of complex data bases to store and share data
+(Scroggins and Boscoe 2020). Another prominent example of the use of
+open-source processes to develop standards in Astronomy is in the tools
+and protocols developed by the International Virtual Observatory
+Alliance (IVOA) and its national implementations, e.g., in the US
+Virtual Astronomical Observatory(Hanisch et al. 2015). The virtual
+observatories facilitate discovery and access across observatories
+around the world and underpin data discovery in astronomy. The IVOA took
+inspiration from the World-Wide Web Consortium (W3C) and adopted its
+process for the development of its standards (i.e., Working drafts
+\(\rightarrow\) Proposed Recommendations \(\rightarrow\)
+Recommendations), with individual standards developed by
+inter-institutional and international working groups. One of the
+outcomes of the coordination effort is the development of an ecosystem
+of software tools both developed within the observatory teams and within
+the user community that interoperate with the standards that were
+adopted by the observatories.
 
 \subsection{High-energy physics (HEP)}\label{high-energy-physics-hep}
 
@@ -358,41 +395,42 @@ Geospatial Consortium (OGC) establishment in the 1990s, a critical step
 towards open standards for geospatial data. The 1990s have also seen the
 development of key standards such as the Network Common Data Form
 (NetCDF) developed by the University Corporation for Atmospheric
-Research (UCAR) and the Hierarchical Data Format (HDF), a set of file
+Research (UCAR), and the Hierarchical Data Format (HDF), a set of file
 formats (HDF4, HDF5) that are widely used, particularly in climate
 research. The GeoTIFF format, which originated at NASA in the late
 1990s, is extensively used to share image data. In the 1990s, open web
 mapping also began with MapServer (https://mapserver.org) and continued
-later with other projects such as OpenStreetMap (www.openstreetmap.org).
-The following two decades, the 2000s-2020s, brought an expansion of open
-standards and integration with web technologies developed by OGC, as
-well as other standards such as the Keyhole Markup Language (KML) for
-displaying geographic data in Earth browsers. Formats suitable for cloud
-computing also emerged, such as the Cloud Optimized GeoTIFF (COG),
-followed by Zarr and Apache Parquet for array and tabular data,
-respectively. In 2006, the Open Source Geospatial Foundation (OSGeo,
-https://www.osgeo.org) was established, demonstrating the community's
-commitment to the development of open-source geospatial technologies.
-While some standards have been developed in the industry (e.g., Keyhole
-Markup Language (KML) by Keyhole Inc., which Google later acquired),
-they later became international standards of the OGC, which now
-encompasses more than 450 commercial, governmental, nonprofit, and
-research organizations working together on the development and
-implementation of open standards (https://www.ogc.org).
+later with other projects such as OpenStreetMap
+(https://www.openstreetmap.org). The following two decades, the
+2000s-2020s, brought an expansion of open standards and integration with
+web technologies developed by OGC, as well as other standards such as
+the Keyhole Markup Language (KML) for displaying geographic data in
+Earth browsers. Formats suitable for cloud computing also emerged, such
+as the Cloud Optimized GeoTIFF (COG), followed by Zarr and Apache
+Parquet for array and tabular data, respectively. In 2006, the Open
+Source Geospatial Foundation (OSGeo, https://www.osgeo.org) was
+established, demonstrating the community's commitment to the development
+of open-source geospatial technologies. While some standards have been
+developed in the industry (e.g., Keyhole Markup Language (KML) by
+Keyhole Inc., which Google later acquired), they later became
+international standards of the OGC, which now encompasses more than 450
+commercial, governmental, nonprofit, and research organizations working
+together on the development and implementation of open standards
+(https://www.ogc.org).
 
 \subsection{Neuroscience}\label{neuroscience}
 
-In contrast to astronomy and HEP, Neuroscience has traditionally been a
-``cottage industry'', where individual labs have generated experimental
-data designed to answer specific experimental questions. While this
-model still exists, the field has also seen the emergence of new modes
-of data production that focus on generating large shared datasets
-designed to answer many different questions, more akin to the data
-generated in large astronomy data collection efforts (Koch and Clay Reid
-2012). This change has been brought on through a combination of
-technical advances in data acquisition techniques, which now generate
-large and very high-dimensional/information-rich datasets, cultural
-changes, which have ushered in new norms of transparency and
+In contrast to the previously-mentioned fields, Neuroscience has
+traditionally been a ``cottage industry'', where individual labs have
+generated experimental data designed to answer specific experimental
+questions. While this model still exists, the field has also seen the
+emergence of new modes of data production that focus on generating large
+shared datasets designed to answer many different questions, more akin
+to the data generated in large astronomy data collection efforts (Koch
+and Clay Reid 2012). This change has been brought on through a
+combination of technical advances in data acquisition techniques, which
+now generate large and very high-dimensional/information-rich datasets,
+cultural changes, which have ushered in new norms of transparency and
 reproducibility, and funding initiatives that have encouraged this kind
 of data collection. However, because these changes are recent relative
 to the other cases mentioned above, standards for data and metadata in
@@ -406,11 +444,11 @@ success to the adoption of OSS development mechanisms (Poldrack et al.
 the GitHub pull request mechanism; larger changes are managed through a
 BIDS Enhancement Proposal (BEP) process that is directly inspired by the
 Python programming language community's Python Enhancement Proposal
-procedure, which isused to introduce new ideas into the language. Though
-the BEP mechanism takes a slightly different technical approach, it
-tries to emulate the open-ended and community-driven aspects of Python
-development to accept contributions from a wide range of stakeholders
-and tap a broad base of expertise.
+procedure, which is used to introduce new ideas into the language.
+Though the BEP mechanism takes a slightly different technical approach,
+it tries to emulate the open-ended and community-driven aspects of
+Python development to accept contributions from a wide range of
+stakeholders and tap a broad base of expertise.
 
 \subsection{Community science}\label{community-science}
 
@@ -475,7 +513,13 @@ standard by a user community, and migration away from the standard.
 Similarly, if a standard evolves too rapidly, users may choose to stick
 to an outdated version of a standard for a long time, creating strains
 on the community of developers and maintainers of a standard who will
-need to accommodate long deprecation cycles.
+need to accommodate long deprecation cycles. On the other hand, in cases
+in which some forms of dynamic change is prohibited -- as in the case of
+the FITS file format, which prohibits changes that break
+backwards-compatibility -- there is also a cost associated with the
+stability (Scroggins and Boscoe 2020): limiting adoption and
+combinations of new types of measurements, new analysis methods or new
+modes of data storage and data sharing.
 
 \subsection{Mismatches between standards developers and user
 communities}\label{mismatches-between-standards-developers-and-user-communities}
@@ -504,6 +548,19 @@ have not yet had significant adoption as tools of day-to-day
 computational practice. At the same time, it provides clarity and
 robustness for standards developers communities that are well-versed in
 these tools.
+
+Another layer of potential mismatches arises when a more complex set of
+stakeholders needs to be considered. For example, the Group on Earth
+Observations (GEO) is a network that aims to coordinate decision making
+around satellite missions and to standardize the data that results from
+these missions. Because this group involves a range of different
+stakeholders, including individuals who more closely understand
+potential legal issues and researchers who are better equipped to
+evaluate technical and domain questions, communication is slower and
+hindered. As the group aims to move forward by consensus, these
+communication difficulties can slow down progress. This is just an
+example, which exemplifies the many cases in which OSS process which
+strives for consensus can slow progress.
 
 \subsection{Cross-domain gaps}\label{cross-domain-gaps}
 
@@ -602,9 +659,6 @@ success and recognition, for example through dedicated research grants
 (and see Section~\ref{sec-cross-sector}). This hampers the long-term
 trajectory that is needed to inculcate a standard into the day-to-day
 practice of researchers.
-
-\subsection{The importance of automated
-validation}\label{the-importance-of-automated-validation}
 
 \section{Cross-sector interactions}\label{sec-cross-sector}
 
@@ -710,20 +764,123 @@ proprietary/closed formats of data can create difficulty at various
 transition points: from one instrument vendor to another, from data
 producer to downstream recipient/user, etc. On the other hand, in some
 cases, cross-sector collaborations with commercial entities may pave the
-way to robust and useful standards. One example is the DICOM standard,
-which is maintained by working groups that encompass commercial imaging
-device vendors and researchers.
+way to robust and useful standards. For example, imaging measurements in
+human subjects (e.g., in brain imaging experiments) significantly
+interact with standards for medical imaging, and chiefly the Digital
+Imaging and Communications in Medicine (DICOM) standard, which is widely
+used in a range of medical imaging applications, including in clinical
+settings Mustra, Delac, and Grgic (2008). The standard emerged from the
+demands of the clinical practice in the 1980s, as digital technologies
+were came into widespread use in medical imaging, through joint work of
+industry organizations: the American College of Radiology and the
+National Association of Electronic Manufacturers. One of the defining
+features of the DICOM standard is that it allows manufacturers of
+instruments to define ``private fields'' that are compliant with the
+standard, but which may include idiosyncratically organized data and/or
+metadata. This provides significant flexibility, but can also easily
+lead to the loss of important information. Nevertheless, the human brain
+imaging case is exemplary of a case in which industry standards and
+research standards coexist and need to communicate with each other
+effectively to advance research use-cases, while keeping up with the
+rapid development of the technologies.
 
 \section{Recommendations for open-source data and metadata
 standards}\label{sec-recommendations}
 
-In conclusion of this report, we propose the following recommendations:
+In conclusion of this report, we would like to propose a set of
+recommendations that distill the lessons learned from an examination of
+data and metadata standards through the lense of open-source software
+development practices. We divide this section into two parts: one aimed
+at the science and technology communities that develop and maintain
+open-source standards, and the other aimed at policy-making and funding
+agencies, who have an interest in fostering more efficient, more robust,
+and more transparent open-source standards.
 
-\subsection{Policy-making and Funding
+\subsection{Science and technology
+communities:}\label{science-and-technology-communities}
+
+\subsubsection{Establish standards governance based on OSS best
+practices}\label{establish-standards-governance-based-on-oss-best-practices}
+
+While best-practice governance principles are also relatively new in OSS
+communities, there is already a substantial set of prior art in this
+domain, on which the developers and maintainers of open-source data and
+metadata standards can rely. For example, it is now clear that
+governance principles and rules can mitigate some of the risks and
+challenges mentioned in Section~\ref{sec-challenges}, especially for
+communities beyond a certain size that need to converge toward a new
+standard or rely on an existing standard. Developers and maintainers
+should review existing governance practices such as
+\href{https://www.theopensourceway.org/the_open_source_way-guidebook-2.0.html\#_project_and_community_governance}{The
+Open Source Way}.
+
+\subsubsection{Foster meta-standards
+development}\label{foster-meta-standards-development}
+
+One of the main conclusions that arise from our survey of the landscape
+of existing standards is that there is significant knowledge that exists
+across fields and domains and that informs the development of standards
+within each field, but that could be surfaced to the level where it may
+be adopted more widely in different domains and be more broadly useful.
+One approach to this is a comparative approach: In this approach, a
+readiness and/or maturity model can be developed that assesses the
+challenges and opportunities that a specific standard faces at its
+current phase of development. Developing such a maturity model, while it
+goes beyond the scope of the current report, could lead to the eventual
+development of a meta-standard or a standard-of-standards. This would
+encompass a succinct description of cross-cutting best-practices that
+can be used as a basis for the analysis or assessment of an existing
+standard, or as guidelines to develop new standards. For instance,
+specific barriers to adopting a data standard that take into account the
+size of the community and its specific technological capabilities should
+be considered.
+
+More generally, meta-standards could include formalization for
+versioning of standards and interactions with specific related software.
+This includes amplifying formalization/guidelines on how to create
+standards (for example, metadata schema specifications using LinkML
+(https://linkml.io)). However, aspects of communication with potential
+user audiences (e.g., researchers in particular domains) should be taken
+into account as well. For example, in the quality of onboarding
+documentation and tools for ingestion or conversion into
+standards-compliant datasets.
+
+An ontology for the standards-development process -- for example
+top-down vs bottom-up, minimum number of datasets, target community size
+and technical expertise typical of this community, and so forth -- could
+help guide the standards-development process towards more effective
+adoption and use. A set of meta-standards and high-level descriptions of
+the standards-development process -- some of which is laid out in this
+report -- could help standard developers avoid known pitfalls, such as
+the dreaded proliferation of standards, or such as complexity-impeded
+adoption. Surveying and documenting the success and failures of current
+standards for a specific dataset / domain can help disseminate knowledge
+about the standardization process. Resources such as
+\href{https://fairsharing.org/}{Fairsharing} or
+\href{https://www.dcc.ac.uk/guidance/standards}{Digital Curation Center}
+can help guide this process.
+
+\subsubsection{Develop standards in tandem with standards-associated
+software}\label{develop-standards-in-tandem-with-standards-associated-software}
+
+Development of standards should be coupled and tightly linked with
+development of associated software. This produces a virtuous cycle where
+the use-cases and technical issues that arise in software development
+informs the development of the standard and vice versa. One of the
+lessons learned across a variety of different standards is the
+importance of automated validation of the standard. Automated validation
+is broadly seen as a requirement for the adoption of a standard and a
+factor in managing change of the standard over time. To advance this
+virtuous cycle, we recommend to make data standards machine readable,
+and make software creation an integral part of establishing a standard's
+schema. Additionally, standards evolution should maintain software
+compatibility, and ability to translate and migrate between standards.
+
+\subsection{Policy-making and funding
 entities:}\label{policy-making-and-funding-entities}
 
-\subsubsection{Fund Data Standards
-Development}\label{fund-data-standards-development}
+\subsubsection{Fund the development of open-source
+standards}\label{fund-the-development-of-open-source-standards}
 
 While some funding agencies already support standards development as
 part of the development of informatics infrastructures, data standards
@@ -735,13 +892,19 @@ The OSS model is seen as a particularly promising avenue for an
 investment of resources, because it builds on previously-developed
 procedures and technical infrastructure and because it provides avenues
 for the democratization of development processes and for community input
-along the way. The clarity offered by procedures for enhancement
-proposals and semantic versioning schemes adopted in standards
-development offers avenues for a range of stakeholders to propose
-well-defined contributions to large and field-wide standards efforts
-(e.g., (Pestilli et al. 2021)).
+along the way. At the same time, there is significant challenges
+associated with incentives to engage, ranging from the dilution of
+credit to individual contributors, and ranging through the burnout of
+maintainers and developers. The clarity offered by procedures for
+enhancement proposals and semantic versioning schemes adopted in
+standards development offers avenues for a range of stakeholders to
+propose well-defined contributions to large and field-wide standards
+efforts (e.g., (Pestilli et al. 2021)), and potentially helps alleviate
+some of these concerns by providing avenues for individual contributions
+to surface, as well as clarity of process, which can alleviate the risks
+of maintainer burnout.
 
-\subsubsection{Invest in Data Stewards}\label{invest-in-data-stewards}
+\subsubsection{Invest in data stewards}\label{invest-in-data-stewards}
 
 Advancing the development and adoption of open-source standards requires
 the dissemination of knowledge to researchers in a variety of fields,
@@ -768,8 +931,11 @@ of open-source standards. For example, tools for version control, tools
 for versioning, and tools for creation and validation of compliant data
 and metadata.
 
-\subsubsection{Review Data Standards
-Pathways}\label{review-data-standards-pathways}
+Stakeholder organizations should invest in training grants to establish
+curriculum for data and metadata standards education.
+
+\subsubsection{Review open-source standards
+pathways}\label{review-open-source-standards-pathways}
 
 Invest in programs that examine retrospective pathways for establishing
 data standards. Encourage publication of lifecycles for successful data
@@ -782,90 +948,22 @@ granting agencies. In the meanwhile, it would be good to also
 retroactively document the lifecycle of existing standards that are seen
 as success stories. Research on the principles that underlie successful
 open-source standards development can be used to formulate new standards
-and iterate on existing ones.
+and iterate on existing ones. Data management plans should promote the
+sharing of not only data, but also metadata and descriptions of how to
+use it.
 
-\subsubsection{Establish Governance}\label{establish-governance}
-
-Establish governance for standards creation and adoption, especially for
-communities beyond a certain size that need to converge toward a new
-standard or rely on an existing standard. Review existing governance
-practices such as
-\href{https://www.theopensourceway.org/the_open_source_way-guidebook-2.0.html\#_project_and_community_governance}{TheOpenSourceWay}.
-Data management plans should promote the sharing of not only data, but
-also metadata and descriptions of how to use it.
-
-\subsubsection{Program Manage Cross Sector
-alliances}\label{program-manage-cross-sector-alliances}
+\subsubsection{Manage Cross Sector
+alliances}\label{manage-cross-sector-alliances}
 
 Encourage cross-sector and cross-domain alliances that can impact
 successful standards creation. Invest in robust program management of
 these alliances to align pace and create incentives (for instance via
-Open Source Program Office / OSPO efforts). Similar to program officers
-at funding agencies, standards evolution need sustained PM efforts.
-Multi company partnerships should include strategic initiatives for
-standard establishment e.g.
-\href{https://www.pistoiaalliance.org/news/press-release-pistoia-alliance-launches-idmp-1-0/}{Pistoiaalliance}.
-
-\subsubsection{Curriculum Development}\label{curriculum-development}
-
-Stakeholder organizations should invest in training grants to establish
-curriculum for data and metadata standards education.
-
-\subsection{Science and Technology
-Communities:}\label{science-and-technology-communities}
-
-\subsubsection{User-Driven Development}\label{user-driven-development}
-
-Standards should be needs-driven and developed in close collaboration
-with users. Changes and enhancements should be in response to community
-feedback.
-
-\subsubsection{Meta-Standards
-development}\label{meta-standards-development}
-
-In surveying the landscape of existing standards, a readiness/maturity
-model can be developed that assesses the challenges and opportunities
-that a specific standard faces. This process in itself can be
-standardized to develop meta-standards or standards-of-standards. These
-are the succinct descriptions of cross-cutting best-practices that can
-be used as a basis for the analysis or assessment of an existing
-standard, or as guidelines to develop new standards. For instance,
-barriers to adopting a data standard irrespective of team size and
-technological capabilities should be considered. Meta-standards should
-include formalization for versioning of standards and interactions with
-specific related software. Aspects of communication with potential user
-audiences (e.g., researchers in particular domains) should be taken into
-account as well. For example, in the quality of onboarding documentation
-and tools for ingestion or conversion into standards-compliant datasets.
-Relatedly, it would be good to create an ontology for standards process
-such as top down vs bottom up, minimum number of datasets, target
-community size and technical expertise typical of this community, etc.
-This ontology can help guide the standards-development process towards
-more effective adoption and use.
-
-\subsubsection{Formalization Guidelines}\label{formalization-guidelines}
-
-Amplify formalization/guidelines on how to create standards (example
-metadata schema specifications using \href{https://linkml.io}{LinkML}.
-
-\subsubsection{Landscape and Failure
-Analysis}\label{landscape-and-failure-analysis}
-
-Before establishing a new standard, survey and document failure of
-current standards for a specific dataset / domain. Use resources such as
-\href{https://fairsharing.org/}{Fairsharing} or
-\href{https://www.dcc.ac.uk/guidance/standards}{Digital Curation
-Center}.
-
-\subsubsection{Machine Readability}\label{machine-readability}
-
-Development of standards should be coupled with development of
-associated software. Make data standards machine readable, and software
-creation an integral part of establishing a standard's schema e.g.~For
-identifiers for a person using CFF in citations, cffconvert software
-makes the CFF standard usable and useful. Additionally, standards
-evolution should maintain software compatibility, and ability to
-translate and migrate between standards.
+Open Source Program Offices at Universities or other research
+organizations). Similar to program officers at funding agencies,
+standards evolution need sustained PM efforts. Multi-company
+partnerships should include strategic initiatives for standard
+establishment such as the Pistoia Alliance
+(https://www.pistoiaalliance.org/).
 
 \section{Acknowledgements}\label{acknowledgements}
 
@@ -905,9 +1003,19 @@ Craddock, Samir Das, Eugene P Duff, Guillaume Flandin, et al. 2016.
 Describing Outputs of Neuroimaging Experiments.''} \emph{Sci Data} 3
 (June): 160044. \url{https://www.nature.com/articles/sdata201644}.
 
+\bibitem[\citeproctext]{ref-Hanisch2015-cu}
+Hanisch, R J, G B Berriman, T J W Lazio, S Emery Bunn, J Evans, T A
+McGlynn, and R Plante. 2015. {``The Virtual Astronomical Observatory:
+Re-Engineering Access to Astronomical Data.''} \emph{Astron. Comput.} 11
+(June): 190--209.
+
 \bibitem[\citeproctext]{ref-Koch2012-ve}
 Koch, Christof, and R Clay Reid. 2012. {``Observatories of the Mind.''}
 \url{http://dx.doi.org/10.1038/483397a}.
+
+\bibitem[\citeproctext]{ref-Larobina2023-vq}
+Larobina, Michele. 2023. {``Thirty Years of the {DICOM} Standard.''}
+\emph{Tomography} 9 (5): 1829--38.
 
 \bibitem[\citeproctext]{ref-zarr}
 Miles, Alistair, jakirkham, M Bussonnier, Josh Moore, Dimitri
@@ -923,6 +1031,11 @@ Implementing FAIR Principles}. 1st ed. Vol. 1. Milton: CRC Press.
 \bibitem[\citeproctext]{ref-Musen2022metadata}
 Musen, Mark A. 2022. {``Without Appropriate Metadata, Data-Sharing
 Mandates Are Pointless.''} \emph{Nature} 609 (7926): 222.
+
+\bibitem[\citeproctext]{ref-Mustra2008-xk}
+Mustra, Mario, Kresimir Delac, and Mislav Grgic. 2008. {``Overview of
+the {DICOM} Standard.''} In \emph{2008 50th International Symposium
+ELMAR}, 1:39--44. IEEE.
 
 \bibitem[\citeproctext]{ref-NIST2019}
 National Institute of Standards and Technology. 2019. {``{U.S}.
@@ -960,6 +1073,11 @@ Ghosh, Lawrence Niu, Pamela Baker, et al. 2022. {``The Neurodata Without
 Borders Ecosystem for Neurophysiological Data Science.''} \emph{Elife}
 11 (October).
 
+\bibitem[\citeproctext]{ref-Scroggins2020-ut}
+Scroggins, Michael, and Bernadette M Boscoe. 2020. {``Once {FITS},
+Always {FITS}? Astronomical Infrastructure in Transition.''} \emph{IEEE
+Ann. Hist. Comput.} 42 (2): 42--54.
+
 \bibitem[\citeproctext]{ref-nstc2022desirable}
 The National Science and Technology Council. 2022. {``Desirable
 Characteristics of Data Repositories for Federally Funded Research.''}
@@ -977,6 +1095,7 @@ Gabrielle Appleton, Myles Axton, Arie Baak, Niklas Blomberg, et al.
 and Stewardship.''} \emph{Sci Data} 3 (March): 160018.
 
 \end{CSLReferences}
+
 
 
 

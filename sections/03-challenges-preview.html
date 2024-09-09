@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.4.555">
+    <meta name="generator" content="quarto-1.5.57">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -176,23 +176,23 @@
   <li><a href="#harnessing-new-computing-paradigms-and-technologies" id="toc-harnessing-new-computing-paradigms-and-technologies" class="nav-link" data-scroll-target="#harnessing-new-computing-paradigms-and-technologies">Harnessing new computing paradigms and technologies</a></li>
   </ul></li>
   <li><a href="#unclear-pathways-for-standards-success-and-sustainability" id="toc-unclear-pathways-for-standards-success-and-sustainability" class="nav-link" data-scroll-target="#unclear-pathways-for-standards-success-and-sustainability">Unclear pathways for standards success and sustainability</a></li>
-  <li><a href="#the-importance-of-automated-validation" id="toc-the-importance-of-automated-validation" class="nav-link" data-scroll-target="#the-importance-of-automated-validation">The importance of automated validation</a></li>
   </ul></li>
   </ul>
 </nav>
 </div>
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">      <section id="sec-challenges" class="level1">
 <h1>Opportunities and risks for open-source standards</h1>
 <p>While open-source standards benefit from the technical and social aspects of OSS, these tools and practices are associated with risks that need to be mitigated.</p>
 <section id="flexibility-vs.-stability" class="level2">
 <h2 class="anchored" data-anchor-id="flexibility-vs.-stability">Flexibility vs.&nbsp;Stability</h2>
-<p>One of the defining characteristics of OSS is its dynamism and its rapid evolution. Because OSS can be used by anyone and, in most cases, contributions can be made by anyone, innovations flow into OSS in a bottom-up fashion from user/developers. Pathways to contribution by members of the community are often well-defined: both from the technical perspective (e.g., through a pull request on GitHub, or other similar mechanisms), as well as from the social perspective (e.g., whether contributors need to accept certain licensing conditions through a contributor licensing agreement) and the socio-technical perspective (e.g., how many people need to review a contribution, what are the timelines for a contribution to be reviewed and accepted, what are the release cycles of the software that make the contribution available to a broader community of users, etc.). Similarly, open-source standards may also find themselves addressing use cases and solutions that were not originally envisioned through bottom-up contributions of members of a research community to which the standard pertains. However, while this dynamism provides an avenue for flexibility it also presents a source of tension. This is because data and metadata standards apply to already existing datasets, and changes may affect the compliance of these existing datasets. Similarly, analysis technology stacks that are developed based on an existing version of a standard have to adapt to the introduction of new ideas and changes into a standard. Dynamic changes of this sort therefore risk causing a loss of faith in the standard by a user community, and migration away from the standard. Similarly, if a standard evolves too rapidly, users may choose to stick to an outdated version of a standard for a long time, creating strains on the community of developers and maintainers of a standard who will need to accommodate long deprecation cycles.</p>
+<p>One of the defining characteristics of OSS is its dynamism and its rapid evolution. Because OSS can be used by anyone and, in most cases, contributions can be made by anyone, innovations flow into OSS in a bottom-up fashion from user/developers. Pathways to contribution by members of the community are often well-defined: both from the technical perspective (e.g., through a pull request on GitHub, or other similar mechanisms), as well as from the social perspective (e.g., whether contributors need to accept certain licensing conditions through a contributor licensing agreement) and the socio-technical perspective (e.g., how many people need to review a contribution, what are the timelines for a contribution to be reviewed and accepted, what are the release cycles of the software that make the contribution available to a broader community of users, etc.). Similarly, open-source standards may also find themselves addressing use cases and solutions that were not originally envisioned through bottom-up contributions of members of a research community to which the standard pertains. However, while this dynamism provides an avenue for flexibility it also presents a source of tension. This is because data and metadata standards apply to already existing datasets, and changes may affect the compliance of these existing datasets. Similarly, analysis technology stacks that are developed based on an existing version of a standard have to adapt to the introduction of new ideas and changes into a standard. Dynamic changes of this sort therefore risk causing a loss of faith in the standard by a user community, and migration away from the standard. Similarly, if a standard evolves too rapidly, users may choose to stick to an outdated version of a standard for a long time, creating strains on the community of developers and maintainers of a standard who will need to accommodate long deprecation cycles. On the other hand, in cases in which some forms of dynamic change is prohibited – as in the case of the FITS file format, which prohibits changes that break backwards-compatibility – there is also a cost associated with the stability <span class="citation" data-cites="Scroggins2020-ut">(<a href="#ref-Scroggins2020-ut" role="doc-biblioref">Scroggins and Boscoe 2020</a>)</span>: limiting adoption and combinations of new types of measurements, new analysis methods or new modes of data storage and data sharing.</p>
 </section>
 <section id="mismatches-between-standards-developers-and-user-communities" class="level2">
 <h2 class="anchored" data-anchor-id="mismatches-between-standards-developers-and-user-communities">Mismatches between standards developers and user communities</h2>
 <p>Open-source standards often entail an inherent gap in both interest and ability to engage with the technical details undergirding standards and their development between the core developers of the standard and the users of the standard, which are members of the broader research field to which the standard pertains. This gap, in and of itself, creates friction on the path to broad adoption and best utilization of the standards. In extreme cases, the interests of researchers and standards developers may even seem at odds, as developers implement sophisticated mechanisms to automate the creation and validation of the standard or advocate for more technically advanced mechanisms for evolving the standard. These advanced capabilities offer more robust development practices and consistency in cases where the standards are complex and elaborate. They can also ease the maintenance burden of the standard. On the other hand, they may end up leaving potential users sidelined in the development of the standard, and limiting their ability to provide feedback about the practical implications of changes to the standards. One example of this (already mentioned above in <span class="citation" data-cites="sec-use-cases">(<a href="#ref-sec-use-cases" role="doc-biblioref"><strong>sec-use-cases?</strong></a>)</span>) is the use of git/GitHub for versioning of standards documents. This sets a high bar for participation in standards development for researchers in fields of research in which git/GitHub have not yet had significant adoption as tools of day-to-day computational practice. At the same time, it provides clarity and robustness for standards developers communities that are well-versed in these tools.</p>
+<p>Another layer of potential mismatches arises when a more complex set of stakeholders needs to be considered. For example, the Group on Earth Observations (GEO) is a network that aims to coordinate decision making around satellite missions and to standardize the data that results from these missions. Because this group involves a range of different stakeholders, including individuals who more closely understand potential legal issues and researchers who are better equipped to evaluate technical and domain questions, communication is slower and hindered. As the group aims to move forward by consensus, these communication difficulties can slow down progress. This is just an example, which exemplifies the many cases in which OSS process which strives for consensus can slow progress.</p>
 </section>
 <section id="cross-domain-gaps" class="level2">
 <h2 class="anchored" data-anchor-id="cross-domain-gaps">Cross-domain gaps</h2>
@@ -209,15 +209,15 @@
 <section id="unclear-pathways-for-standards-success-and-sustainability" class="level2">
 <h2 class="anchored" data-anchor-id="unclear-pathways-for-standards-success-and-sustainability">Unclear pathways for standards success and sustainability</h2>
 <p>The development of open-source standards faces similar sustainability challenges to those faced by open-source software that is developed for research. Standards typically develop organically through sustained and persistent efforts from dedicated groups of data practitioners. These include scientists and the broader ecosystem of data curators and users. However, there is no playbook on the structure and components of a data standard, or the pathway that moves the implementation of a specific data architecture (e.g., a particular file format) to become a data standard. As a result, data standardization lacks formal avenues for success and recognition, for example through dedicated research grants (and see <span class="citation" data-cites="sec-cross-sector">(<a href="#ref-sec-cross-sector" role="doc-biblioref"><strong>sec-cross-sector?</strong></a>)</span>). This hampers the long-term trajectory that is needed to inculcate a standard into the day-to-day practice of researchers.</p>
-</section>
-<section id="the-importance-of-automated-validation" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="the-importance-of-automated-validation">The importance of automated validation</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-zarr" class="csl-entry" role="listitem">
 Miles, Alistair, jakirkham, M Bussonnier, Josh Moore, Dimitri Papadopoulos Orfanos, Davis Bennett, David Stansby, et al. 2024. <span>“Zarr-Developers/Zarr-Python: V3.0.0-Alpha.”</span> Zenodo. <a href="https://doi.org/10.5281/zenodo.11592827">https://doi.org/10.5281/zenodo.11592827</a>.
 </div>
 <div id="ref-Norman2021CloudBank" class="csl-entry" role="listitem">
 Norman, Michael, Vince Kellen, Shava Smallen, Brian DeMeulle, Shawn Strande, Ed Lazowska, Naomi Alterman, et al. 2021. <span>“<span class="nocase">CloudBank: Managed Services to Simplify Cloud Access for Computer Science Research and Education</span>.”</span> In <em>Practice and Experience in Advanced Research Computing</em>. PEARC ’21. New York, NY, USA: Association for Computing Machinery. <a href="https://doi.org/10.1145/3437359.3465586">https://doi.org/10.1145/3437359.3465586</a>.
+</div>
+<div id="ref-Scroggins2020-ut" class="csl-entry" role="listitem">
+Scroggins, Michael, and Bernadette M Boscoe. 2020. <span>“Once <span>FITS</span>, Always <span>FITS</span>? Astronomical Infrastructure in Transition.”</span> <em>IEEE Ann. Hist. Comput.</em> 42 (2): 42–54.
 </div>
 </div>
 </section>
@@ -258,18 +258,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -301,7 +290,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -309,7 +320,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

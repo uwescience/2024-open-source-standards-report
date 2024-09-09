@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.4.555">
+    <meta name="generator" content="quarto-1.5.57">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -175,7 +175,7 @@
   </ul>
 </nav>
 </div>
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">      <section id="sec-cross-sector" class="level1">
 <h1>Cross-sector interactions</h1>
@@ -192,8 +192,14 @@
 </section>
 <section id="industry" class="level2">
 <h2 class="anchored" data-anchor-id="industry">Industry</h2>
-<p>Interactions of data and meta-data standards with commercial interests may provide specific sources of friction. This is because proprietary/closed formats of data can create difficulty at various transition points: from one instrument vendor to another, from data producer to downstream recipient/user, etc. On the other hand, in some cases, cross-sector collaborations with commercial entities may pave the way to robust and useful standards. One example is the DICOM standard, which is maintained by working groups that encompass commercial imaging device vendors and researchers.</p>
+<p>Interactions of data and meta-data standards with commercial interests may provide specific sources of friction. This is because proprietary/closed formats of data can create difficulty at various transition points: from one instrument vendor to another, from data producer to downstream recipient/user, etc. On the other hand, in some cases, cross-sector collaborations with commercial entities may pave the way to robust and useful standards. For example, imaging measurements in human subjects (e.g., in brain imaging experiments) significantly interact with standards for medical imaging, and chiefly the Digital Imaging and Communications in Medicine (DICOM) standard, which is widely used in a range of medical imaging applications, including in clinical settings <span class="citation" data-cites="Larobina2023-vq">Mustra, Delac, and Grgic (<a href="#ref-Mustra2008-xk" role="doc-biblioref">2008</a>)</span>. The standard emerged from the demands of the clinical practice in the 1980s, as digital technologies were came into widespread use in medical imaging, through joint work of industry organizations: the American College of Radiology and the National Association of Electronic Manufacturers. One of the defining features of the DICOM standard is that it allows manufacturers of instruments to define “private fields” that are compliant with the standard, but which may include idiosyncratically organized data and/or metadata. This provides significant flexibility, but can also easily lead to the loss of important information. Nevertheless, the human brain imaging case is exemplary of a case in which industry standards and research standards coexist and need to communicate with each other effectively to advance research use-cases, while keeping up with the rapid development of the technologies.</p>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Larobina2023-vq" class="csl-entry" role="listitem">
+Larobina, Michele. 2023. <span>“Thirty Years of the <span>DICOM</span> Standard.”</span> <em>Tomography</em> 9 (5): 1829–38.
+</div>
+<div id="ref-Mustra2008-xk" class="csl-entry" role="listitem">
+Mustra, Mario, Kresimir Delac, and Mislav Grgic. 2008. <span>“Overview of the <span>DICOM</span> Standard.”</span> In <em>2008 50th International Symposium ELMAR</em>, 1:39–44. IEEE.
+</div>
 <div id="ref-NIST2019" class="csl-entry" role="listitem">
 National Institute of Standards and Technology. 2019. <span>“<span>U.S</span>. <span>LEADERSHIP</span> <span>IN</span> <span>AI</span>: A Plan for Federal Engagement in Developing Technical Standards and Related Tools.”</span>
 </div>
@@ -242,18 +248,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -285,7 +280,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -293,7 +310,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

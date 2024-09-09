@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.4.555">
+    <meta name="generator" content="quarto-1.5.57">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -148,7 +148,7 @@
   window.document.addEventListener("DOMContentLoaded", function (_event) {
     document.body.classList.add('hypothesis-enabled');
   });
-</script>  
+</script>   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script> 
       </head>
 
   <body class="quarto-notebook">
@@ -177,14 +177,14 @@
   </ul>
 </nav>
 </div>
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
 <main class="content quarto-banner-title-block" id="quarto-document-content">      <section id="sec-use-cases" class="level1">
 <h1>Use cases</h1>
 <p>To understand how OSS development practices affect the development of data and metadata standards, it is informative to demonstrate this cross-fertilization through a few use cases. As we will see in these examples, some fields, such as astronomy, high-energy physics and earth sciences have a relatively long history of shared data resources from organizations such as LSST, CERN, and NASA, while other fields have only relatively recently become aware of the value of data sharing and its impact. These disparate histories inform how standards have evolved and how OSS practices have pervaded their development. It also demonstrates field-specific limitations on the adoption of OSS tools and practices that exemplify some of the challenges, which we will explore subsequently.</p>
 <section id="astronomy" class="level2">
 <h2 class="anchored" data-anchor-id="astronomy">Astronomy</h2>
-<p>An early prominent example of a community-driven standard is the FITS (Flexible Image Transport System) file format standard, which was developed in the late 1970s and early 1980s <span class="citation" data-cites="wells1979fits">(<a href="#ref-wells1979fits" role="doc-biblioref">Wells and Greisen 1979</a>)</span>, and has been adopted worldwide for astronomy data preservation and exchange. Essentially every software platform used in astronomy reads and writes the FITS format. It was developed by observatories in the 1980s to store image data in the visible and x-ray spectrum. It has been endorsed by IAU, as well as funding agencies. Though the format has evolved over time, “once FITS, always FITS”. That is, the format cannot be evolved to introduce changes that break backward compatibility. Among the features that make FITS so durable is that it was designed originally to have a very restricted metadata schema. That is, FITS records were designed to be the lowest common denominator of word lengths in computer systems at the time. However, while FITS is compact, its ability to encode the coordinate frame and pixels, means that data from different observational instruments can be stored in this format and relationships between data from different instruments can be related, rendering manual and error-prone procedures for conforming images obsolete.</p>
+<p>An early prominent example of a community-driven standard is the FITS (Flexible Image Transport System) file format standard, which was developed in the late 1970s and early 1980s <span class="citation" data-cites="wells1979fits">(<a href="#ref-wells1979fits" role="doc-biblioref">Wells and Greisen 1979</a>)</span>, and has been adopted worldwide for astronomy data preservation and exchange. Essentially every software platform used in astronomy reads and writes the FITS format. It was developed by observatories in the 1980s to store image data in the visible and x-ray spectrum. It has been endorsed by the International Astronomical Union (IAU), as well as funding agencies. Though the format has evolved over time, “once FITS, always FITS”. That is, the format cannot be evolved to introduce changes that break backward compatibility. Among the features that make FITS so durable is that it was designed originally to have a very restricted metadata schema. That is, FITS records were designed to be the lowest common denominator of word lengths in computer systems at the time. However, while FITS is compact, its ability to encode the coordinate frame and pixels, means that data from different observational instruments can be stored in this format and relationships between data from different instruments can be related, rendering manual and error-prone procedures for conforming images obsolete. Nevertheless, the stability has also raised some issues as the field continues to adapt to new measurement methods and the demands of ever-increasing data volumes and complex data analysis use-case, such as interchange with other data and the use of complex data bases to store and share data <span class="citation" data-cites="Scroggins2020-ut">(<a href="#ref-Scroggins2020-ut" role="doc-biblioref">Scroggins and Boscoe 2020</a>)</span>. Another prominent example of the use of open-source processes to develop standards in Astronomy is in the tools and protocols developed by the International Virtual Observatory Alliance (IVOA) and its national implementations, e.g., in the US Virtual Astronomical Observatory<span class="citation" data-cites="Hanisch2015-cu">(<a href="#ref-Hanisch2015-cu" role="doc-biblioref">Hanisch et al. 2015</a>)</span>. The virtual observatories facilitate discovery and access across observatories around the world and underpin data discovery in astronomy. The IVOA took inspiration from the World-Wide Web Consortium (W3C) and adopted its process for the development of its standards (i.e., Working drafts <span class="math inline">\(\rightarrow\)</span> Proposed Recommendations <span class="math inline">\(\rightarrow\)</span> Recommendations), with individual standards developed by inter-institutional and international working groups. One of the outcomes of the coordination effort is the development of an ecosystem of software tools both developed within the observatory teams and within the user community that interoperate with the standards that were adopted by the observatories.</p>
 </section>
 <section id="high-energy-physics-hep" class="level2">
 <h2 class="anchored" data-anchor-id="high-energy-physics-hep">High-energy physics (HEP)</h2>
@@ -192,11 +192,11 @@
 </section>
 <section id="earth-sciences" class="level2">
 <h2 class="anchored" data-anchor-id="earth-sciences">Earth sciences</h2>
-<p>The need for geospatial data exchange between different systems began to be recognized in the 1970s and 1980s, but proprietary formats still dominated. Coordinated standardization efforts brought the Open Geospatial Consortium (OGC) establishment in the 1990s, a critical step towards open standards for geospatial data. The 1990s have also seen the development of key standards such as the Network Common Data Form (NetCDF) developed by the University Corporation for Atmospheric Research (UCAR) and the Hierarchical Data Format (HDF), a set of file formats (HDF4, HDF5) that are widely used, particularly in climate research. The GeoTIFF format, which originated at NASA in the late 1990s, is extensively used to share image data. In the 1990s, open web mapping also began with MapServer (https://mapserver.org) and continued later with other projects such as OpenStreetMap (www.openstreetmap.org). The following two decades, the 2000s-2020s, brought an expansion of open standards and integration with web technologies developed by OGC, as well as other standards such as the Keyhole Markup Language (KML) for displaying geographic data in Earth browsers. Formats suitable for cloud computing also emerged, such as the Cloud Optimized GeoTIFF (COG), followed by Zarr and Apache Parquet for array and tabular data, respectively. In 2006, the Open Source Geospatial Foundation (OSGeo, https://www.osgeo.org) was established, demonstrating the community’s commitment to the development of open-source geospatial technologies. While some standards have been developed in the industry (e.g., Keyhole Markup Language (KML) by Keyhole Inc., which Google later acquired), they later became international standards of the OGC, which now encompasses more than 450 commercial, governmental, nonprofit, and research organizations working together on the development and implementation of open standards (https://www.ogc.org).</p>
+<p>The need for geospatial data exchange between different systems began to be recognized in the 1970s and 1980s, but proprietary formats still dominated. Coordinated standardization efforts brought the Open Geospatial Consortium (OGC) establishment in the 1990s, a critical step towards open standards for geospatial data. The 1990s have also seen the development of key standards such as the Network Common Data Form (NetCDF) developed by the University Corporation for Atmospheric Research (UCAR), and the Hierarchical Data Format (HDF), a set of file formats (HDF4, HDF5) that are widely used, particularly in climate research. The GeoTIFF format, which originated at NASA in the late 1990s, is extensively used to share image data. In the 1990s, open web mapping also began with MapServer (https://mapserver.org) and continued later with other projects such as OpenStreetMap (https://www.openstreetmap.org). The following two decades, the 2000s-2020s, brought an expansion of open standards and integration with web technologies developed by OGC, as well as other standards such as the Keyhole Markup Language (KML) for displaying geographic data in Earth browsers. Formats suitable for cloud computing also emerged, such as the Cloud Optimized GeoTIFF (COG), followed by Zarr and Apache Parquet for array and tabular data, respectively. In 2006, the Open Source Geospatial Foundation (OSGeo, https://www.osgeo.org) was established, demonstrating the community’s commitment to the development of open-source geospatial technologies. While some standards have been developed in the industry (e.g., Keyhole Markup Language (KML) by Keyhole Inc., which Google later acquired), they later became international standards of the OGC, which now encompasses more than 450 commercial, governmental, nonprofit, and research organizations working together on the development and implementation of open standards (https://www.ogc.org).</p>
 </section>
 <section id="neuroscience" class="level2">
 <h2 class="anchored" data-anchor-id="neuroscience">Neuroscience</h2>
-<p>In contrast to astronomy and HEP, Neuroscience has traditionally been a “cottage industry”, where individual labs have generated experimental data designed to answer specific experimental questions. While this model still exists, the field has also seen the emergence of new modes of data production that focus on generating large shared datasets designed to answer many different questions, more akin to the data generated in large astronomy data collection efforts <span class="citation" data-cites="Koch2012-ve">(<a href="#ref-Koch2012-ve" role="doc-biblioref">Koch and Clay Reid 2012</a>)</span>. This change has been brought on through a combination of technical advances in data acquisition techniques, which now generate large and very high-dimensional/information-rich datasets, cultural changes, which have ushered in new norms of transparency and reproducibility, and funding initiatives that have encouraged this kind of data collection. However, because these changes are recent relative to the other cases mentioned above, standards for data and metadata in neuroscience have been prone to adopt many elements of modern OSS development. Two salient examples in neuroscience are the Neurodata Without Borders file format for neurophysiology data <span class="citation" data-cites="Rubel2022NWB">(<a href="#ref-Rubel2022NWB" role="doc-biblioref">Rübel et al. 2022</a>)</span> and the Brain Imaging Data Structure (BIDS) standard for neuroimaging data <span class="citation" data-cites="Gorgolewski2016BIDS">(<a href="#ref-Gorgolewski2016BIDS" role="doc-biblioref">Gorgolewski et al. 2016</a>)</span>. BIDS in particular owes some of its success to the adoption of OSS development mechanisms <span class="citation" data-cites="Poldrack2024BIDS">(<a href="#ref-Poldrack2024BIDS" role="doc-biblioref">Poldrack et al. 2024</a>)</span>. For example, small changes to the standard are managed through the GitHub pull request mechanism; larger changes are managed through a BIDS Enhancement Proposal (BEP) process that is directly inspired by the Python programming language community’s Python Enhancement Proposal procedure, which isused to introduce new ideas into the language. Though the BEP mechanism takes a slightly different technical approach, it tries to emulate the open-ended and community-driven aspects of Python development to accept contributions from a wide range of stakeholders and tap a broad base of expertise.</p>
+<p>In contrast to the previously-mentioned fields, Neuroscience has traditionally been a “cottage industry”, where individual labs have generated experimental data designed to answer specific experimental questions. While this model still exists, the field has also seen the emergence of new modes of data production that focus on generating large shared datasets designed to answer many different questions, more akin to the data generated in large astronomy data collection efforts <span class="citation" data-cites="Koch2012-ve">(<a href="#ref-Koch2012-ve" role="doc-biblioref">Koch and Clay Reid 2012</a>)</span>. This change has been brought on through a combination of technical advances in data acquisition techniques, which now generate large and very high-dimensional/information-rich datasets, cultural changes, which have ushered in new norms of transparency and reproducibility, and funding initiatives that have encouraged this kind of data collection. However, because these changes are recent relative to the other cases mentioned above, standards for data and metadata in neuroscience have been prone to adopt many elements of modern OSS development. Two salient examples in neuroscience are the Neurodata Without Borders file format for neurophysiology data <span class="citation" data-cites="Rubel2022NWB">(<a href="#ref-Rubel2022NWB" role="doc-biblioref">Rübel et al. 2022</a>)</span> and the Brain Imaging Data Structure (BIDS) standard for neuroimaging data <span class="citation" data-cites="Gorgolewski2016BIDS">(<a href="#ref-Gorgolewski2016BIDS" role="doc-biblioref">Gorgolewski et al. 2016</a>)</span>. BIDS in particular owes some of its success to the adoption of OSS development mechanisms <span class="citation" data-cites="Poldrack2024BIDS">(<a href="#ref-Poldrack2024BIDS" role="doc-biblioref">Poldrack et al. 2024</a>)</span>. For example, small changes to the standard are managed through the GitHub pull request mechanism; larger changes are managed through a BIDS Enhancement Proposal (BEP) process that is directly inspired by the Python programming language community’s Python Enhancement Proposal procedure, which is used to introduce new ideas into the language. Though the BEP mechanism takes a slightly different technical approach, it tries to emulate the open-ended and community-driven aspects of Python development to accept contributions from a wide range of stakeholders and tap a broad base of expertise.</p>
 </section>
 <section id="community-science" class="level2">
 <h2 class="anchored" data-anchor-id="community-science">Community science</h2>
@@ -208,6 +208,9 @@ Basaglia, T, M Bellis, J Blomer, J Boyd, C Bozzi, D Britzger, S Campana, et al. 
 <div id="ref-Gorgolewski2016BIDS" class="csl-entry" role="listitem">
 Gorgolewski, Krzysztof J, Tibor Auer, Vince D Calhoun, R Cameron Craddock, Samir Das, Eugene P Duff, Guillaume Flandin, et al. 2016. <span>“The <span>Brain</span> <span>Imaging</span> <span>Data</span> <span>Structure</span>, a Format for Organizing and Describing Outputs of Neuroimaging Experiments.”</span> <em>Sci Data</em> 3 (June): 160044. <a href="https://www.nature.com/articles/sdata201644">https://www.nature.com/articles/sdata201644</a>.
 </div>
+<div id="ref-Hanisch2015-cu" class="csl-entry" role="listitem">
+Hanisch, R J, G B Berriman, T J W Lazio, S Emery Bunn, J Evans, T A McGlynn, and R Plante. 2015. <span>“The Virtual Astronomical Observatory: Re-Engineering Access to Astronomical Data.”</span> <em>Astron. Comput.</em> 11 (June): 190–209.
+</div>
 <div id="ref-Koch2012-ve" class="csl-entry" role="listitem">
 Koch, Christof, and R Clay Reid. 2012. <span>“Observatories of the Mind.”</span> <a href="http://dx.doi.org/10.1038/483397a" class="uri">http://dx.doi.org/10.1038/483397a</a>.
 </div>
@@ -216,6 +219,9 @@ Poldrack, Russell A, Christopher J Markiewicz, Stefan Appelhoff, Yoni K Ashar, T
 </div>
 <div id="ref-Rubel2022NWB" class="csl-entry" role="listitem">
 Rübel, Oliver, Andrew Tritt, Ryan Ly, Benjamin K Dichter, Satrajit Ghosh, Lawrence Niu, Pamela Baker, et al. 2022. <span>“The Neurodata Without Borders Ecosystem for Neurophysiological Data Science.”</span> <em>Elife</em> 11 (October).
+</div>
+<div id="ref-Scroggins2020-ut" class="csl-entry" role="listitem">
+Scroggins, Michael, and Bernadette M Boscoe. 2020. <span>“Once <span>FITS</span>, Always <span>FITS</span>? Astronomical Infrastructure in Transition.”</span> <em>IEEE Ann. Hist. Comput.</em> 42 (2): 42–54.
 </div>
 <div id="ref-wells1979fits" class="csl-entry" role="listitem">
 Wells, Donald Carson, and Eric W Greisen. 1979. <span>“FITS-a Flexible Image Transport System.”</span> In <em>Image Processing in Astronomy</em>, 445.
@@ -259,18 +265,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -302,7 +297,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -310,7 +327,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
