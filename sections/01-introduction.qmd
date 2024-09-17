@@ -30,7 +30,7 @@ non-profit organization that was founded in the 1990s developed a set of
 guidelines for licensing of OSS that is designed to protect the rights of
 developers and users. On the technical side, tools such as the Git Source-code
 management system support complex and distributed open-source workflows that
-accelerate, streamline, and robustify OSS development. Governance approaches
+accelerate, streamline, and make OSS development more robust. Governance approaches
 have been honed to address the challenges of managing a range of stakeholder
 interests and to mediate between large numbers of weakly-connected individuals
 that contribute to OSS. When these social and technical innovations are put

@@ -9,34 +9,35 @@ mitigated.
 One of the defining characteristics of OSS is its dynamism and its rapid
 evolution. Because OSS can be used by anyone and, in most cases, contributions
 can be made by anyone, innovations flow into OSS in a bottom-up fashion from
-user/developers. Pathways to contribution by members of the community are often
-well-defined: both from the technical perspective (e.g., through a pull request
-on GitHub, or other similar mechanisms), as well as from the social perspective
-(e.g., whether contributors need to accept certain licensing conditions through
-a contributor licensing agreement) and the socio-technical perspective (e.g.,
-how many people need to review a contribution, what are the timelines for a
-contribution to be reviewed and accepted, what are the release cycles of the
-software that make the contribution available to a broader community of users,
-etc.). Similarly, open-source standards may also find themselves addressing use
-cases and solutions that were not originally envisioned through bottom-up
-contributions of members of a research community to which the standard
-pertains. However, while this dynamism provides an avenue for flexibility it
-also presents a source of tension. This is because data and metadata standards
-apply to already existing datasets, and changes may affect the compliance of
-these existing datasets. Similarly, analysis technology stacks that are
-developed based on an existing version of a standard have to adapt to the
-introduction of new ideas and changes into a standard. Dynamic changes of this
-sort therefore risk causing a loss of faith in the standard by a user
-community, and migration away from the standard. Similarly, if a standard
-evolves too rapidly, users may choose to stick to an outdated version of a
-standard for a long time, creating strains on the community of developers and
-maintainers of a standard who will need to accommodate long deprecation cycles.
-On the other hand, in cases in which some forms of dynamic change is prohibited
--- as in the case of the FITS file format, which prohibits changes that break
-backwards-compatibility -- there is also a cost associated with the stability
-[@Scroggins2020-ut]: limiting adoption and combinations of new types of
-measurements, new analysis methods or new modes of data storage and data
-sharing.
+users/developers. Pathways to contribution by members of the community are
+often well-defined: both from the technical perspective (e.g., through a pull
+request on GitHub, or other similar mechanisms), as well as from the social
+perspective (e.g., whether contributors need to accept certain licensing
+conditions through a contributor licensing agreement) and the socio-technical
+perspective (e.g., how many people need to review a contribution, what are the
+timelines for a contribution to be reviewed and accepted, what are the release
+cycles of the software that make the contribution available to a broader
+community of users, etc.). Similarly, open-source standards may also find
+themselves addressing use cases and solutions that were not originally
+envisioned through bottom-up contributions of members of a research community
+to which the standard pertains. However, while this dynamism provides an avenue
+for flexibility it also presents a source of tension. This is because data and
+metadata standards apply to already existing datasets, and changes may affect
+the compliance of these existing datasets. These existing datasets may have a
+lifespan of decades, making continued compatibility crucial. Similarly,
+analysis technology stacks that are developed based on an existing version of a
+standard have to adapt to the introduction of new ideas and changes into a
+standard. Dynamic changes of this sort therefore risk causing a loss of faith
+in the standard by a user community, and migration away from the standard.
+Similarly, if a standard evolves too rapidly, users may choose to stick to an
+outdated version of a standard for a long time, creating strains on the
+community of developers and maintainers of a standard who will need to
+accommodate long deprecation cycles. On the other hand, in cases in which some
+forms of dynamic change is prohibited -- as in the case of the FITS file
+format, which prohibits changes that break backwards-compatibility -- there is
+also a cost associated with the stability [@Scroggins2020-ut]: limiting
+adoption and combinations of new types of measurements, new analysis methods or
+new modes of data storage and data sharing.
 
 ## Mismatches between standards developers and user communities
 
@@ -52,15 +53,16 @@ the standard or advocate for more technically advanced mechanisms for evolving
 the standard. These advanced capabilities offer more robust development
 practices and consistency in cases where the standards are complex and
 elaborate. They can also ease the maintenance burden of the standard. On the
-other hand, they may end up leaving potential users sidelined in the
-development of the standard, and limiting their ability to provide feedback
-about the practical implications of changes to the standards. One example of
-this (already mentioned above in @sec-use-cases) is the use of git/GitHub for
-versioning of standards documents. This sets a high bar for participation in
-standards development for researchers in fields of research in which git/GitHub
-have not yet had significant adoption as tools of day-to-day computational
-practice. At the same time, it provides clarity and robustness for standards
-developers communities that are well-versed in these tools.
+other hand, they may end up leaving potential experimental researchers and data
+providers sidelined in the development of the standard, and limiting their
+ability to provide feedback about the practical implications of changes to the
+standards. One example of this (already mentioned above in @sec-use-cases) is
+the use of git/GitHub for versioning of standards documents. This sets a high
+bar for participation in standards development for researchers in fields of
+research in which git/GitHub have not yet had significant adoption as tools of
+day-to-day computational practice. At the same time, it provides clarity and
+robustness for standards developers communities that are well-versed in these
+tools.
 
 Another layer of potential mismatches arises when a more complex set of
 stakeholders needs to be considered. For example, the Group on Earth
@@ -101,14 +103,19 @@ directed towards commercial solutions) there is an incentive to create data
 formats and data analysis platforms that are proprietary. This may drive
 innovative applications of scientific measurements, but also creates sub-fields
 where scientific observations are generated by proprietary instrumentation, due
-to these commercialization or other profit-driven incentives. There is a lack
-of regulatory oversight to adhere to available standards or evolve common
-tools, limiting integration across different measurements. In cases where a
-significant amount of data is already stored in proprietary formats,
-significant data transformations may be required to get data to a state that is
-amenable to open-source standards. In these sub-fields there may also be a lack
-of incentive to set aside investment or resources to invest in establishing
-open-source data standards, leaving these sub-fields relatively siloed.
+to these commercialization or other profit-driven incentives. One example is
+the proliferation of proprietary file formats in electrophysiological
+measurements of brain signals [@Gillon2024-vu, @Hermes2023-aw]. Another example
+is proprietary application programming interfaces (APIs) used in electronic
+health records [@Barker2024-ox]. In most cases, there is a lack of regulatory
+oversight to adhere to available standards or evolve common tools, limiting
+integration across different measurements. In cases where a significant amount
+of data is already stored in proprietary formats, or where access is limited by
+proprietary APIs significant data transformations may be required to get data
+to a state that is amenable to open-source standards. In these sub-fields there
+may also be a lack of incentive to set aside investment or resources to invest
+in establishing open-source data standards, leaving these sub-fields relatively
+siloed.
 
 ### Harnessing new computing paradigms and technologies
 
