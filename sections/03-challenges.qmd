@@ -132,28 +132,29 @@ because cloud data access patterns are fundamentally different from the ones
 that are used in local posix-style file-systems. Suspicion of cloud computing
 comes in two different flavors: the first by researchers and administrators who
 may be wary of costs associated with cloud computing, and especially with the
-difficulty of predicting these costs, particularly in scenarios where long-term
-preservation is required. Projects such as NSF's Cloud Bank seek to mitigate
-some of these concerns, by providing an additional layer of transparency into
-cloud costs [@Norman2021CloudBank]. The other type of objection relates to the
-fact that cloud computing services, by their very nature, are closed ecosystems
-that resist portability and interoperability. Some aspects of the services are
-always going to remain hidden and privy only to the cloud computing service
-provider. In this respect, cloud computing runs afoul of some of the appealing
-aspects of OSS. That said, the development of "cloud native" standards can
-provide significant benefits in terms of the research that can be conducted.
-For example, NOAA plans to use cloud computing for integration across the
-multiple disparate datasets that it collects to build knowledge graphs that can
-be queried by researchers to answer questions that can only be answered through
-this integration. Putting all the data "in one place" should help with that.
-Adaptation to the cloud in terms of data standards has driven development of
-new file formats. A salient example is the ZARR format [@zarr], which supports
-random access into array-based datasets stored in cloud object storage,
-facilitating scalable and parallelized computing on these data. Indeed, data
-standards such as NWB (neuroscience) and OME (microscopy) now use ZARR as a
-backend for cloud-based storage. In other cases, file formats that were once
-not straightforward to use in the cloud, such as HDF5 and TIFF have been
-adapted to cloud use (e.g., through the cloud-optimized geoTIFF format).
+difficulty of predicting these costs. This can particularly affect scenarios
+where long-term preservation is required. Projects such as NSF's Cloud Bank
+seek to mitigate some of these concerns, by providing an additional layer of
+transparency into cloud costs [@Norman2021CloudBank]. The other type of
+objection relates to the fact that cloud computing services, by their very
+nature, are closed ecosystems that resist portability and interoperability.
+Some aspects of the services are always going to remain hidden and privy only
+to the cloud computing service provider. In this respect, cloud computing runs
+afoul of some of the appealing aspects of OSS. That said, the development of
+"cloud native" standards can provide significant benefits in terms of the
+research that can be conducted. For example, NOAA plans to use cloud computing
+for integration across the multiple disparate datasets that it collects to
+build knowledge graphs that can be queried by researchers to answer questions
+that can only be answered through this integration. Putting all the data "in
+one place" should help with that. Adaptation to the cloud in terms of data
+standards has driven development of new file formats. A salient example is the
+ZARR format [@zarr], which supports random access into array-based datasets
+stored in cloud object storage, facilitating scalable and parallelized
+computing on these data. Indeed, data standards such as NWB (neuroscience) and
+OME (microscopy) now use ZARR as a backend for cloud-based storage. In other
+cases, file formats that were once not straightforward to use in the cloud,
+such as HDF5 and TIFF have been adapted to cloud use (e.g., through the
+cloud-optimized geoTIFF format).
 
 
 ## Unclear pathways for standards success and sustainability
