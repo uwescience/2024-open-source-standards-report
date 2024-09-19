@@ -119,7 +119,7 @@ training so that this crucial role is encouraged. Initial proposals for the
 curriculum and scope of the role have already been proposed (e.g., in
 [@Mons2018DataStewardshipBook]), but we identify here also a need to connect
 these individuals directly to the practices that exemplify open-source
-standards. Thus, it will be important for these individuals to be facile in the
+standards. Thus, it will be important for these individuals to be conversant in the
 methodology of OSS. This does not mean that they need to become software
 engineers -- though for some of them there may be some overlap with the role of
 research software engineers [@Connolly2023Software] -- but rather that they
