@@ -36,7 +36,7 @@ be developed that assesses the challenges and opportunities that a specific
 standard faces at its current phase of development. Developing such a maturity
 model, while it goes beyond the scope of the current report, could lead to the
 eventual development of a meta-standard or a standard-of-standards. This would
-encompass a succinct description of cross-cutting best-practices that can be
+facilitate a succinct description of cross-cutting best-practices that can be
 used as a basis for the analysis or assessment of an existing standard, or as
 guidelines to develop new standards. For instance, specific barriers to
 adopting a data standard that take into account the size of the community and
