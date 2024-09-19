@@ -41,28 +41,28 @@ new modes of data storage and data sharing.
 
 ## Mismatches between standards developers and user communities
 
-Open-source standards often entail an inherent gap in both interest and ability
-to engage with the technical details undergirding standards and their
-development between the core developers of the standard and the users of the
-standard, which are members of the broader research field to which the standard
-pertains. This gap, in and of itself, creates friction on the path to broad
-adoption and best utilization of the standards. In extreme cases, the interests
-of researchers and standards developers may even seem at odds, as developers
-implement sophisticated mechanisms to automate the creation and validation of
-the standard or advocate for more technically advanced mechanisms for evolving
-the standard. These advanced capabilities offer more robust development
-practices and consistency in cases where the standards are complex and
-elaborate. They can also ease the maintenance burden of the standard. On the
-other hand, they may end up leaving potential experimental researchers and data
-providers sidelined in the development of the standard, and limiting their
-ability to provide feedback about the practical implications of changes to the
-standards. One example of this (already mentioned above in @sec-use-cases) is
-the use of git/GitHub for versioning of standards documents. This sets a high
-bar for participation in standards development for researchers in fields of
-research in which git/GitHub have not yet had significant adoption as tools of
-day-to-day computational practice. At the same time, it provides clarity and
-robustness for standards developers communities that are well-versed in these
-tools.
+Open-source standards often entail an inherent gap between the core developers
+of the standard and the users of the standard. The former may be possess higher
+ability to engage with the technical details undergirding standards and their
+development, while the latter still have a high level of interest as members of
+the broader research field to which the standard pertains. This gap, in and of
+itself, creates friction on the path to broad adoption and best utilization of
+the standards. In extreme cases, the interests of researchers and standards
+developers may even seem at odds, as developers implement sophisticated
+mechanisms to automate the creation and validation of the standard or advocate
+for more technically advanced mechanisms for evolving the standard. These
+advanced capabilities offer more robust development practices and consistency
+in cases where the standards are complex and elaborate. They can also ease the
+maintenance burden of the standard. On the other hand, they may end up leaving
+potential experimental researchers and data providers sidelined in the
+development of the standard, and limiting their ability to provide feedback
+about the practical implications of changes to the standards. One example of
+this (already mentioned above in @sec-use-cases) is the use of git/GitHub for
+versioning of standards documents. This sets a high bar for participation in
+standards development for researchers in fields of research in which git/GitHub
+have not yet had significant adoption as tools of day-to-day computational
+practice. At the same time, it provides clarity and robustness for standards
+developers communities that are well-versed in these tools.
 
 Another layer of potential mismatches arises when a more complex set of
 stakeholders needs to be considered. For example, the Group on Earth
