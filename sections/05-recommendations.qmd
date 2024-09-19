@@ -92,7 +92,7 @@ community efforts and tools for this. The OSS model is seen as a particularly
 promising avenue for an investment of resources, because it builds on
 previously-developed procedures and technical infrastructure and because it
 provides avenues for the democratization of development processes and for
-community input along the way. At the same time, there is significant
+community input along the way. At the same time, there are significant
 challenges associated with incentives to engage, ranging from the dilution of
 credit to individual contributors, and ranging through the burnout of
 maintainers and developers. The clarity offered by procedures for enhancement
