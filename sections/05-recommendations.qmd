@@ -57,10 +57,10 @@ expertise typical of this community, and so forth -- could help guide the
 standards-development process towards more effective adoption and use. A set of
 meta-standards and high-level descriptions of the standards-development process
 -- some of which is laid out in this report -- could help standard developers
-avoid known pitfalls, such as the dreaded proliferation of standards, or such
-as complexity-impeded adoption. Surveying and documenting the success and
-failures of current standards for a specific dataset / domain can help
-disseminate knowledge about the standardization process. Resources such as
+avoid known pitfalls, such as the dreaded proliferation of standards, or
+complexity-impeded adoption. Surveying and documenting the success and failures
+of current standards for a specific dataset / domain can help disseminate
+knowledge about the standardization process. Resources such as
 [Fairsharing](https://fairsharing.org/) or [Digital Curation
 Center](https://www.dcc.ac.uk/guidance/standards) can help guide this process.
 
