@@ -155,13 +155,13 @@ development of open-source standards, and to build on prior experience, the
 documentation and dissemination of lifecycles should be seen as an integral
 step of the work of standards creators and granting agencies. In the meanwhile,
 it would be good to also retroactively document the lifecycle of existing
-standards that are seen as success stories. Research on the principles that
-underlie successful open-source standards development can be used to formulate
-new standards and iterate on existing ones. Data management plans should
-promote the sharing of not only data, but also metadata and descriptions of how
-to use it.
+standards that are seen as success stories, and to foster the awareness of
+these standards. In addition, fostering research projects on the principles
+that underlie successful open-source standards development will help formulate
+new standards and iterate on existing ones. In accordance, data management
+plans should promote the sharing of not only data, but also metadata and
+descriptions of how to use it.
 
-AJC: Foster awareness of standards (and software). FAIR for standards so that others can learn about standards in other fields – there are ma y success stories from this.
 
 ### Manage Cross Sector alliances
 
@@ -169,6 +169,6 @@ Encourage cross-sector and cross-domain alliances that can impact successful
 standards creation. Invest in robust program management of these alliances to
 align pace and create incentives (for instance via Open Source Program Offices
 at Universities or other research organizations). Similar to program officers
-at funding agencies, standards evolution need sustained PM efforts.
-Multi-company partnerships should include strategic initiatives for standard
-establishment such as the Pistoia Alliance (https://www.pistoiaalliance.org/).
+at funding agencies, standards evolution need sustained PM efforts. Multi-party
+partnerships should include strategic initiatives for standard establishment
+such as the Pistoia Alliance (https://www.pistoiaalliance.org/).
