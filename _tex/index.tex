@@ -219,7 +219,8 @@
 
 
 \title{Towards an open-source model for data and metadata standards}
-\author{Ariel Rokem \and Vani Mandava \and Nicoleta Cristea}
+\author{Ariel Rokem \and Vani Mandava \and Nicoleta Cristea \and Anshul
+Tambay \and Andrew J. Connolly}
 \date{}
 
 \begin{document}
@@ -292,15 +293,15 @@ organization that was founded in the 1990s developed a set of guidelines
 for licensing of OSS that is designed to protect the rights of
 developers and users. On the technical side, tools such as the Git
 Source-code management system support complex and distributed
-open-source workflows that accelerate, streamline, and robustify OSS
-development. Governance approaches have been honed to address the
-challenges of managing a range of stakeholder interests and to mediate
-between large numbers of weakly-connected individuals that contribute to
-OSS. When these social and technical innovations are put together they
-enable a host of positive defining features of OSS, such as
-transparency, collaboration, and decentralization. These features allow
-OSS to have a remarkable level of dynamism and productivity, while also
-retaining the ability of a variety of stakeholders to guide the
+open-source workflows that accelerate, streamline, and make OSS
+development more robust. Governance approaches have been honed to
+address the challenges of managing a range of stakeholder interests and
+to mediate between large numbers of weakly-connected individuals that
+contribute to OSS. When these social and technical innovations are put
+together they enable a host of positive defining features of OSS, such
+as transparency, collaboration, and decentralization. These features
+allow OSS to have a remarkable level of dynamism and productivity, while
+also retaining the ability of a variety of stakeholders to guide the
 evolution of the software to take their needs and interests into
 account.
 
@@ -308,7 +309,7 @@ Data and metadata standards that use tools and practices of OSS
 (``open-source standards'' henceforth) reap many of the benefits that
 the OSS model has provided in the development of other technologies. The
 present report explores how OSS processes and tools have affected the
-development of data and metadata standards. The report will triangulate
+development of data and metadata standards. The report will survey
 common features of a variety of use cases; it will identify some of the
 challenges and pitfalls of this mode of standards development, with a
 particular focus on cross-sector interactions; and it will make
@@ -322,7 +323,7 @@ data and metadata standards, it is informative to demonstrate this
 cross-fertilization through a few use cases. As we will see in these
 examples, some fields, such as astronomy, high-energy physics and earth
 sciences have a relatively long history of shared data resources from
-organizations such as LSST, CERN, and NASA, while other fields have only
+organizations such as SDSS, CERN, and NASA, while other fields have only
 relatively recently become aware of the value of data sharing and its
 impact. These disparate histories inform how standards have evolved and
 how OSS practices have pervaded their development. It also demonstrates
@@ -346,31 +347,30 @@ changes that break backward compatibility. Among the features that make
 FITS so durable is that it was designed originally to have a very
 restricted metadata schema. That is, FITS records were designed to be
 the lowest common denominator of word lengths in computer systems at the
-time. However, while FITS is compact, its ability to encode the
-coordinate frame and pixels, means that data from different
-observational instruments can be stored in this format and relationships
-between data from different instruments can be related, rendering manual
-and error-prone procedures for conforming images obsolete. Nevertheless,
-the stability has also raised some issues as the field continues to
-adapt to new measurement methods and the demands of ever-increasing data
-volumes and complex data analysis use-case, such as interchange with
-other data and the use of complex data bases to store and share data
-(Scroggins and Boscoe 2020). Another prominent example of the use of
-open-source processes to develop standards in Astronomy is in the tools
-and protocols developed by the International Virtual Observatory
-Alliance (IVOA) and its national implementations, e.g., in the US
-Virtual Astronomical Observatory(Hanisch et al. 2015). The virtual
-observatories facilitate discovery and access across observatories
-around the world and underpin data discovery in astronomy. The IVOA took
-inspiration from the World-Wide Web Consortium (W3C) and adopted its
-process for the development of its standards (i.e., Working drafts
-\(\rightarrow\) Proposed Recommendations \(\rightarrow\)
-Recommendations), with individual standards developed by
-inter-institutional and international working groups. One of the
-outcomes of the coordination effort is the development of an ecosystem
-of software tools both developed within the observatory teams and within
-the user community that interoperate with the standards that were
-adopted by the observatories.
+time. However, while FITS is compact, its ability to encode a coordinate
+frame for pixels, means that data from different observational
+instruments can be stored in this format and relationships between data
+from different instruments can be defined, rendering manual and
+error-prone procedures for conforming images obsolete. Nevertheless, the
+stability has also raised some issues as the field continues to adapt to
+new measurement methods and the demands of ever-increasing data volumes
+and complex data analysis use-case, such as interchange with other data
+and the use of complex data bases to store and share data (Scroggins and
+Boscoe 2020). Another prominent example of the use of open-source
+processes to develop standards in Astronomy is in the tools and
+protocols developed by the International Virtual Observatory Alliance
+(IVOA) and its national implementations, e.g., in the US Virtual
+Astronomical Observatory(Hanisch et al. 2015). The virtual observatories
+facilitate discovery and access across observatories around the world
+and underpin data discovery in astronomy. The IVOA took inspiration from
+the World-Wide Web Consortium (W3C) and adopted its process for the
+development of its standards (i.e., Working drafts \(\rightarrow\)
+Proposed Recommendations \(\rightarrow\) Recommendations), with
+individual standards developed by inter-institutional and international
+working groups. One of the outcomes of the coordination effort is the
+development of an ecosystem of software tools both developed within the
+observatory teams and within the user community that interoperate with
+the standards that were adopted by the observatories.
 
 \subsection{High-energy physics (HEP)}\label{high-energy-physics-hep}
 
@@ -380,11 +380,11 @@ data analysis has high penetration (Basaglia et al. 2023). A top-down
 approach is taken so that within every large collaboration, standards
 are enforced, and this adoption is centrally managed. Access to raw data
 is essentially impossible because of its large volume, and making it
-publicly available is both technically very hard and potentially
-ill-advised. Therefore, analysis tools are tuned specifically to the
-standards of the released data. Incentives to use the standards are
-provided by funders that require data management plans that specify how
-the data is shared (i.e., in a standards-compliant manner).
+publicly available would be technically very difficult. Therefore,
+analysis tools are tuned specifically to the standards of the released
+data. Incentives to use the standards are provided by funders that
+require data management plans that specify how the data is shared (i.e.,
+in a standards-compliant manner).
 
 \subsection{Earth sciences}\label{earth-sciences}
 
@@ -398,25 +398,22 @@ development of key standards such as the Network Common Data Form
 Research (UCAR), and the Hierarchical Data Format (HDF), a set of file
 formats (HDF4, HDF5) that are widely used, particularly in climate
 research. The GeoTIFF format, which originated at NASA in the late
-1990s, is extensively used to share image data. In the 1990s, open web
-mapping also began with MapServer (https://mapserver.org) and continued
-later with other projects such as OpenStreetMap
-(https://www.openstreetmap.org). The following two decades, the
-2000s-2020s, brought an expansion of open standards and integration with
-web technologies developed by OGC, as well as other standards such as
-the Keyhole Markup Language (KML) for displaying geographic data in
-Earth browsers. Formats suitable for cloud computing also emerged, such
-as the Cloud Optimized GeoTIFF (COG), followed by Zarr and Apache
-Parquet for array and tabular data, respectively. In 2006, the Open
-Source Geospatial Foundation (OSGeo, https://www.osgeo.org) was
-established, demonstrating the community's commitment to the development
-of open-source geospatial technologies. While some standards have been
-developed in the industry (e.g., Keyhole Markup Language (KML) by
-Keyhole Inc., which Google later acquired), they later became
-international standards of the OGC, which now encompasses more than 450
-commercial, governmental, nonprofit, and research organizations working
-together on the development and implementation of open standards
-(https://www.ogc.org).
+1990s, is extensively used to share image data. The following two
+decades, the 2000s-2020s, brought an expansion of open standards and
+integration with web technologies developed by OGC, as well as other
+standards such as the Keyhole Markup Language (KML) for displaying
+geographic data in Earth browsers. Formats suitable for cloud computing
+also emerged, such as the Cloud Optimized GeoTIFF (COG), followed by
+Zarr and Apache Parquet for array and tabular data, respectively. In
+2006, the Open Source Geospatial Foundation (OSGeo,
+https://www.osgeo.org) was established, demonstrating the community's
+commitment to the development of open-source geospatial technologies.
+While some standards have been developed in the industry (e.g., Keyhole
+Markup Language (KML) by Keyhole Inc., which Google later acquired),
+they later became international standards of the OGC, which now
+encompasses more than 450 commercial, governmental, nonprofit, and
+research organizations working together on the development and
+implementation of open standards (https://www.ogc.org).
 
 \subsection{Neuroscience}\label{neuroscience}
 
@@ -453,29 +450,33 @@ stakeholders and tap a broad base of expertise.
 \subsection{Community science}\label{community-science}
 
 Another interesting use case for open-source standards is
-community/citizen science. This approach, which has grown in the last 20
-years, has many benefits for both the research field that harnesses the
-energy of non-scientist members of the community to engage with
-scientific data, as well as to the community members themselves who can
-draw both knowledge and pride in their participation in the scientific
-endeavor. It is also recognized that unique broader benefits are accrued
-from this mode of scientific research, through the inclusion of
-perspectives and data that would not otherwise be included. To make data
-accessible to community scientists, and to make the data collected by
-community scientists accessible to professional scientists, it needs to
-be provided in a manner that can be created and accessed without
-specialized instruments or specialized knowledge. Here, standards are
-needed to facilitate interactions between an in-group of expert
-researchers who generate and curate data and a broader set of out-group
-enthusiasts who would like to make meaningful contributions to the
-science. This creates a particularly stringent constraint on
-transparency and simplicity of standards. Creating these standards in a
-manner that addresses these unique constraints can benefit from OSS
-tools, with the caveat that some of these tools require additional
-expertise. For example, if the standard is developed using git/GitHub
-for versioning, this would require learning the complex and obscure
-technical aspects of these system that are far from easy to adopt, even
-for many professional scientists.
+community/citizen science. An early example of this approach is
+OpenStreetMap (https://www.openstreetmap.org), which allows users to
+contribute to the project development with code and data and freely use
+the maps and other related geospatial datasets. But this example is not
+unique. Overall, this approach has grown in the last 20 years and has
+been adopted in many different fields. It has many benefits for both the
+research field that harnesses the energy of non-scientist members of the
+community to engage with scientific data, as well as to the community
+members themselves who can draw both knowledge and pride in their
+participation in the scientific endeavor. It is also recognized that
+unique broader benefits are accrued from this mode of scientific
+research, through the inclusion of perspectives and data that would not
+otherwise be included. To make data accessible to community scientists,
+and to make the data collected by community scientists accessible to
+professional scientists, it needs to be provided in a manner that can be
+created and accessed without specialized instruments or specialized
+knowledge. Here, standards are needed to facilitate interactions between
+an in-group of expert researchers who generate and curate data and a
+broader set of out-group enthusiasts who would like to make meaningful
+contributions to the science. This creates a particularly stringent
+constraint on transparency and simplicity of standards. Creating these
+standards in a manner that addresses these unique constraints can
+benefit from OSS tools, with the caveat that some of these tools require
+additional expertise. For example, if the standard is developed using
+git/GitHub for versioning, this would require learning the complex and
+obscure technical aspects of these system that are far from easy to
+adopt, even for many professional scientists.
 
 \section{Opportunities and risks for open-source
 standards}\label{sec-challenges}
@@ -489,7 +490,7 @@ need to be mitigated.
 One of the defining characteristics of OSS is its dynamism and its rapid
 evolution. Because OSS can be used by anyone and, in most cases,
 contributions can be made by anyone, innovations flow into OSS in a
-bottom-up fashion from user/developers. Pathways to contribution by
+bottom-up fashion from users/developers. Pathways to contribution by
 members of the community are often well-defined: both from the technical
 perspective (e.g., through a pull request on GitHub, or other similar
 mechanisms), as well as from the social perspective (e.g., whether
@@ -505,29 +506,31 @@ research community to which the standard pertains. However, while this
 dynamism provides an avenue for flexibility it also presents a source of
 tension. This is because data and metadata standards apply to already
 existing datasets, and changes may affect the compliance of these
-existing datasets. Similarly, analysis technology stacks that are
-developed based on an existing version of a standard have to adapt to
-the introduction of new ideas and changes into a standard. Dynamic
-changes of this sort therefore risk causing a loss of faith in the
-standard by a user community, and migration away from the standard.
-Similarly, if a standard evolves too rapidly, users may choose to stick
-to an outdated version of a standard for a long time, creating strains
-on the community of developers and maintainers of a standard who will
-need to accommodate long deprecation cycles. On the other hand, in cases
-in which some forms of dynamic change is prohibited -- as in the case of
-the FITS file format, which prohibits changes that break
-backwards-compatibility -- there is also a cost associated with the
-stability (Scroggins and Boscoe 2020): limiting adoption and
+existing datasets. These existing datasets may have a lifespan of
+decades, making continued compatibility crucial. Similarly, analysis
+technology stacks that are developed based on an existing version of a
+standard have to adapt to the introduction of new ideas and changes into
+a standard. Dynamic changes of this sort therefore risk causing a loss
+of faith in the standard by a user community, and migration away from
+the standard. Similarly, if a standard evolves too rapidly, users may
+choose to stick to an outdated version of a standard for a long time,
+creating strains on the community of developers and maintainers of a
+standard who will need to accommodate long deprecation cycles. On the
+other hand, in cases in which some forms of dynamic change is prohibited
+-- as in the case of the FITS file format, which prohibits changes that
+break backwards-compatibility -- there is also a cost associated with
+the stability (Scroggins and Boscoe 2020): limiting adoption and
 combinations of new types of measurements, new analysis methods or new
 modes of data storage and data sharing.
 
 \subsection{Mismatches between standards developers and user
 communities}\label{mismatches-between-standards-developers-and-user-communities}
 
-Open-source standards often entail an inherent gap in both interest and
-ability to engage with the technical details undergirding standards and
-their development between the core developers of the standard and the
-users of the standard, which are members of the broader research field
+Open-source standards often entail an inherent gap between the core
+developers of the standard and the users of the standard. The former may
+be possess higher ability to engage with the technical details
+undergirding standards and their development, while the latter still
+have a high level of interest as members of the broader research field
 to which the standard pertains. This gap, in and of itself, creates
 friction on the path to broad adoption and best utilization of the
 standards. In extreme cases, the interests of researchers and standards
@@ -537,17 +540,17 @@ advocate for more technically advanced mechanisms for evolving the
 standard. These advanced capabilities offer more robust development
 practices and consistency in cases where the standards are complex and
 elaborate. They can also ease the maintenance burden of the standard. On
-the other hand, they may end up leaving potential users sidelined in the
-development of the standard, and limiting their ability to provide
-feedback about the practical implications of changes to the standards.
-One example of this (already mentioned above in
-Section~\ref{sec-use-cases}) is the use of git/GitHub for versioning of
-standards documents. This sets a high bar for participation in standards
-development for researchers in fields of research in which git/GitHub
-have not yet had significant adoption as tools of day-to-day
-computational practice. At the same time, it provides clarity and
-robustness for standards developers communities that are well-versed in
-these tools.
+the other hand, they may end up leaving potential experimental
+researchers and data providers sidelined in the development of the
+standard, and limiting their ability to provide feedback about the
+practical implications of changes to the standards. One example of this
+(already mentioned above in Section~\ref{sec-use-cases}) is the use of
+git/GitHub for versioning of standards documents. This sets a high bar
+for participation in standards development for researchers in fields of
+research in which git/GitHub have not yet had significant adoption as
+tools of day-to-day computational practice. At the same time, it
+provides clarity and robustness for standards developers communities
+that are well-versed in these tools.
 
 Another layer of potential mismatches arises when a more complex set of
 stakeholders needs to be considered. For example, the Group on Earth
@@ -591,15 +594,23 @@ incentive to create data formats and data analysis platforms that are
 proprietary. This may drive innovative applications of scientific
 measurements, but also creates sub-fields where scientific observations
 are generated by proprietary instrumentation, due to these
-commercialization or other profit-driven incentives. There is a lack of
-regulatory oversight to adhere to available standards or evolve common
-tools, limiting integration across different measurements. In cases
-where a significant amount of data is already stored in proprietary
-formats, significant data transformations may be required to get data to
-a state that is amenable to open-source standards. In these sub-fields
-there may also be a lack of incentive to set aside investment or
-resources to invest in establishing open-source data standards, leaving
-these sub-fields relatively siloed.
+commercialization or other profit-driven incentives. FTIR Spectroscopy
+is one such example, wherein use of Bruker instrumentation necessitates
+downstream analysis of the resulting measurements using proprietary
+binary formats necessary for the OPUS Software. Another example is the
+proliferation of proprietary file formats in electrophysiological
+measurements of brain signals Hermes and Cimbalnek (2023). And yet
+another one is proprietary application programming interfaces (APIs)
+used in electronic health records Adler-Milstein and Pfeifer (2017). In
+most cases, there is a lack of regulatory oversight to adhere to
+available standards or evolve common tools, limiting integration across
+different measurements. In cases where a significant amount of data is
+already stored in proprietary formats, or where access is limited by
+proprietary APIs significant data transformations may be required to get
+data to a state that is amenable to open-source standards. In these
+sub-fields there may also be a lack of incentive to set aside investment
+or resources to invest in establishing open-source data standards,
+leaving these sub-fields relatively siloed.
 
 \subsubsection{Harnessing new computing paradigms and
 technologies}\label{harnessing-new-computing-paradigms-and-technologies}
@@ -618,30 +629,32 @@ cloud data access patterns are fundamentally different from the ones
 that are used in local posix-style file-systems. Suspicion of cloud
 computing comes in two different flavors: the first by researchers and
 administrators who may be wary of costs associated with cloud computing,
-and especially with the difficulty of predicting these costs. Projects
-such as NSF's Cloud Bank seek to mitigate some of these concerns, by
-providing an additional layer of transparency into cloud costs (Norman
-et al. 2021). The other type of objection relates to the fact that cloud
-computing services, by their very nature, are closed ecosystems that
-resist portability and interoperability. Some aspects of the services
-are always going to remain hidden and privy only to the cloud computing
-service provider. In this respect, cloud computing runs afoul of some of
-the appealing aspects of OSS. That said, the development of ``cloud
-native'' standards can provide significant benefits in terms of the
-research that can be conducted. For example, NOAA plans to use cloud
-computing for integration across the multiple disparate datasets that it
-collects to build knowledge graphs that can be queried by researchers to
-answer questions that can only be answered through this integration.
-Putting all the data ``in one place'' should help with that. Adaptation
-to the cloud in terms of data standards has driven development of new
-file formats. A salient example is the ZARR format (Miles et al. 2024),
-which supports random access into array-based datasets stored in cloud
-object storage, facilitating scalable and parallelized computing on
-these data. Indeed, data standards such as NWB (neuroscience) and OME
-(microscopy) now use ZARR as a backend for cloud-based storage. In other
-cases, file formats that were once not straightforward to use in the
-cloud, such as HDF5 and TIFF have been adapted to cloud use (e.g.,
-through the cloud-optimized geoTIFF format).
+and especially with the difficulty of predicting these costs. This can
+particularly affect scenarios where long-term preservation is required.
+Projects such as NSF's Cloud Bank seek to mitigate some of these
+concerns, by providing an additional layer of transparency into cloud
+costs (Norman et al. 2021). The other type of objection relates to the
+fact that cloud computing services, by their very nature, are closed
+ecosystems that resist portability and interoperability. Some aspects of
+the services are always going to remain hidden and privy only to the
+cloud computing service provider. In this respect, cloud computing runs
+afoul of some of the appealing aspects of OSS. That said, the
+development of ``cloud native'' standards can provide significant
+benefits in terms of the research that can be conducted. For example,
+NOAA plans to use cloud computing for integration across the multiple
+disparate datasets that it collects to build knowledge graphs that can
+be queried by researchers to answer questions that can only be answered
+through this integration. Putting all the data ``in one place'' should
+help with that. Adaptation to the cloud in terms of data standards has
+driven development of new file formats. A salient example is the ZARR
+format (Miles et al. 2024), which supports random access into
+array-based datasets stored in cloud object storage, facilitating
+scalable and parallelized computing on these data. Indeed, data
+standards such as NWB (neuroscience) and OME (microscopy) now use ZARR
+as a backend for cloud-based storage. In other cases, file formats that
+were once not straightforward to use in the cloud, such as HDF5 and TIFF
+have been adapted to cloud use (e.g., through the cloud-optimized
+geoTIFF format).
 
 \subsection{Unclear pathways for standards success and
 sustainability}\label{unclear-pathways-for-standards-success-and-sustainability}
@@ -822,13 +835,13 @@ of existing standards is that there is significant knowledge that exists
 across fields and domains and that informs the development of standards
 within each field, but that could be surfaced to the level where it may
 be adopted more widely in different domains and be more broadly useful.
-One approach to this is a comparative approach: In this approach, a
+One approach to this is a comparative approach: in this approach, a
 readiness and/or maturity model can be developed that assesses the
 challenges and opportunities that a specific standard faces at its
 current phase of development. Developing such a maturity model, while it
 goes beyond the scope of the current report, could lead to the eventual
 development of a meta-standard or a standard-of-standards. This would
-encompass a succinct description of cross-cutting best-practices that
+facilitate a succinct description of cross-cutting best-practices that
 can be used as a basis for the analysis or assessment of an existing
 standard, or as guidelines to develop new standards. For instance,
 specific barriers to adopting a data standard that take into account the
@@ -852,10 +865,10 @@ help guide the standards-development process towards more effective
 adoption and use. A set of meta-standards and high-level descriptions of
 the standards-development process -- some of which is laid out in this
 report -- could help standard developers avoid known pitfalls, such as
-the dreaded proliferation of standards, or such as complexity-impeded
-adoption. Surveying and documenting the success and failures of current
-standards for a specific dataset / domain can help disseminate knowledge
-about the standardization process. Resources such as
+the dreaded proliferation of standards, or complexity-impeded adoption.
+Surveying and documenting the success and failures of current standards
+for a specific dataset / domain can help disseminate knowledge about the
+standardization process. Resources such as
 \href{https://fairsharing.org/}{Fairsharing} or
 \href{https://www.dcc.ac.uk/guidance/standards}{Digital Curation Center}
 can help guide this process.
@@ -892,7 +905,7 @@ The OSS model is seen as a particularly promising avenue for an
 investment of resources, because it builds on previously-developed
 procedures and technical infrastructure and because it provides avenues
 for the democratization of development processes and for community input
-along the way. At the same time, there is significant challenges
+along the way. At the same time, there are significant challenges
 associated with incentives to engage, ranging from the dilution of
 credit to individual contributors, and ranging through the burnout of
 maintainers and developers. The clarity offered by procedures for
@@ -921,18 +934,32 @@ so that this crucial role is encouraged. Initial proposals for the
 curriculum and scope of the role have already been proposed (e.g., in
 (Mons 2018)), but we identify here also a need to connect these
 individuals directly to the practices that exemplify open-source
-standards. Thus, it will be important for these individuals to be facile
-in the methodology of OSS. This does not mean that they need to become
-software engineers -- though for some of them there may be some overlap
-with the role of research software engineers (Connolly et al. 2023) --
-but rather that they need to become familiar with those parts of the OSS
-development life-cycle that are specifically useful for the development
-of open-source standards. For example, tools for version control, tools
-for versioning, and tools for creation and validation of compliant data
-and metadata.
+standards. Thus, it will be important for these individuals to be
+conversant in the methodology of OSS. This does not mean that they need
+to become software engineers -- though for some of them there may be
+some overlap with the role of research software engineers (Connolly et
+al. 2023) -- but rather that they need to become familiar with those
+parts of the OSS development life-cycle that are specifically useful for
+the development of open-source standards. For example, tools for version
+control, tools for versioning, and tools for creation and validation of
+compliant data and metadata. Stakeholder organizations should invest in
+training grants to establish curriculum for data and metadata standards
+education.
 
-Stakeholder organizations should invest in training grants to establish
-curriculum for data and metadata standards education.
+Ultimately, efficient use of data stewards and their knowledge will have
+to be applied. It is evident that not every project and every lab that
+produces data requires a full-time data steward. Instead, data
+stewardship could be centralized within organizations such as libraries,
+data science, or software engineering cores of larger research
+organizations. This would be akin to recent models for research software
+engineering that are becoming common in many research organization (Van
+Tuyl 2023). Efficiency considerations also suggest that the development
+of data standards would not have its intended purpose unless funds are
+also allocated to the implementation of the standard in practice.
+Mandating standards without appropriate funding for their implementation
+by data producers and data users could risk hampering science and could
+leading to researchers doing the bare minimum to make their data
+``open''.
 
 \subsubsection{Review open-source standards
 pathways}\label{review-open-source-standards-pathways}
@@ -946,11 +973,12 @@ on prior experience, the documentation and dissemination of lifecycles
 should be seen as an integral step of the work of standards creators and
 granting agencies. In the meanwhile, it would be good to also
 retroactively document the lifecycle of existing standards that are seen
-as success stories. Research on the principles that underlie successful
-open-source standards development can be used to formulate new standards
-and iterate on existing ones. Data management plans should promote the
-sharing of not only data, but also metadata and descriptions of how to
-use it.
+as success stories, and to foster the awareness of these standards. In
+addition, fostering research projects on the principles that underlie
+successful open-source standards development will help formulate new
+standards and iterate on existing ones. In accordance, data management
+plans should promote the sharing of not only data, but also metadata and
+descriptions of how to use it.
 
 \subsubsection{Manage Cross Sector
 alliances}\label{manage-cross-sector-alliances}
@@ -960,10 +988,9 @@ successful standards creation. Invest in robust program management of
 these alliances to align pace and create incentives (for instance via
 Open Source Program Offices at Universities or other research
 organizations). Similar to program officers at funding agencies,
-standards evolution need sustained PM efforts. Multi-company
-partnerships should include strategic initiatives for standard
-establishment such as the Pistoia Alliance
-(https://www.pistoiaalliance.org/).
+standards evolution need sustained PM efforts. Multi-party partnerships
+should include strategic initiatives for standard establishment such as
+the Pistoia Alliance (https://www.pistoiaalliance.org/).
 
 \section{Acknowledgements}\label{acknowledgements}
 
@@ -984,6 +1011,18 @@ to Enable Open-Source Ecosystems (POSE)} program.
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-Adler-Milstein2017-id}
+Adler-Milstein, Julia, and Eric Pfeifer. 2017. {``Information Blocking:
+Is It Occurring and What Policy Strategies Can Address It?''}
+\emph{Milbank Q.} 95 (1): 117--35.
+
+\bibitem[\citeproctext]{ref-Barker2024-ox}
+Barker, Wesley, Natalya Maisel, Catherine E Strawley, Grace K Israelit,
+Julia Adler-Milstein, and Benjamin Rosner. 2024. {``A National Survey of
+Digital Health Company Experiences with Electronic Health Record
+Application Programming Interfaces.''} \emph{J. Am. Med. Inform. Assoc.}
+31 (4): 866--74.
+
 \bibitem[\citeproctext]{ref-Basaglia2023-dq}
 Basaglia, T, M Bellis, J Blomer, J Boyd, C Bozzi, D Britzger, S Campana,
 et al. 2023. {``Data Preservation in High Energy Physics.''} \emph{The
@@ -995,6 +1034,12 @@ Fatland, Ed Lazowska, Vani Mandava, and Sarah Stone. 2023. {``{Software}
 {Engineering} {Practices} in {Academia}: Promoting the
 3Rs---{Readability}, {Resilience}, and {Reuse}.''} \emph{Harvard Data
 Science Review} 5 (2).
+
+\bibitem[\citeproctext]{ref-Gillon2024-vu}
+Gillon, Colleen J, Cody Baker, Ryan Ly, Edoardo Balzani, Bingni W
+Brunton, Manuel Schottdorf, Satrajit Ghosh, and Nima Dehghani. 2024.
+{``{ODIN}: Open Data in Neurophysiology: Advancements, Solutions \&
+Challenges.''} \emph{arXiv {[}q-Bio.NC{]}}, July.
 
 \bibitem[\citeproctext]{ref-Gorgolewski2016BIDS}
 Gorgolewski, Krzysztof J, Tibor Auer, Vince D Calhoun, R Cameron
@@ -1008,6 +1053,12 @@ Hanisch, R J, G B Berriman, T J W Lazio, S Emery Bunn, J Evans, T A
 McGlynn, and R Plante. 2015. {``The Virtual Astronomical Observatory:
 Re-Engineering Access to Astronomical Data.''} \emph{Astron. Comput.} 11
 (June): 190--209.
+
+\bibitem[\citeproctext]{ref-Hermes2023-aw}
+Hermes, Dora, and Jan Cimbalnek. 2023. {``How Can Intracranial {EEG}
+Data Be Published in a Standardized Format?''} In \emph{Studies in
+Neuroscience, Psychology and Behavioral Economics}, 595--604. Cham:
+Springer International Publishing.
 
 \bibitem[\citeproctext]{ref-Koch2012-ve}
 Koch, Christof, and R Clay Reid. 2012. {``Observatories of the Mind.''}
@@ -1083,6 +1134,12 @@ The National Science and Technology Council. 2022. {``Desirable
 Characteristics of Data Repositories for Federally Funded Research.''}
 \emph{Executive Office of the President of the United States, Tech.
 Rep}.
+
+\bibitem[\citeproctext]{ref-Van-Tuyl2023-vp}
+Van Tuyl, Steve (ed ). 2023. {``Hiring, Managing, and Retaining Data
+Scientists and Research Software Engineers in Academia: A Career
+Guidebook from {ADSA} and {US}-{RSE}.''}
+https://doi.org/\url{https://doi.org/10.5281/zenodo.8329337}.
 
 \bibitem[\citeproctext]{ref-wells1979fits}
 Wells, Donald Carson, and Eric W Greisen. 1979. {``FITS-a Flexible Image
