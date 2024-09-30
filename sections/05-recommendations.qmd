@@ -31,12 +31,12 @@ existing standards is that there is significant knowledge that exists across
 fields and domains and that informs the development of standards within each
 field, but that could be surfaced to the level where it may be adopted more
 widely in different domains and be more broadly useful. One approach to this is
-a comparative approach: In this approach, a readiness and/or maturity model can
+a comparative approach: in this approach, a readiness and/or maturity model can
 be developed that assesses the challenges and opportunities that a specific
 standard faces at its current phase of development. Developing such a maturity
 model, while it goes beyond the scope of the current report, could lead to the
 eventual development of a meta-standard or a standard-of-standards. This would
-encompass a succinct description of cross-cutting best-practices that can be
+facilitate a succinct description of cross-cutting best-practices that can be
 used as a basis for the analysis or assessment of an existing standard, or as
 guidelines to develop new standards. For instance, specific barriers to
 adopting a data standard that take into account the size of the community and
@@ -57,10 +57,10 @@ expertise typical of this community, and so forth -- could help guide the
 standards-development process towards more effective adoption and use. A set of
 meta-standards and high-level descriptions of the standards-development process
 -- some of which is laid out in this report -- could help standard developers
-avoid known pitfalls, such as the dreaded proliferation of standards, or such
-as complexity-impeded adoption. Surveying and documenting the success and
-failures of current standards for a specific dataset / domain can help
-disseminate knowledge about the standardization process. Resources such as
+avoid known pitfalls, such as the dreaded proliferation of standards, or
+complexity-impeded adoption. Surveying and documenting the success and failures
+of current standards for a specific dataset / domain can help disseminate
+knowledge about the standardization process. Resources such as
 [Fairsharing](https://fairsharing.org/) or [Digital Curation
 Center](https://www.dcc.ac.uk/guidance/standards) can help guide this process.
 
@@ -92,7 +92,7 @@ community efforts and tools for this. The OSS model is seen as a particularly
 promising avenue for an investment of resources, because it builds on
 previously-developed procedures and technical infrastructure and because it
 provides avenues for the democratization of development processes and for
-community input along the way. At the same time, there is significant
+community input along the way. At the same time, there are significant
 challenges associated with incentives to engage, ranging from the dilution of
 credit to individual contributors, and ranging through the burnout of
 maintainers and developers. The clarity offered by procedures for enhancement
@@ -119,17 +119,31 @@ training so that this crucial role is encouraged. Initial proposals for the
 curriculum and scope of the role have already been proposed (e.g., in
 [@Mons2018DataStewardshipBook]), but we identify here also a need to connect
 these individuals directly to the practices that exemplify open-source
-standards. Thus, it will be important for these individuals to be facile in the
-methodology of OSS. This does not mean that they need to become software
+standards. Thus, it will be important for these individuals to be conversant in
+the methodology of OSS. This does not mean that they need to become software
 engineers -- though for some of them there may be some overlap with the role of
 research software engineers [@Connolly2023Software] -- but rather that they
 need to become familiar with those parts of the OSS development life-cycle that
 are specifically useful for the development of open-source standards. For
 example, tools for version control, tools for versioning, and tools for
-creation and validation of compliant data and metadata.
+creation and validation of compliant data and metadata. Stakeholder
+organizations should invest in training grants to establish curriculum for data
+and metadata standards education.
 
-Stakeholder organizations should invest in training grants to establish
-curriculum for data and metadata standards education. </ol>
+Ultimately, efficient use of data stewards and their knowledge will have to be
+applied. It is evident that not every project and every lab that produces data
+requires a full-time data steward. Instead, data stewardship could be
+centralized within organizations such as libraries, data science, or software
+engineering cores of larger research organizations. This would be akin to
+recent models for research software engineering that are becoming common in
+many research organization [@Van-Tuyl2023-vp]. Efficiency considerations also
+suggest that the development of data standards would not have its intended
+purpose unless funds are also allocated to the implementation of the standard
+in practice. Mandating standards without appropriate funding for their
+implementation by data producers and data users could risk hampering science
+and could leading to researchers doing the bare minimum to make their data
+“open”.
+
 
 ### Review open-source standards pathways
 
@@ -141,11 +155,13 @@ development of open-source standards, and to build on prior experience, the
 documentation and dissemination of lifecycles should be seen as an integral
 step of the work of standards creators and granting agencies. In the meanwhile,
 it would be good to also retroactively document the lifecycle of existing
-standards that are seen as success stories. Research on the principles that
-underlie successful open-source standards development can be used to formulate
-new standards and iterate on existing ones. Data management plans should
-promote the sharing of not only data, but also metadata and descriptions of how
-to use it.
+standards that are seen as success stories, and to foster the awareness of
+these standards. In addition, fostering research projects on the principles
+that underlie successful open-source standards development will help formulate
+new standards and iterate on existing ones. In accordance, data management
+plans should promote the sharing of not only data, but also metadata and
+descriptions of how to use it.
+
 
 ### Manage Cross Sector alliances
 
@@ -153,6 +169,6 @@ Encourage cross-sector and cross-domain alliances that can impact successful
 standards creation. Invest in robust program management of these alliances to
 align pace and create incentives (for instance via Open Source Program Offices
 at Universities or other research organizations). Similar to program officers
-at funding agencies, standards evolution need sustained PM efforts.
-Multi-company partnerships should include strategic initiatives for standard
-establishment such as the Pistoia Alliance (https://www.pistoiaalliance.org/).
+at funding agencies, standards evolution need sustained PM efforts. Multi-party
+partnerships should include strategic initiatives for standard establishment
+such as the Pistoia Alliance (https://www.pistoiaalliance.org/).

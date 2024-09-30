@@ -9,12 +9,18 @@ authors:
   - name: Vani Mandava
     affiliation: University of Washington
     roles: writing
-    corresponding: true
     orcid: 0000-0003-3592-9453
   - name: Nicoleta Cristea
     affiliation: University of Washington
     roles: writing
-    corresponding: true
     orcid: 0000-0002-9091-0280
+  - name: Anshul Tambay
+    affiliation: University of Washington
+    roles: writing
+    orcid: 0009-0004-9010-1223
+  - name: Andrew J. Connolly
+    affiliation: University of Washington
+    roles: writing
+    orcid: 0000-0001-5576-8189
 
 bibliography: references.bib

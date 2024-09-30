@@ -4,7 +4,7 @@ To understand how OSS development practices affect the development of data and
 metadata standards, it is informative to demonstrate this cross-fertilization
 through a few use cases. As we will see in these examples, some fields, such as
 astronomy, high-energy physics and earth sciences have a relatively long
-history of shared data resources from organizations such as LSST, CERN, and
+history of shared data resources from organizations such as SDSS, CERN, and
 NASA, while other fields have only relatively recently become aware of the
 value of data sharing and its impact. These disparate histories inform how
 standards have evolved and how OSS practices have pervaded their development.
@@ -27,14 +27,14 @@ that break backward compatibility. Among the features that make FITS so durable
 is that it was designed originally to have a very restricted metadata schema.
 That is, FITS records were designed to be the lowest common denominator of word
 lengths in computer systems at the time. However, while FITS is compact, its
-ability to encode the coordinate frame and pixels, means that data from
-different observational instruments can be stored in this format and
-relationships between data from different instruments can be related, rendering
-manual and error-prone procedures for conforming images obsolete. Nevertheless,
-the stability has also raised some issues as the field continues to adapt to
-new measurement methods and the demands of ever-increasing data volumes and
-complex data analysis use-case, such as interchange with other data and the use
-of complex data bases to store and share data [@Scroggins2020-ut]. Another
+ability to encode a coordinate frame for pixels, means that data from different
+observational instruments can be stored in this format and relationships
+between data from different instruments can be defined, rendering manual and
+error-prone procedures for conforming images obsolete. Nevertheless, the
+stability has also raised some issues as the field continues to adapt to new
+measurement methods and the demands of ever-increasing data volumes and complex
+data analysis use-case, such as interchange with other data and the use of
+complex data bases to store and share data [@Scroggins2020-ut]. Another
 prominent example of the use of open-source processes to develop standards in
 Astronomy is in the tools and protocols developed by the International Virtual
 Observatory Alliance (IVOA) and its national implementations, e.g., in the US
@@ -56,11 +56,11 @@ have been established and the adoption of these standards in data analysis has
 high penetration [@Basaglia2023-dq]. A top-down approach is taken so that
 within every large collaboration, standards are enforced, and this adoption is
 centrally managed. Access to raw data is essentially impossible because of its
-large volume, and making it publicly available is both technically very hard
-and potentially ill-advised. Therefore, analysis tools are tuned specifically
-to the standards of the released data. Incentives to use the standards are
-provided by funders that require data management plans that specify how the
-data is shared (i.e., in a standards-compliant manner).
+large volume, and making it publicly available would be technically very
+difficult. Therefore, analysis tools are tuned specifically to the standards of
+the released data. Incentives to use the standards are provided by funders that
+require data management plans that specify how the data is shared (i.e., in a
+standards-compliant manner).
 
 ## Earth sciences
 
@@ -73,22 +73,20 @@ as the Network Common Data Form (NetCDF) developed by the University
 Corporation for Atmospheric Research (UCAR), and the Hierarchical Data Format
 (HDF), a set of file formats (HDF4, HDF5) that are widely used, particularly in
 climate research. The GeoTIFF format, which originated at NASA in the late
-1990s, is extensively used to share image data. In the 1990s, open web mapping
-also began with MapServer (https://mapserver.org) and continued later with
-other projects such as OpenStreetMap (https://www.openstreetmap.org). The
-following two decades, the 2000s-2020s, brought an expansion of open standards
-and integration with web technologies developed by OGC, as well as other
-standards such as the Keyhole Markup Language (KML) for displaying geographic
-data in Earth browsers. Formats suitable for cloud computing also emerged, such
-as the Cloud Optimized GeoTIFF (COG), followed by Zarr and Apache Parquet for
-array and tabular data, respectively. In 2006, the Open Source Geospatial
-Foundation (OSGeo, https://www.osgeo.org) was established, demonstrating the
-community's commitment to the development of open-source geospatial
-technologies. While some standards have been developed in the industry (e.g.,
-Keyhole Markup Language (KML) by Keyhole Inc., which Google later acquired),
-they later became international standards of the OGC, which now encompasses
-more than 450 commercial, governmental, nonprofit, and research organizations
-working together on the development and implementation of open standards
+1990s, is extensively used to share image data. The following two decades, the
+2000s-2020s, brought an expansion of open standards and integration with web
+technologies developed by OGC, as well as other standards such as the Keyhole
+Markup Language (KML) for displaying geographic data in Earth browsers. Formats
+suitable for cloud computing also emerged, such as the Cloud Optimized GeoTIFF
+(COG), followed by Zarr and Apache Parquet for array and tabular data,
+respectively. In 2006, the Open Source Geospatial Foundation (OSGeo,
+https://www.osgeo.org) was established, demonstrating the community's
+commitment to the development of open-source geospatial technologies. While
+some standards have been developed in the industry (e.g., Keyhole Markup
+Language (KML) by Keyhole Inc., which Google later acquired), they later became
+international standards of the OGC, which now encompasses more than 450
+commercial, governmental, nonprofit, and research organizations working
+together on the development and implementation of open standards
 (https://www.ogc.org).
 
 ## Neuroscience
@@ -123,25 +121,30 @@ wide range of stakeholders and tap a broad base of expertise.
 ## Community science
 
 Another interesting use case for open-source standards is community/citizen
-science. This approach, which has grown in the last 20 years, has many benefits
-for both the research field that harnesses the energy of non-scientist members
-of the community to engage with scientific data, as well as to the community
-members themselves who can draw both knowledge and pride in their participation
-in the scientific endeavor. It is also recognized that unique broader benefits
-are accrued from this mode of scientific research, through the inclusion of
-perspectives and data that would not otherwise be included. To make data
-accessible to community scientists, and to make the data collected by community
-scientists accessible to professional scientists, it needs to be provided in a
-manner that can be created and accessed without specialized instruments or
-specialized knowledge. Here, standards are needed to facilitate interactions
-between an in-group of expert researchers who generate and curate data and a
-broader set of out-group enthusiasts who would like to make meaningful
-contributions to the science. This creates a particularly stringent constraint
-on transparency and simplicity of standards. Creating these standards in a
-manner that addresses these unique constraints can benefit from OSS tools, with
-the caveat that some of these tools require additional expertise. For example,
-if the standard is developed using git/GitHub for versioning, this would
-require learning the complex and obscure technical aspects of these system that
-are far from easy to adopt, even for many professional scientists.
+science. An early example of this approach is OpenStreetMap
+(https://www.openstreetmap.org), which allows users to contribute to the
+project development with code and data and freely use the maps and other
+related geospatial datasets. But this example is not unique. Overall, this
+approach has grown in the last 20 years and has been adopted in many different
+fields. It has many benefits for both the research field that harnesses the
+energy of non-scientist members of the community to engage with scientific
+data, as well as to the community members themselves who can draw both
+knowledge and pride in their participation in the scientific endeavor. It is
+also recognized that unique broader benefits are accrued from this mode of
+scientific research, through the inclusion of perspectives and data that would
+not otherwise be included. To make data accessible to community scientists, and
+to make the data collected by community scientists accessible to professional
+scientists, it needs to be provided in a manner that can be created and
+accessed without specialized instruments or specialized knowledge. Here,
+standards are needed to facilitate interactions between an in-group of expert
+researchers who generate and curate data and a broader set of out-group
+enthusiasts who would like to make meaningful contributions to the science.
+This creates a particularly stringent constraint on transparency and simplicity
+of standards. Creating these standards in a manner that addresses these unique
+constraints can benefit from OSS tools, with the caveat that some of these
+tools require additional expertise. For example, if the standard is developed
+using git/GitHub for versioning, this would require learning the complex and
+obscure technical aspects of these system that are far from easy to adopt, even
+for many professional scientists.
 
 
