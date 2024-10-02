@@ -1,0 +1,31 @@
+| Name                      | Affiliation                          |
+|---------------------------|--------------------------------------|
+| Alex D Wade               | Digital Science                      |
+| Alexander Szalay          | Johns Hopkins University             |
+| Andrew Connolly           | University of Washington             |
+| Anshul Tushar Tambay      | University of Washington             |
+| Ariel Rokem               | University of Washington             |
+| Carolina Lorena Berys     | University of California, San Diego  |
+| Christine Kirkpatrick     | San Diego Supercomputer Center       |
+| Fernando Seabra Chirigati | Nature Computational Science         |
+| Jessica Morgan            | NOAA                                 |
+| John Relph                | NOAA                                 |
+| Julia Ferraioli           | Open Source Stories                  |
+| Jurriaan Hein Spaaks      | formerly Netherlands eScience Center |
+| Justin (Jay) Hnilo        | Department of Energy                 |
+| Kalynn Elisabeth Kennon   | Infectious Diseases Data Observatory |
+| Kevin Christopher Booth   | Radiant Earth                        |
+| Kristofer E. Bouchard     | Lawrence Berkeley National Labs      |
+| Lea A. Shanley            | University of California, Berkeley   |
+| Michael Spannowsky        | Durham University                    |
+| Nicoleta C Cristea        | University of Washington             |
+| Nina Amla                 | NSF                                  |
+| Oliver Ruebel             | Lawrence Berkeley National Labs      |
+| Ray E. Habermann          | Metadata Game Changers               |
+| Raymond (Ray) Plante      | NIST                                 |
+| Robert Hanisch            | NIST                                 |
+| Saskia de Vries           | Allen Institute for AI               |
+| Steven Crawford           | NASA                                 |
+| Vani Mandava              | University of Washington             |
+| Yaroslav Halchenko        | Dartmouth University                 |
+| Ziheng Sun                | George Mason University              |
