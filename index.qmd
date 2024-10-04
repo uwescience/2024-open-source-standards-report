@@ -40,6 +40,6 @@ process.
 {{< include sections/04-cross-sector.qmd >}}
 {{< include sections/05-recommendations.qmd >}}
 {{< include sections/06-acknowledgments.qmd >}}
-
+{{< include sections/07-participants.qmd >}}
 
 # References
