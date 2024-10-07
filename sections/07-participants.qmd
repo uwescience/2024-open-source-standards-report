@@ -1,3 +1,5 @@
+# Appendix: List of participants
+
 | Name                      | Affiliation                          |
 |---------------------------|--------------------------------------|
 | Alex D Wade               | Digital Science                      |
