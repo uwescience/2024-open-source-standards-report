@@ -18,8 +18,5 @@ format:
 
   pdf: default
 
-filters:
-  - watermark
-
 number-sections: true
 bibliography: references.bib
