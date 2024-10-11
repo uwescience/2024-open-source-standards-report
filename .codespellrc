@@ -1,4 +1,4 @@
 [codespell]
-skip = references.bib
+skip = references.bib, ./_extensions
 count =
 quiet-level = 3
