@@ -80,14 +80,14 @@ Markup Language (KML) for displaying geographic data in Earth browsers. Formats
 suitable for cloud computing also emerged, such as the Cloud Optimized GeoTIFF
 (COG), followed by Zarr and Apache Parquet for array and tabular data,
 respectively. In 2006, the Open Source Geospatial Foundation (OSGeo,
-https://www.osgeo.org) was established, demonstrating the community's
+[https://www.osgeo.org](https://www.osgeo.org)) was established, demonstrating the community's
 commitment to the development of open-source geospatial technologies. While
 some standards have been developed in the industry (e.g., Keyhole Markup
 Language (KML) by Keyhole Inc., which Google later acquired), they later became
 international standards of the OGC, which now encompasses more than 450
 commercial, governmental, nonprofit, and research organizations working
 together on the development and implementation of open standards
-(https://www.ogc.org).
+[https://www.ogc.org](https://www.ogc.org).
 
 ## Neuroscience
 
@@ -122,22 +122,22 @@ wide range of stakeholders and tap a broad base of expertise.
 
 Another interesting use case for open-source standards is community/citizen
 science. An early example of this approach is OpenStreetMap
-(https://www.openstreetmap.org), which allows users to contribute to the
-project development with code and data and freely use the maps and other
-related geospatial datasets. But this example is not unique. Overall, this
-approach has grown in the last 20 years and has been adopted in many different
-fields. It has many benefits for both the research field that harnesses the
-energy of non-scientist members of the community to engage with scientific
-data, as well as to the community members themselves who can draw both
-knowledge and pride in their participation in the scientific endeavor. It is
-also recognized that unique broader benefits are accrued from this mode of
-scientific research, through the inclusion of perspectives and data that would
-not otherwise be included. To make data accessible to community scientists, and
-to make the data collected by community scientists accessible to professional
-scientists, it needs to be provided in a manner that can be created and
-accessed without specialized instruments or specialized knowledge. Here,
-standards are needed to facilitate interactions between an in-group of expert
-researchers who generate and curate data and a broader set of out-group
+[https://www.openstreetmap.org](https://www.openstreetmap.org), which allows
+users to contribute to the project development with code and data and freely
+use the maps and other related geospatial datasets. But this example is not
+unique. Overall, this approach has grown in the last 20 years and has been
+adopted in many different fields. It has many benefits for both the research
+field that harnesses the energy of non-scientist members of the community to
+engage with scientific data, as well as to the community members themselves who
+can draw both knowledge and pride in their participation in the scientific
+endeavor. It is also recognized that unique broader benefits are accrued from
+this mode of scientific research, through the inclusion of perspectives and
+data that would not otherwise be included. To make data accessible to community
+scientists, and to make the data collected by community scientists accessible
+to professional scientists, it needs to be provided in a manner that can be
+created and accessed without specialized instruments or specialized knowledge.
+Here, standards are needed to facilitate interactions between an in-group of
+expert researchers who generate and curate data and a broader set of out-group
 enthusiasts who would like to make meaningful contributions to the science.
 This creates a particularly stringent constraint on transparency and simplicity
 of standards. Creating these standards in a manner that addresses these unique

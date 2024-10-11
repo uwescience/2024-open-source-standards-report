@@ -5,9 +5,7 @@
 %
 \documentclass[
   number,
-  preprint,
-  3p,
-  twocolumn]{elsarticle}
+  preprint]{elsarticle}
 
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
@@ -133,26 +131,6 @@
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
-\makeatother
-\usepackage{float}
-\makeatletter
-\let\oldlt\longtable
-\let\endoldlt\endlongtable
-\def\longtable{\@ifnextchar[\longtable@i \longtable@ii}
-\def\longtable@i[#1]{\begin{figure}[H]
-\onecolumn
-\begin{minipage}{0.5\textwidth}
-\oldlt[#1]
-}
-\def\longtable@ii{\begin{figure}[H]
-\onecolumn
-\begin{minipage}{0.5\textwidth}
-\oldlt
-}
-\def\endlongtable{\endoldlt
-\end{minipage}
-\twocolumn
-\end{figure}}
 \makeatother
 
 \ifLuaTeX
@@ -396,14 +374,14 @@ geographic data in Earth browsers. Formats suitable for cloud computing
 also emerged, such as the Cloud Optimized GeoTIFF (COG), followed by
 Zarr and Apache Parquet for array and tabular data, respectively. In
 2006, the Open Source Geospatial Foundation (OSGeo,
-https://www.osgeo.org) was established, demonstrating the community's
-commitment to the development of open-source geospatial technologies.
-While some standards have been developed in the industry (e.g., Keyhole
-Markup Language (KML) by Keyhole Inc., which Google later acquired),
-they later became international standards of the OGC, which now
-encompasses more than 450 commercial, governmental, nonprofit, and
+\url{https://www.osgeo.org}) was established, demonstrating the
+community's commitment to the development of open-source geospatial
+technologies. While some standards have been developed in the industry
+(e.g., Keyhole Markup Language (KML) by Keyhole Inc., which Google later
+acquired), they later became international standards of the OGC, which
+now encompasses more than 450 commercial, governmental, nonprofit, and
 research organizations working together on the development and
-implementation of open standards (https://www.ogc.org).
+implementation of open standards \url{https://www.ogc.org}.
 
 \subsection{Neuroscience}\label{neuroscience}
 
@@ -441,7 +419,7 @@ from a wide range of stakeholders and tap a broad base of expertise.
 
 Another interesting use case for open-source standards is
 community/citizen science. An early example of this approach is
-OpenStreetMap (https://www.openstreetmap.org), which allows users to
+OpenStreetMap \url{https://www.openstreetmap.org}, which allows users to
 contribute to the project development with code and data and freely use
 the maps and other related geospatial datasets. But this example is not
 unique. Overall, this approach has grown in the last 20 years and has
@@ -979,7 +957,7 @@ Open Source Program Offices at Universities or other research
 organizations). Similar to program officers at funding agencies,
 standards evolution need sustained PM efforts. Multi-party partnerships
 should include strategic initiatives for standard establishment such as
-the Pistoia Alliance (https://www.pistoiaalliance.org/).
+the Pistoia Alliance (\url{https://www.pistoiaalliance.org/}).
 
 \section{Acknowledgements}\label{acknowledgements}
 
@@ -997,6 +975,8 @@ grant \#2334483} from the NSF
 to Enable Open-Source Ecosystems (POSE)} program. The opinions expressed
 in this report do not necessarily reflect those of the National Science
 Foundation.
+
+\newpage
 
 \section{Appendix: List of
 participants}\label{appendix-list-of-participants}

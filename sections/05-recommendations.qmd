@@ -20,8 +20,7 @@ can rely. For example, it is now clear that governance principles and rules can
 mitigate some of the risks and challenges mentioned in @sec-challenges,
 especially for communities beyond a certain size that need to converge toward a
 new standard or rely on an existing standard. Developers and maintainers should
-review existing governance practices such as [The Open Source
-Way](https://www.theopensourceway.org/the_open_source_way-guidebook-2.0.html#_project_and_community_governance).
+review existing governance practices such as [The Open Source Way](https://www.theopensourceway.org/the_open_source_way-guidebook-2.0.html#_project_and_community_governance).
 
 
 ### Foster meta-standards development
@@ -61,8 +60,8 @@ avoid known pitfalls, such as the dreaded proliferation of standards, or
 complexity-impeded adoption. Surveying and documenting the success and failures
 of current standards for a specific dataset / domain can help disseminate
 knowledge about the standardization process. Resources such as
-[Fairsharing](https://fairsharing.org/) or [Digital Curation
-Center](https://www.dcc.ac.uk/guidance/standards) can help guide this process.
+[Fairsharing](https://fairsharing.org/) or [Digital Curation Center](https://www.dcc.ac.uk/guidance/standards)
+can help guide this process.
 
 ### Develop standards in tandem with standards-associated software
 
@@ -171,4 +170,4 @@ align pace and create incentives (for instance via Open Source Program Offices
 at Universities or other research organizations). Similar to program officers
 at funding agencies, standards evolution need sustained PM efforts. Multi-party
 partnerships should include strategic initiatives for standard establishment
-such as the Pistoia Alliance (https://www.pistoiaalliance.org/).
+such as the Pistoia Alliance ([https://www.pistoiaalliance.org/](https://www.pistoiaalliance.org/)).
