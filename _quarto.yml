@@ -19,7 +19,6 @@ format:
 
   elsevier-pdf:
     journal:
-      formatting: preprint
       cite-style: number
 
 number-sections: true

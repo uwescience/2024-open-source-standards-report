@@ -1,26 +1,91 @@
 title: Towards an open-source model for data and metadata standards
 authors:
   - name: Ariel Rokem
-    affiliation: University of Washington
+    affiliations:
+      - name: University of Washington
+        id: 1
+        department: Department of Psychology
+        city: Seattle
+        state: WA
+        country: USA
+      - name: University of Washington
+        id: 5
+        department: eScience Institute
+        city: Seattle
+        state: WA
+        country: USA
     roles: writing
     corresponding: true
+    email: arokem@uw.edu
     orcid: 0000-0003-0679-1985
 # Add your name and metadata here:
   - name: Vani Mandava
-    affiliation: University of Washington
+    affiliations:
+      - name: University of Washington
+        id: 2
+        department: Scientific Software Engineering Center
+        city: Seattle
+        state: WA
+        country: USA
+      - name: University of Washington
+        id: 5
+        department: eScience Institute
+        city: Seattle
+        state: WA
+        country: USA
     roles: writing
     orcid: 0000-0003-3592-9453
   - name: Nicoleta Cristea
-    affiliation: University of Washington
+    affiliations:
+      - name: University of Washington
+        id: 3
+        department: Department of Civil and Environmental Engineering
+        city: Seattle
+        state: WA
+        country: USA
+      - name: University of Washington
+        id: 5
+        department: eScience Institute
+        city: Seattle
+        state: WA
+        country: USA
+
     roles: writing
     orcid: 0000-0002-9091-0280
   - name: Anshul Tambay
-    affiliation: University of Washington
+    affiliations:
+      - name: University of Washington
+        id: 2
+        department: Scientific Software Engineering Center
+        city: Seattle
+        state: WA
+        country: USA
+      - name: University of Washington
+        id: 5
+        department: eScience Institute
+        city: Seattle
+        state: WA
+        country: USA
     roles: writing
     orcid: 0009-0004-9010-1223
   - name: Andrew J. Connolly
-    affiliation: University of Washington
+    affiliations:
+      - name: University of Washington
+        id: 4
+        department: Department of Astronomy
+        city: Seattle
+        state: WA
+        country: USA
+      - name: University of Washington
+        id: 5
+        department: eScience Institute
+        city: Seattle
+        state: WA
+        country: USA
     roles: writing
     orcid: 0000-0001-5576-8189
+
+abstract: |
+  Progress in machine learning and artificial intelligence promises to advance research and understanding across a wide range of fields and activities. In tandem, increased awareness of the importance of open data for reproducibility and scientific transparency is making inroads in fields that have not traditionally produced large publicly available datasets. Data sharing requirements from publishers and funders, as well as from other stakeholders, have also created pressure to make datasets with research and/or public interest value available through digital repositories. However, to make the best use of existing data, and facilitate the creation of useful future datasets, robust, interoperable and usable standards need to evolve and adapt over time. The open-source development model provides significant potential benefits to the process of standard creation and adaptation. In particular, data and meta-data standards can use long-standing technical and socio-technical processes that have been key to managing the development of software, and which allow incorporating broad community input into the formulation of these standards. On the other hand, open-source models carry unique risks that need to be considered. This report surveys existing open-source standards development, addressing these benefits and risks. It outlines recommendations for standards developers, funders and other stakeholders on the path to robust, interoperable and usable open-source data and metadata standards.
 
 bibliography: references.bib
