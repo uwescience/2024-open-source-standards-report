@@ -4,8 +4,7 @@
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
-  number,
-  preprint]{elsarticle}
+  number]{elsarticle}
 
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
@@ -157,28 +156,39 @@
 
 \begin{frontmatter}
 \title{Towards an open-source model for data and metadata standards}
-\author[1]{Ariel Rokem%
+\author[1,2]{Ariel Rokem%
 \corref{cor1}%
 }
-
-\author[1]{Vani Mandava%
+ \ead{arokem@uw.edu} 
+\author[3,2]{Vani Mandava%
 %
 }
 
-\author[1]{Nicoleta Cristea%
+\author[4,2]{Nicoleta Cristea%
 %
 }
 
-\author[1]{Anshul Tambay%
+\author[3,2]{Anshul Tambay%
 %
 }
 
-\author[1]{Andrew J. Connolly%
+\author[5,2]{Andrew J. Connolly%
 %
 }
 
 
-\affiliation[1]{organization={University of Washington},,postcodesep={}}
+\affiliation[1]{organization={University of Washington, Department of
+Psychology},city={Seattle},country={USA},countrysep={,},postcodesep={}}
+\affiliation[2]{organization={University of Washington, eScience
+Institute},city={Seattle},country={USA},countrysep={,},postcodesep={}}
+\affiliation[3]{organization={University of Washington, Scientific
+Software Engineering
+Center},city={Seattle},country={USA},countrysep={,},postcodesep={}}
+\affiliation[4]{organization={University of Washington, Department of
+Civil and Environmental
+Engineering},city={Seattle},country={USA},countrysep={,},postcodesep={}}
+\affiliation[5]{organization={University of Washington, Department of
+Astronomy},city={Seattle},country={USA},countrysep={,},postcodesep={}}
 
 \cortext[cor1]{Corresponding author}
 
@@ -187,6 +197,30 @@
 
 
         
+\begin{abstract}
+Progress in machine learning and artificial intelligence promises to
+advance research and understanding across a wide range of fields and
+activities. In tandem, increased awareness of the importance of open
+data for reproducibility and scientific transparency is making inroads
+in fields that have not traditionally produced large publicly available
+datasets. Data sharing requirements from publishers and funders, as well
+as from other stakeholders, have also created pressure to make datasets
+with research and/or public interest value available through digital
+repositories. However, to make the best use of existing data, and
+facilitate the creation of useful future datasets, robust, interoperable
+and usable standards need to evolve and adapt over time. The open-source
+development model provides significant potential benefits to the process
+of standard creation and adaptation. In particular, data and meta-data
+standards can use long-standing technical and socio-technical processes
+that have been key to managing the development of software, and which
+allow incorporating broad community input into the formulation of these
+standards. On the other hand, open-source models carry unique risks that
+need to be considered. This report surveys existing open-source
+standards development, addressing these benefits and risks. It outlines
+recommendations for standards developers, funders and other stakeholders
+on the path to robust, interoperable and usable open-source data and
+metadata standards.
+\end{abstract}
 
 
 
