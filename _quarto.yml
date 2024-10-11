@@ -20,8 +20,6 @@ format:
   elsevier-pdf:
     journal:
       formatting: preprint
-      model: 3p
-      layout: twocolumn
       cite-style: number
 
 number-sections: true
