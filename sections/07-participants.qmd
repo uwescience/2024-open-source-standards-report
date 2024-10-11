@@ -1,5 +1,4 @@
-\newpage
-# Appendix: List of participants {.appendix}
+# Appendix: List of participants {#sec-appendix .appendix}
 
 | Name                      | Affiliation                          |
 |---------------------------|--------------------------------------|
@@ -27,7 +26,7 @@
 | Ray E. Habermann          | Metadata Game Changers               |
 | Raymond (Ray) Plante      | NIST                                 |
 | Robert Hanisch            | NIST                                 |
-| Saskia de Vries           | Allen Institute for AI               |
+| Saskia de Vries           | Allen Institute for Neural Dynamics  |
 | Steven Crawford           | NASA                                 |
 | Vani Mandava              | University of Washington             |
 | Yaroslav Halchenko        | Dartmouth University                 |
