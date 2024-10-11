@@ -16,7 +16,13 @@ format:
     number-sections: true
     highlight-style: github
 
-  pdf: default
+
+  elsevier-pdf:
+    journal:
+      formatting: preprint
+      model: 3p
+      layout: twocolumn
+      cite-style: number
 
 number-sections: true
 bibliography: references.bib
