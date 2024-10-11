@@ -4,9 +4,10 @@
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
-  letterpaper,
-  DIV=11,
-  numbers=noendperiod]{scrartcl}
+  number,
+  preprint,
+  3p,
+  twocolumn]{elsarticle}
 
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
@@ -91,41 +92,7 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-% definitions for citeproc citations
-\NewDocumentCommand\citeproctext{}{}
-\NewDocumentCommand\citeproc{mm}{%
-  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
-\makeatletter
- % allow citations to break across lines
- \let\@cite@ofmt\@firstofone
- % avoid brackets around text for \cite:
- \def\@biblabel#1{}
- \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
-\makeatother
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
- {\begin{list}{}{%
-  \setlength{\itemindent}{0pt}
-  \setlength{\leftmargin}{0pt}
-  \setlength{\parsep}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1
-   \setlength{\leftmargin}{\cslhangindent}
-   \setlength{\itemindent}{-1\cslhangindent}
-  \fi
-  % set entry spacing
-  \setlength{\itemsep}{#2\baselineskip}}}
- {\end{list}}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
-\KOMAoption{captions}{tableheading}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -167,10 +134,32 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
+\usepackage{float}
+\makeatletter
+\let\oldlt\longtable
+\let\endoldlt\endlongtable
+\def\longtable{\@ifnextchar[\longtable@i \longtable@ii}
+\def\longtable@i[#1]{\begin{figure}[H]
+\onecolumn
+\begin{minipage}{0.5\textwidth}
+\oldlt[#1]
+}
+\def\longtable@ii{\begin{figure}[H]
+\onecolumn
+\begin{minipage}{0.5\textwidth}
+\oldlt
+}
+\def\endlongtable{\endoldlt
+\end{minipage}
+\twocolumn
+\end{figure}}
+\makeatother
 
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
+\usepackage[]{natbib}
+\bibliographystyle{elsarticle-num}
 \usepackage{bookmark}
 
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
@@ -185,14 +174,48 @@
   pdfcreator={LaTeX via pandoc}}
 
 
-\title{Towards an open-source model for data and metadata standards}
-\author{Ariel Rokem \and Vani Mandava \and Nicoleta Cristea \and Anshul
-Tambay \and Andrew J. Connolly}
-\date{}
-
+\setlength{\parindent}{6pt}
 \begin{document}
-\maketitle
 
+\begin{frontmatter}
+\title{Towards an open-source model for data and metadata standards}
+\author[1]{Ariel Rokem%
+\corref{cor1}%
+}
+
+\author[1]{Vani Mandava%
+%
+}
+
+\author[1]{Nicoleta Cristea%
+%
+}
+
+\author[1]{Anshul Tambay%
+%
+}
+
+\author[1]{Andrew J. Connolly%
+%
+}
+
+
+\affiliation[1]{organization={University of Washington},,postcodesep={}}
+
+\cortext[cor1]{Corresponding author}
+
+
+
+
+
+        
+
+
+
+
+
+\end{frontmatter}
+    
 
 \section{Abstract}\label{abstract}
 
@@ -238,11 +261,11 @@ business transactions on the internet, to the structure and history of
 the universe. However, the development of new machine learning methods
 and data-intensive discovery more generally depends on Findability,
 Accessibility, Interoperability and Reusability (FAIR) of data
-(Wilkinson et al. 2016) as well as metadata (Musen 2022). One of the
-main mechanisms through which the FAIR principles are promoted is the
-development of \emph{standards} for data and metadata. Standards can
-vary in the level of detail and scope, and encompass such things as
-\emph{file formats} for the storage of certain data types,
+\citep{Wilkinson2016FAIR} as well as metadata \citep{Musen2022metadata}.
+One of the main mechanisms through which the FAIR principles are
+promoted is the development of \emph{standards} for data and metadata.
+Standards can vary in the level of detail and scope, and encompass such
+things as \emph{file formats} for the storage of certain data types,
 \emph{schemas} for databases that organize data, \emph{ontologies} to
 describe and organize metadata in a manner that connects it to
 field-specific meaning, as well as mechanisms to describe
@@ -302,35 +325,35 @@ subsequently.
 
 An early prominent example of a community-driven standard is the FITS
 (Flexible Image Transport System) file format standard, which was
-developed in the late 1970s and early 1980s (Wells and Greisen 1979),
-and has been adopted worldwide for astronomy data preservation and
-exchange. Essentially every software platform used in astronomy reads
-and writes the FITS format. It was developed by observatories in the
-1980s to store image data in the visible and x-ray spectrum. It has been
-endorsed by the International Astronomical Union (IAU), as well as
-funding agencies. Though the format has evolved over time, ``once FITS,
-always FITS''. That is, the format cannot be evolved to introduce
-changes that break backward compatibility. Among the features that make
-FITS so durable is that it was designed originally to have a very
-restricted metadata schema. That is, FITS records were designed to be
-the lowest common denominator of word lengths in computer systems at the
-time. However, while FITS is compact, its ability to encode a coordinate
-frame for pixels, means that data from different observational
-instruments can be stored in this format and relationships between data
-from different instruments can be defined, rendering manual and
-error-prone procedures for conforming images obsolete. Nevertheless, the
-stability has also raised some issues as the field continues to adapt to
-new measurement methods and the demands of ever-increasing data volumes
-and complex data analysis use-case, such as interchange with other data
-and the use of complex data bases to store and share data (Scroggins and
-Boscoe 2020). Another prominent example of the use of open-source
-processes to develop standards in Astronomy is in the tools and
-protocols developed by the International Virtual Observatory Alliance
-(IVOA) and its national implementations, e.g., in the US Virtual
-Astronomical Observatory(Hanisch et al. 2015). The virtual observatories
-facilitate discovery and access across observatories around the world
-and underpin data discovery in astronomy. The IVOA took inspiration from
-the World-Wide Web Consortium (W3C) and adopted its process for the
+developed in the late 1970s and early 1980s \citep{wells1979fits}, and
+has been adopted worldwide for astronomy data preservation and exchange.
+Essentially every software platform used in astronomy reads and writes
+the FITS format. It was developed by observatories in the 1980s to store
+image data in the visible and x-ray spectrum. It has been endorsed by
+the International Astronomical Union (IAU), as well as funding agencies.
+Though the format has evolved over time, ``once FITS, always FITS''.
+That is, the format cannot be evolved to introduce changes that break
+backward compatibility. Among the features that make FITS so durable is
+that it was designed originally to have a very restricted metadata
+schema. That is, FITS records were designed to be the lowest common
+denominator of word lengths in computer systems at the time. However,
+while FITS is compact, its ability to encode a coordinate frame for
+pixels, means that data from different observational instruments can be
+stored in this format and relationships between data from different
+instruments can be defined, rendering manual and error-prone procedures
+for conforming images obsolete. Nevertheless, the stability has also
+raised some issues as the field continues to adapt to new measurement
+methods and the demands of ever-increasing data volumes and complex data
+analysis use-case, such as interchange with other data and the use of
+complex data bases to store and share data \citep{Scroggins2020-ut}.
+Another prominent example of the use of open-source processes to develop
+standards in Astronomy is in the tools and protocols developed by the
+International Virtual Observatory Alliance (IVOA) and its national
+implementations, e.g., in the US Virtual Astronomical
+Observatory\citep{Hanisch2015-cu}. The virtual observatories facilitate
+discovery and access across observatories around the world and underpin
+data discovery in astronomy. The IVOA took inspiration from the
+World-Wide Web Consortium (W3C) and adopted its process for the
 development of its standards (i.e., Working drafts \(\rightarrow\)
 Proposed Recommendations \(\rightarrow\) Recommendations), with
 individual standards developed by inter-institutional and international
@@ -343,7 +366,7 @@ the standards that were adopted by the observatories.
 
 Because data collection is centralized, standards to collect and store
 HEP data have been established and the adoption of these standards in
-data analysis has high penetration (Basaglia et al. 2023). A top-down
+data analysis has high penetration \citep{Basaglia2023-dq}. A top-down
 approach is taken so that within every large collaboration, standards
 are enforced, and this adoption is centrally managed. Access to raw data
 is essentially impossible because of its large volume, and making it
@@ -390,8 +413,8 @@ generated experimental data designed to answer specific experimental
 questions. While this model still exists, the field has also seen the
 emergence of new modes of data production that focus on generating large
 shared datasets designed to answer many different questions, more akin
-to the data generated in large astronomy data collection efforts (Koch
-and Clay Reid 2012). This change has been brought on through a
+to the data generated in large astronomy data collection efforts
+\citep{Koch2012-ve}. This change has been brought on through a
 combination of technical advances in data acquisition techniques, which
 now generate large and very high-dimensional/information-rich datasets,
 cultural changes, which have ushered in new norms of transparency and
@@ -400,19 +423,19 @@ of data collection. However, because these changes are recent relative
 to the other cases mentioned above, standards for data and metadata in
 neuroscience have been prone to adopt many elements of modern OSS
 development. Two salient examples in neuroscience are the Neurodata
-Without Borders file format for neurophysiology data (Rübel et al. 2022)
-and the Brain Imaging Data Structure (BIDS) standard for neuroimaging
-data (Gorgolewski et al. 2016). BIDS in particular owes some of its
-success to the adoption of OSS development mechanisms (Poldrack et al.
-2024). For example, small changes to the standard are managed through
-the GitHub pull request mechanism; larger changes are managed through a
-BIDS Enhancement Proposal (BEP) process that is directly inspired by the
-Python programming language community's Python Enhancement Proposal
-procedure, which is used to introduce new ideas into the language.
-Though the BEP mechanism takes a slightly different technical approach,
-it tries to emulate the open-ended and community-driven aspects of
-Python development to accept contributions from a wide range of
-stakeholders and tap a broad base of expertise.
+Without Borders file format for neurophysiology data
+\citep{Rubel2022NWB} and the Brain Imaging Data Structure (BIDS)
+standard for neuroimaging data \citep{Gorgolewski2016BIDS}. BIDS in
+particular owes some of its success to the adoption of OSS development
+mechanisms \citep{Poldrack2024BIDS}. For example, small changes to the
+standard are managed through the GitHub pull request mechanism; larger
+changes are managed through a BIDS Enhancement Proposal (BEP) process
+that is directly inspired by the Python programming language community's
+Python Enhancement Proposal procedure, which is used to introduce new
+ideas into the language. Though the BEP mechanism takes a slightly
+different technical approach, it tries to emulate the open-ended and
+community-driven aspects of Python development to accept contributions
+from a wide range of stakeholders and tap a broad base of expertise.
 
 \subsection{Community science}\label{community-science}
 
@@ -486,7 +509,7 @@ standard who will need to accommodate long deprecation cycles. On the
 other hand, in cases in which some forms of dynamic change is prohibited
 -- as in the case of the FITS file format, which prohibits changes that
 break backwards-compatibility -- there is also a cost associated with
-the stability (Scroggins and Boscoe 2020): limiting adoption and
+the stability \citep{Scroggins2020-ut}: limiting adoption and
 combinations of new types of measurements, new analysis methods or new
 modes of data storage and data sharing.
 
@@ -566,18 +589,19 @@ is one such example, wherein use of Bruker instrumentation necessitates
 downstream analysis of the resulting measurements using proprietary
 binary formats necessary for the OPUS Software. Another example is the
 proliferation of proprietary file formats in electrophysiological
-measurements of brain signals Hermes and Cimbalnek (2023). And yet
-another one is proprietary application programming interfaces (APIs)
-used in electronic health records Adler-Milstein and Pfeifer (2017). In
-most cases, there is a lack of regulatory oversight to adhere to
-available standards or evolve common tools, limiting integration across
-different measurements. In cases where a significant amount of data is
-already stored in proprietary formats, or where access is limited by
-proprietary APIs significant data transformations may be required to get
-data to a state that is amenable to open-source standards. In these
-sub-fields there may also be a lack of incentive to set aside investment
-or resources to invest in establishing open-source data standards,
-leaving these sub-fields relatively siloed.
+measurements of brain signals \citep[@Hermes2023-aw]{Gillon2024-vu}. And
+yet another one is proprietary application programming interfaces (APIs)
+used in electronic health records
+\citep[@Adler-Milstein2017-id]{Barker2024-ox}. In most cases, there is a
+lack of regulatory oversight to adhere to available standards or evolve
+common tools, limiting integration across different measurements. In
+cases where a significant amount of data is already stored in
+proprietary formats, or where access is limited by proprietary APIs
+significant data transformations may be required to get data to a state
+that is amenable to open-source standards. In these sub-fields there may
+also be a lack of incentive to set aside investment or resources to
+invest in establishing open-source data standards, leaving these
+sub-fields relatively siloed.
 
 \subsubsection{Harnessing new computing paradigms and
 technologies}\label{harnessing-new-computing-paradigms-and-technologies}
@@ -600,13 +624,13 @@ and especially with the difficulty of predicting these costs. This can
 particularly affect scenarios where long-term preservation is required.
 Projects such as NSF's Cloud Bank seek to mitigate some of these
 concerns, by providing an additional layer of transparency into cloud
-costs (Norman et al. 2021). The other type of objection relates to the
-fact that cloud computing services, by their very nature, are closed
-ecosystems that resist portability and interoperability. Some aspects of
-the services are always going to remain hidden and privy only to the
-cloud computing service provider. In this respect, cloud computing runs
-afoul of some of the appealing aspects of OSS. That said, the
-development of ``cloud native'' standards can provide significant
+costs \citep{Norman2021CloudBank}. The other type of objection relates
+to the fact that cloud computing services, by their very nature, are
+closed ecosystems that resist portability and interoperability. Some
+aspects of the services are always going to remain hidden and privy only
+to the cloud computing service provider. In this respect, cloud
+computing runs afoul of some of the appealing aspects of OSS. That said,
+the development of ``cloud native'' standards can provide significant
 benefits in terms of the research that can be conducted. For example,
 NOAA plans to use cloud computing for integration across the multiple
 disparate datasets that it collects to build knowledge graphs that can
@@ -614,14 +638,13 @@ be queried by researchers to answer questions that can only be answered
 through this integration. Putting all the data ``in one place'' should
 help with that. Adaptation to the cloud in terms of data standards has
 driven development of new file formats. A salient example is the ZARR
-format (Miles et al. 2024), which supports random access into
-array-based datasets stored in cloud object storage, facilitating
-scalable and parallelized computing on these data. Indeed, data
-standards such as NWB (neuroscience) and OME (microscopy) now use ZARR
-as a backend for cloud-based storage. In other cases, file formats that
-were once not straightforward to use in the cloud, such as HDF5 and TIFF
-have been adapted to cloud use (e.g., through the cloud-optimized
-geoTIFF format).
+format \citep{zarr}, which supports random access into array-based
+datasets stored in cloud object storage, facilitating scalable and
+parallelized computing on these data. Indeed, data standards such as NWB
+(neuroscience) and OME (microscopy) now use ZARR as a backend for
+cloud-based storage. In other cases, file formats that were once not
+straightforward to use in the cloud, such as HDF5 and TIFF have been
+adapted to cloud use (e.g., through the cloud-optimized geoTIFF format).
 
 \subsection{Unclear pathways for standards success and
 sustainability}\label{unclear-pathways-for-standards-success-and-sustainability}
@@ -670,26 +693,25 @@ policy guidance related to data and metadata standards. For example, the
 importance of standards was underscored in a recent report by the
 Subcommittee on Open Science of the National Science and Technology
 Council on the ``Desirable characteristics of data repositories for
-federally funded research'' (The National Science and Technology Council
-2022). The report explicitly called out the importance of
-``allow{[}ing{]} datasets and metadata to be accessed, downloaded, or
-exported from the repository in widely used, preferably non-proprietary,
-formats consistent with standards used in the disciplines the repository
-serves.'' This highlights the need for data and metadata standards
-across a variety of different kinds of data. In addition, a report from
-the National Institute of Standards and Technology on ``U.S. Leadership
-in AI: A Plan for Federal Engagement in Developing Technical Standards
-and Related Tools'' emphasized that -- specifically for the case of AI
--- ``U.S. government agencies should prioritize AI standards efforts
-that are {[}\ldots{]} Consensus-based, {[}\ldots{]} Inclusive and
-accessible, {[}\ldots{]} Multi-path, {[}\ldots{]} Open and transparent,
-{[}\ldots{]} and {[}that{]} result in globally relevant and
-non-discriminatory standards\ldots{}'' (National Institute of Standards
-and Technology 2019). The converging characteristics of standards that
-arise from these reports suggest that considerable thought needs to be
-given to how standards arise so that these goals are achieved.
-Importantly, open-source standards seem to well-match at least some of
-these characteristics.
+federally funded research'' \citep{nstc2022desirable}. The report
+explicitly called out the importance of ``allow{[}ing{]} datasets and
+metadata to be accessed, downloaded, or exported from the repository in
+widely used, preferably non-proprietary, formats consistent with
+standards used in the disciplines the repository serves.'' This
+highlights the need for data and metadata standards across a variety of
+different kinds of data. In addition, a report from the National
+Institute of Standards and Technology on ``U.S. Leadership in AI: A Plan
+for Federal Engagement in Developing Technical Standards and Related
+Tools'' emphasized that -- specifically for the case of AI -- ``U.S.
+government agencies should prioritize AI standards efforts that are
+{[}\ldots{]} Consensus-based, {[}\ldots{]} Inclusive and accessible,
+{[}\ldots{]} Multi-path, {[}\ldots{]} Open and transparent, {[}\ldots{]}
+and {[}that{]} result in globally relevant and non-discriminatory
+standards\ldots{}'' \citep{NIST2019}. The converging characteristics of
+standards that arise from these reports suggest that considerable
+thought needs to be given to how standards arise so that these goals are
+achieved. Importantly, open-source standards seem to well-match at least
+some of these characteristics.
 
 The other side of policies is the implementation of these policies in
 practice by developers of open-source standards and by the communities
@@ -697,16 +719,16 @@ to which the standards pertain. A compelling road map towards
 implementation and adoption of open science practices in general and
 open-source standards in particular is offered in a blog post authored
 by the Center for Open Science's co-founder and executive director,
-Brian Nosek, entitled ``Strategy for Culture Change'' (Nosek, n.d.). The
-core idea is that affecting a turn toward open science requires an
-alignment of not only incentives and values, but also technical
-infrastructure and user experience. A sociotechnical bridge between
-these pieces, which makes the adoption of standards possible, and maybe
-even easy, and the policy goals, arises from a community of practice
-that makes the adoption of standards \emph{normative}. Once all of these
-pieces are in place, making adoption of open science standards
-\emph{required} through policy becomes more straightforward and less
-onerous.
+Brian Nosek, entitled ``Strategy for Culture Change''
+\citep{Nosek2019CultureChange}. The core idea is that affecting a turn
+toward open science requires an alignment of not only incentives and
+values, but also technical infrastructure and user experience. A
+sociotechnical bridge between these pieces, which makes the adoption of
+standards possible, and maybe even easy, and the policy goals, arises
+from a community of practice that makes the adoption of standards
+\emph{normative}. Once all of these pieces are in place, making adoption
+of open science standards \emph{required} through policy becomes more
+straightforward and less onerous.
 
 \subsection{Funding}\label{funding}
 
@@ -749,13 +771,13 @@ human subjects (e.g., in brain imaging experiments) significantly
 interact with standards for medical imaging, and chiefly the Digital
 Imaging and Communications in Medicine (DICOM) standard, which is widely
 used in a range of medical imaging applications, including in clinical
-settings Mustra, Delac, and Grgic (2008). The standard emerged from the
-demands of the clinical practice in the 1980s, as digital technologies
-were came into widespread use in medical imaging, through joint work of
-industry organizations: the American College of Radiology and the
-National Association of Electronic Manufacturers. One of the defining
-features of the DICOM standard is that it allows manufacturers of
-instruments to define ``private fields'' that are compliant with the
+settings \citep[@Mustra2008-xk]{Larobina2023-vq}. The standard emerged
+from the demands of the clinical practice in the 1980s, as digital
+technologies were came into widespread use in medical imaging, through
+joint work of industry organizations: the American College of Radiology
+and the National Association of Electronic Manufacturers. One of the
+defining features of the DICOM standard is that it allows manufacturers
+of instruments to define ``private fields'' that are compliant with the
 standard, but which may include idiosyncratically organized data and/or
 metadata. This provides significant flexibility, but can also easily
 lead to the loss of important information. Nevertheless, the human brain
@@ -879,10 +901,10 @@ maintainers and developers. The clarity offered by procedures for
 enhancement proposals and semantic versioning schemes adopted in
 standards development offers avenues for a range of stakeholders to
 propose well-defined contributions to large and field-wide standards
-efforts (e.g., (Pestilli et al. 2021)), and potentially helps alleviate
-some of these concerns by providing avenues for individual contributions
-to surface, as well as clarity of process, which can alleviate the risks
-of maintainer burnout.
+efforts (e.g., \citep{pestilli2021community}), and potentially helps
+alleviate some of these concerns by providing avenues for individual
+contributions to surface, as well as clarity of process, which can
+alleviate the risks of maintainer burnout.
 
 \subsubsection{Invest in data stewards}\label{invest-in-data-stewards}
 
@@ -899,19 +921,19 @@ will be necessary to set up programs for training for data stewards, and
 to invest in the career paths of individuals that receive such training
 so that this crucial role is encouraged. Initial proposals for the
 curriculum and scope of the role have already been proposed (e.g., in
-(Mons 2018)), but we identify here also a need to connect these
-individuals directly to the practices that exemplify open-source
-standards. Thus, it will be important for these individuals to be
-conversant in the methodology of OSS. This does not mean that they need
-to become software engineers -- though for some of them there may be
-some overlap with the role of research software engineers (Connolly et
-al. 2023) -- but rather that they need to become familiar with those
-parts of the OSS development life-cycle that are specifically useful for
-the development of open-source standards. For example, tools for version
-control, tools for versioning, and tools for creation and validation of
-compliant data and metadata. Stakeholder organizations should invest in
-training grants to establish curriculum for data and metadata standards
-education.
+\citep{Mons2018DataStewardshipBook}), but we identify here also a need
+to connect these individuals directly to the practices that exemplify
+open-source standards. Thus, it will be important for these individuals
+to be conversant in the methodology of OSS. This does not mean that they
+need to become software engineers -- though for some of them there may
+be some overlap with the role of research software engineers
+\citep{Connolly2023Software} -- but rather that they need to become
+familiar with those parts of the OSS development life-cycle that are
+specifically useful for the development of open-source standards. For
+example, tools for version control, tools for versioning, and tools for
+creation and validation of compliant data and metadata. Stakeholder
+organizations should invest in training grants to establish curriculum
+for data and metadata standards education.
 
 Ultimately, efficient use of data stewards and their knowledge will have
 to be applied. It is evident that not every project and every lab that
@@ -919,14 +941,14 @@ produces data requires a full-time data steward. Instead, data
 stewardship could be centralized within organizations such as libraries,
 data science, or software engineering cores of larger research
 organizations. This would be akin to recent models for research software
-engineering that are becoming common in many research organization (Van
-Tuyl 2023). Efficiency considerations also suggest that the development
-of data standards would not have its intended purpose unless funds are
-also allocated to the implementation of the standard in practice.
-Mandating standards without appropriate funding for their implementation
-by data producers and data users could risk hampering science and could
-leading to researchers doing the bare minimum to make their data
-``open''.
+engineering that are becoming common in many research organization
+\citep{Van-Tuyl2023-vp}. Efficiency considerations also suggest that the
+development of data standards would not have its intended purpose unless
+funds are also allocated to the implementation of the standard in
+practice. Mandating standards without appropriate funding for their
+implementation by data producers and data users could risk hampering
+science and could leading to researchers doing the bare minimum to make
+their data ``open''.
 
 \subsubsection{Review open-source standards
 pathways}\label{review-open-source-standards-pathways}
@@ -1017,153 +1039,9 @@ Yaroslav Halchenko & Dartmouth University \\
 Ziheng Sun & George Mason University \\
 \end{longtable}
 
-\section*{References}\label{references}
-\addcontentsline{toc}{section}{References}
 
-\phantomsection\label{refs}
-\begin{CSLReferences}{1}{0}
-\bibitem[\citeproctext]{ref-Adler-Milstein2017-id}
-Adler-Milstein, Julia, and Eric Pfeifer. 2017. {``Information Blocking:
-Is It Occurring and What Policy Strategies Can Address It?''}
-\emph{Milbank Q.} 95 (1): 117--35.
-
-\bibitem[\citeproctext]{ref-Barker2024-ox}
-Barker, Wesley, Natalya Maisel, Catherine E Strawley, Grace K Israelit,
-Julia Adler-Milstein, and Benjamin Rosner. 2024. {``A National Survey of
-Digital Health Company Experiences with Electronic Health Record
-Application Programming Interfaces.''} \emph{J. Am. Med. Inform. Assoc.}
-31 (4): 866--74.
-
-\bibitem[\citeproctext]{ref-Basaglia2023-dq}
-Basaglia, T, M Bellis, J Blomer, J Boyd, C Bozzi, D Britzger, S Campana,
-et al. 2023. {``Data Preservation in High Energy Physics.''} \emph{The
-European Physical Journal C} 83 (9): 795.
-
-\bibitem[\citeproctext]{ref-Connolly2023Software}
-Connolly, Andrew, Joseph Hellerstein, Naomi Alterman, David Beck, Rob
-Fatland, Ed Lazowska, Vani Mandava, and Sarah Stone. 2023. {``{Software}
-{Engineering} {Practices} in {Academia}: Promoting the
-3Rs---{Readability}, {Resilience}, and {Reuse}.''} \emph{Harvard Data
-Science Review} 5 (2).
-
-\bibitem[\citeproctext]{ref-Gillon2024-vu}
-Gillon, Colleen J, Cody Baker, Ryan Ly, Edoardo Balzani, Bingni W
-Brunton, Manuel Schottdorf, Satrajit Ghosh, and Nima Dehghani. 2024.
-{``{ODIN}: Open Data in Neurophysiology: Advancements, Solutions \&
-Challenges.''} \emph{arXiv {[}q-Bio.NC{]}}, July.
-
-\bibitem[\citeproctext]{ref-Gorgolewski2016BIDS}
-Gorgolewski, Krzysztof J, Tibor Auer, Vince D Calhoun, R Cameron
-Craddock, Samir Das, Eugene P Duff, Guillaume Flandin, et al. 2016.
-{``The {Brain} {Imaging} {Data} {Structure}, a Format for Organizing and
-Describing Outputs of Neuroimaging Experiments.''} \emph{Sci Data} 3
-(June): 160044. \url{https://www.nature.com/articles/sdata201644}.
-
-\bibitem[\citeproctext]{ref-Hanisch2015-cu}
-Hanisch, R J, G B Berriman, T J W Lazio, S Emery Bunn, J Evans, T A
-McGlynn, and R Plante. 2015. {``The Virtual Astronomical Observatory:
-Re-Engineering Access to Astronomical Data.''} \emph{Astron. Comput.} 11
-(June): 190--209.
-
-\bibitem[\citeproctext]{ref-Hermes2023-aw}
-Hermes, Dora, and Jan Cimbalnek. 2023. {``How Can Intracranial {EEG}
-Data Be Published in a Standardized Format?''} In \emph{Studies in
-Neuroscience, Psychology and Behavioral Economics}, 595--604. Cham:
-Springer International Publishing.
-
-\bibitem[\citeproctext]{ref-Koch2012-ve}
-Koch, Christof, and R Clay Reid. 2012. {``Observatories of the Mind.''}
-\url{http://dx.doi.org/10.1038/483397a}.
-
-\bibitem[\citeproctext]{ref-Larobina2023-vq}
-Larobina, Michele. 2023. {``Thirty Years of the {DICOM} Standard.''}
-\emph{Tomography} 9 (5): 1829--38.
-
-\bibitem[\citeproctext]{ref-zarr}
-Miles, Alistair, jakirkham, M Bussonnier, Josh Moore, Dimitri
-Papadopoulos Orfanos, Davis Bennett, David Stansby, et al. 2024.
-{``Zarr-Developers/Zarr-Python: V3.0.0-Alpha.''} Zenodo.
-\url{https://doi.org/10.5281/zenodo.11592827}.
-
-\bibitem[\citeproctext]{ref-Mons2018DataStewardshipBook}
-Mons, Barend. 2018. \emph{Data Stewardship for Open Science:
-Implementing FAIR Principles}. 1st ed. Vol. 1. Milton: CRC Press.
-\url{https://doi.org/10.1201/9781315380711}.
-
-\bibitem[\citeproctext]{ref-Musen2022metadata}
-Musen, Mark A. 2022. {``Without Appropriate Metadata, Data-Sharing
-Mandates Are Pointless.''} \emph{Nature} 609 (7926): 222.
-
-\bibitem[\citeproctext]{ref-Mustra2008-xk}
-Mustra, Mario, Kresimir Delac, and Mislav Grgic. 2008. {``Overview of
-the {DICOM} Standard.''} In \emph{2008 50th International Symposium
-ELMAR}, 1:39--44. IEEE.
-
-\bibitem[\citeproctext]{ref-NIST2019}
-National Institute of Standards and Technology. 2019. {``{U.S}.
-{LEADERSHIP} {IN} {AI}: A Plan for Federal Engagement in Developing
-Technical Standards and Related Tools.''}
-
-\bibitem[\citeproctext]{ref-Norman2021CloudBank}
-Norman, Michael, Vince Kellen, Shava Smallen, Brian DeMeulle, Shawn
-Strande, Ed Lazowska, Naomi Alterman, et al. 2021. {``{CloudBank:
-Managed Services to Simplify Cloud Access for Computer Science Research
-and Education}.''} In \emph{Practice and Experience in Advanced Research
-Computing}. PEARC '21. New York, NY, USA: Association for Computing
-Machinery. \url{https://doi.org/10.1145/3437359.3465586}.
-
-\bibitem[\citeproctext]{ref-Nosek2019CultureChange}
-Nosek, Brian. n.d. {``Strategy for Culture Change.''}
-\url{https://www.cos.io/blog/strategy-for-culture-change}.
-
-\bibitem[\citeproctext]{ref-pestilli2021community}
-Pestilli, Franco, Russ Poldrack, Ariel Rokem, Theodore Satterthwaite,
-Franklin Feingold, Eugene Duff, Cyril Pernet, Robert Smith, Oscar
-Esteban, and Matt Cieslak. 2021. {``A Community-Driven Development of
-the Brain Imaging Data Standard (BIDS) to Describe Macroscopic Brain
-Connections.''} \emph{OSF}.
-
-\bibitem[\citeproctext]{ref-Poldrack2024BIDS}
-Poldrack, Russell A, Christopher J Markiewicz, Stefan Appelhoff, Yoni K
-Ashar, Tibor Auer, Sylvain Baillet, Shashank Bansal, et al. 2024. {``The
-Past, Present, and Future of the Brain Imaging Data Structure
-({BIDS}).''} \emph{ArXiv}, January.
-
-\bibitem[\citeproctext]{ref-Rubel2022NWB}
-Rübel, Oliver, Andrew Tritt, Ryan Ly, Benjamin K Dichter, Satrajit
-Ghosh, Lawrence Niu, Pamela Baker, et al. 2022. {``The Neurodata Without
-Borders Ecosystem for Neurophysiological Data Science.''} \emph{Elife}
-11 (October).
-
-\bibitem[\citeproctext]{ref-Scroggins2020-ut}
-Scroggins, Michael, and Bernadette M Boscoe. 2020. {``Once {FITS},
-Always {FITS}? Astronomical Infrastructure in Transition.''} \emph{IEEE
-Ann. Hist. Comput.} 42 (2): 42--54.
-
-\bibitem[\citeproctext]{ref-nstc2022desirable}
-The National Science and Technology Council. 2022. {``Desirable
-Characteristics of Data Repositories for Federally Funded Research.''}
-\emph{Executive Office of the President of the United States, Tech.
-Rep}.
-
-\bibitem[\citeproctext]{ref-Van-Tuyl2023-vp}
-Van Tuyl, Steve (ed ). 2023. {``Hiring, Managing, and Retaining Data
-Scientists and Research Software Engineers in Academia: A Career
-Guidebook from {ADSA} and {US}-{RSE}.''}
-https://doi.org/\url{https://doi.org/10.5281/zenodo.8329337}.
-
-\bibitem[\citeproctext]{ref-wells1979fits}
-Wells, Donald Carson, and Eric W Greisen. 1979. {``FITS-a Flexible Image
-Transport System.''} In \emph{Image Processing in Astronomy}, 445.
-
-\bibitem[\citeproctext]{ref-Wilkinson2016FAIR}
-Wilkinson, Mark D, Michel Dumontier, I Jsbrand Jan Aalbersberg,
-Gabrielle Appleton, Myles Axton, Arie Baak, Niklas Blomberg, et al.
-2016. {``The {FAIR} Guiding Principles for Scientific Data Management
-and Stewardship.''} \emph{Sci Data} 3 (March): 160018.
-
-\end{CSLReferences}
-
+\renewcommand\refname{References}
+  \bibliography{references.bib}
 
 
 
