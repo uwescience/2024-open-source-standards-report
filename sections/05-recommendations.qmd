@@ -20,7 +20,7 @@ can rely. For example, it is now clear that governance principles and rules can
 mitigate some of the risks and challenges mentioned in @sec-challenges,
 especially for communities beyond a certain size that need to converge toward a
 new standard or rely on an existing standard. Developers and maintainers should
-review existing governance practices such as [The Open Source Way](https://www.theopensourceway.org/the_open_source_way-guidebook-2.0.html#_project_and_community_governance).
+review existing governance practices such as those provided by The Open Source Way([https://www.theopensourceway.org/](https://www.theopensourceway.org/the_open_source_way-guidebook-2.0.html#_project_and_community_governance)).
 
 
 ### Foster meta-standards development
@@ -44,7 +44,7 @@ its specific technological capabilities should be considered.
 More generally, meta-standards could include formalization for versioning of
 standards and interactions with specific related software. This includes
 amplifying formalization/guidelines on how to create standards (for example,
-metadata schema specifications using LinkML (https://linkml.io)). However,
+metadata schema specifications using LinkML, [https://linkml.io](https://linkml.io)). However,
 aspects of communication with potential user audiences (e.g., researchers in
 particular domains) should be taken into account as well. For example, in the
 quality of onboarding documentation and tools for ingestion or conversion into
@@ -59,9 +59,8 @@ meta-standards and high-level descriptions of the standards-development process
 avoid known pitfalls, such as the dreaded proliferation of standards, or
 complexity-impeded adoption. Surveying and documenting the success and failures
 of current standards for a specific dataset / domain can help disseminate
-knowledge about the standardization process. Resources such as
-[Fairsharing](https://fairsharing.org/) or [Digital Curation Center](https://www.dcc.ac.uk/guidance/standards)
-can help guide this process.
+knowledge about the standardization process. Resources such as Fairsharing (
+[https://fairsharing.org/](https://fairsharing.org/)) or the Digital Curation Center ([https://www.dcc.ac.uk/guidance/standards](https://www.dcc.ac.uk/guidance/standards)) can help guide this process.
 
 ### Develop standards in tandem with standards-associated software
 
