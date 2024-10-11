@@ -1,4 +1,5 @@
-# Appendix: List of participants
+\newpage
+# Appendix: List of participants {.appendix}
 
 | Name                      | Affiliation                          |
 |---------------------------|--------------------------------------|
