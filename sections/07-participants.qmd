@@ -29,5 +29,5 @@
 | Saskia de Vries           | Allen Institute for Neural Dynamics  |
 | Steven Crawford           | NASA                                 |
 | Vani Mandava              | University of Washington             |
-| Yaroslav Halchenko        | Dartmouth University                 |
+| Yaroslav O. Halchenko     | Dartmouth College                    |
 | Ziheng Sun                | George Mason University              |
