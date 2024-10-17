@@ -20,7 +20,8 @@ can rely. For example, it is now clear that governance principles and rules can
 mitigate some of the risks and challenges mentioned in @sec-challenges,
 especially for communities beyond a certain size that need to converge toward a
 new standard or rely on an existing standard. Developers and maintainers should
-review existing governance practices such as those provided by The Open Source Way([https://www.theopensourceway.org/](https://www.theopensourceway.org/the_open_source_way-guidebook-2.0.html#_project_and_community_governance)).
+review existing governance practices such as those provided by The Open Source Way,
+([https://www.theopensourceway.org/](https://www.theopensourceway.org/the_open_source_way-guidebook-2.0.html#_project_and_community_governance)).
 
 
 ### Foster meta-standards development
